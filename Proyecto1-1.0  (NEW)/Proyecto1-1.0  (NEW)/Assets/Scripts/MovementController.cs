@@ -11,10 +11,19 @@ public class MovementController : MonoBehaviour
     bool Onfloor = false, jumpKeyHeld = false;
     SpriteRenderer Player;
 
+    [Header("Flip de los colliders del player")]
+    public Collider2D FeetCol;
+    public Collider2D SwordCol;
+    private Collider2D BodyCol;
+
+    
+
     void Start()
     {
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Player = GetComponent<SpriteRenderer>();
+        BodyCol = gameObject.GetComponent<CapsuleCollider2D>();
+        
     }
     void Update()
     {
@@ -30,10 +39,17 @@ public class MovementController : MonoBehaviour
         if (axisX < 0)
         {
             Player.flipX = true;
+            BodyCol.offset = new Vector2(-0.1f,0.05f);
+            FeetCol.offset = new Vector2(-0.15f,-0.5f);
+            SwordCol.offset = new Vector2(-0.85f,0);
         }
         else if (axisX > 0)
         {
             Player.flipX = false;
+            BodyCol.offset = new Vector2(0.1f, 0.05f);
+            FeetCol.offset = new Vector2(0.15f, -0.5f);
+            SwordCol.offset = new Vector2(0.85f, 0);
+
         }
 
 
