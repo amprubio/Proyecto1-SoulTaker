@@ -54,9 +54,19 @@ public static class InputManager
 
     // -- Buttons
 
-    public static bool AButton()                            // (Teclado: K)
+    public static bool AButtonDown()                            // (Teclado: K)
     {
         return Input.GetButtonDown("A_Button");
+    }
+
+    public static bool AButton()                            
+    {
+        return Input.GetButton("A_Button");
+    }
+
+    public static bool AButtonUp()
+    {
+        return Input.GetButtonUp("A_Button");
     }
 
     public static bool BButton()                            // (Teclado: L)
