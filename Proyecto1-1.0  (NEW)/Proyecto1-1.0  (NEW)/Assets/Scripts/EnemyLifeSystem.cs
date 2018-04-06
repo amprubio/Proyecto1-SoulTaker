@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyLifeSystem : MonoBehaviour {
 
 
@@ -11,9 +12,30 @@ public class EnemyLifeSystem : MonoBehaviour {
     public int MaxHealth;
     [HideInInspector]
     public int CurrentHealth;
+    public float souls;
+    public float darkness;
+    //private Ataque playerDamage;
+    private Souls giveSouls;
+    private Darkness giveDarkness;
 
-    private void Start()
+    // Use this for initialization
+    void Start()
     {
+        SetInitialReferences();
+    }
+
+    private void OnDestroy()
+    {
+        giveSouls.AddSouls(souls);
+        giveDarkness.AddDarkness(darkness);
+    }
+
+
+    void SetInitialReferences()
+    {
+        giveSouls = GameObject.Find("UI").GetComponent<Souls>();
+        giveDarkness = GameObject.Find("UI").GetComponent<Darkness>();
+
         CurrentHealth = MaxHealth;
     }
 

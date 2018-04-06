@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class Darkness : MonoBehaviour {
     private float darkness = 0f;
     private Text darknessCount;
-    private GameObject enemy;
-    private EnemyProperties enemyDarkness;
 
     // Use this for initialization
     void Start ()
@@ -16,11 +14,6 @@ public class Darkness : MonoBehaviour {
         InitialDarkness();
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        AddDarkness();
-	}
 
     void InitialDarkness()
     {
@@ -31,15 +24,13 @@ public class Darkness : MonoBehaviour {
     void SetInitialReferences()
     {
         darknessCount = GameObject.Find("DarknessCount").GetComponent<Text>();
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyDarkness = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyProperties>();
     }
 
-    void AddDarkness()
+    public void AddDarkness(float amountDarkness)
     {
-        if (enemy == null)
-            darkness += enemyDarkness.souls;
-
+        darkness += amountDarkness;
         darknessCount.text = ("" + darkness);
     }
+
+
 }

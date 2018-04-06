@@ -60,7 +60,7 @@ public class Ataque : MonoBehaviour {
             Debug.Log("Hit" + DañoAtaque);
             Hit = true;
         }
-        
+
     }
 
 }

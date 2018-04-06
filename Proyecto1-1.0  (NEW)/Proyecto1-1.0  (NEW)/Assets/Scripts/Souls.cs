@@ -7,8 +7,6 @@ public class Souls : MonoBehaviour {
 
     private float souls = 0f;
     private Text soulsCount;
-    private GameObject enemy;
-    private EnemyProperties enemySouls;
 
     // Use this for initialization
     void Start ()
@@ -17,17 +15,10 @@ public class Souls : MonoBehaviour {
         InitialSouls();
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-            AddSouls();
-	}
 
     void SetInitialReferences()
     {
         soulsCount = GameObject.Find("SoulsCount").GetComponent<Text>();
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemySouls = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyProperties>();
     }
 
     void InitialSouls()
@@ -36,11 +27,9 @@ public class Souls : MonoBehaviour {
             soulsCount.text = ("" + souls);
     }
 
-    void AddSouls()
-    {
-        if (enemy == null)
-            souls += enemySouls.souls;
-
+     public void AddSouls(float amountSouls)
+     {
+        souls += amountSouls;
         soulsCount.text = ("" + souls);
-    } 
+     } 
 }
