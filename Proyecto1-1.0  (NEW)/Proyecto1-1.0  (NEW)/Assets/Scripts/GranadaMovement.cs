@@ -57,7 +57,7 @@ public class GranadaMovement : MonoBehaviour {
 			time += Time.deltaTime;
 			yield return null;
 		}
-		yield return new WaitForSecondsRealtime (2f);
+		yield return new WaitForSecondsRealtime (0.5f);
 		Instantiate (prefabExplosion, granada.transform.position,  Quaternion.identity);
 		Destroy (this.gameObject,0f);
 		Destroy (prefabExplosion.gameObject,1f);

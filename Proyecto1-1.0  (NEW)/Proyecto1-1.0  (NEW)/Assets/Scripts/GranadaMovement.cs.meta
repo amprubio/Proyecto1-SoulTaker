@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 579d6b0e4f831df4fb348a24e5935a2b
+timeCreated: 1522937916
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefabExplosion: {fileID: 1835839706443518, guid: 60e3e08bb8585f94ab2e2b17c6c566e4,
+      type: 2}
+  - granada: {instanceID: 0}
+  - Avatar: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
