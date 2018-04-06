@@ -14,11 +14,10 @@ public class EnemyLifeSystem : MonoBehaviour {
     public int CurrentHealth;
     public float souls;
     public float darkness;
-    //private Ataque playerDamage;
     private Souls giveSouls;
     private Darkness giveDarkness;
 
-    // Use this for initialization
+    
     void Start()
     {
         SetInitialReferences();
@@ -26,16 +25,13 @@ public class EnemyLifeSystem : MonoBehaviour {
 
     private void OnDestroy()
     {
-        giveSouls.AddSouls(souls);
-        giveDarkness.AddDarkness(darkness);
+        GameManager.instance.AddDarkness(darkness);
+        GameManager.instance.AddSouls(souls);
     }
 
 
     void SetInitialReferences()
     {
-        giveSouls = GameObject.Find("UI").GetComponent<Souls>();
-        giveDarkness = GameObject.Find("UI").GetComponent<Darkness>();
-
         CurrentHealth = MaxHealth;
     }
 
