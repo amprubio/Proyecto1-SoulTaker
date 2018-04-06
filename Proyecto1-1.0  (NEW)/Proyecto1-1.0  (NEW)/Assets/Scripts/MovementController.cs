@@ -8,8 +8,8 @@ public class MovementController : MonoBehaviour
     public float jumpHeight;
     public float fall;
     bool Onfloor = false;
-    SpriteRenderer Player;
-    
+    public SpriteRenderer Player;
+	public GameObject granada;
 
     void Start()
     {
@@ -34,7 +34,9 @@ public class MovementController : MonoBehaviour
         }
         // Jump
         //float timer = 0;
-
+		if (InputManager.LBButton()){
+			Instantiate (granada, transform.position + new Vector3 (0f, 1f,0f),Quaternion.identity);
+		}
         if (InputManager.AButton())
         {
             if (Onfloor)
@@ -46,9 +48,9 @@ public class MovementController : MonoBehaviour
             }
         }
 
-         if (GetComponent<Rigidbody2D>().velocity.y < 0)
-             GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall) * Time.deltaTime;
-    }
+		if (GetComponent<Rigidbody2D> ().velocity.y < 0)
+			GetComponent<Rigidbody2D> ().velocity += Vector2.up * Physics2D.gravity.y * (fall) * Time.deltaTime;
+	}
 
     void OnTriggerStay2D()
     {     
@@ -58,6 +60,4 @@ public class MovementController : MonoBehaviour
     {
         Onfloor = false;
     }
-
-    
 }
