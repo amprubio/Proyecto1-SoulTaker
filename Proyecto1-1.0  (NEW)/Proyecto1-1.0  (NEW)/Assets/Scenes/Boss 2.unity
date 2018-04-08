@@ -1289,12 +1289,15 @@ MonoBehaviour:
   PuntoSpawn: {fileID: 956270715}
   anguloAperturaDisparo: 30
   "rotaci\xF3nLocalProyectil": 0
-  movementSpeed: 2
+  movementSpeed: 3
   Proyectil: {fileID: 1807759331804660, guid: 6dee47166faa0734787e5b24380e8ea5, type: 2}
   bossSprite: {fileID: 1525036415}
   currentWayPoint: 0
-  temp: 3
+  varSpeedUp: 0
+  tempShooting: 3
+  tempIdle: 3
   IsShooting: 0
+  IsIdle: 0
   tempPos: {x: 0, y: 0, z: 0}
   posOffset: {x: 0, y: 0, z: 0}
 --- !u!212 &1525036415

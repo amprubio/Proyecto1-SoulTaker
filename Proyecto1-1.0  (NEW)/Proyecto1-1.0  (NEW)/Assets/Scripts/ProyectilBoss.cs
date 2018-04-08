@@ -11,6 +11,7 @@ public class ProyectilBoss : MonoBehaviour {
     public float coseno;
     private Vector3 target;
     private SpriteRenderer render;
+    private float tempDestroy = 10f;
 
     
 
@@ -36,6 +37,8 @@ public class ProyectilBoss : MonoBehaviour {
             render.flipX = true;
         }
         transform.position += target * speed * direccion * Time.deltaTime;
+        tempDestroy = tempDestroy - Time.deltaTime;
+        if (tempDestroy < 0) Destroy(gameObject);
 	}
 
     private void OnBecameInvisible()

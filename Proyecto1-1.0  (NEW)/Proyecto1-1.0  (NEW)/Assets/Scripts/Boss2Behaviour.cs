@@ -13,7 +13,7 @@ public class Boss2Behaviour : MonoBehaviour {
     [Header("si se pone un valor positivo el angulo se hace mas pequeño.")]
     public int anguloAperturaDisparo;
     public int rotaciónLocalProyectil;
-    public int movementSpeed;
+    public float movementSpeed;
     public GameObject Proyectil;
     public SpriteRenderer bossSprite;
     
@@ -23,28 +23,23 @@ public class Boss2Behaviour : MonoBehaviour {
     
     public int currentWayPoint = 0;
     private Transform nextWayPoint;
-    private int varSpeed;
-    public float temp = 3f;
+    public float varSpeedUp;
+    public float tempShooting = 3f;
+    public float tempIdle = 3f;
     public bool IsShooting = false;
+    public bool IsIdle = false;
     public Vector3 tempPos = new Vector3();
     public Vector3 posOffset = new Vector3();
     private float amplitude = 0.01f;
     private float frequency = 0.5f;
-    
-
-
-           
-    
+    private float acceleration = 0.1f;
     
     void Start ()
     {
-        varSpeed = movementSpeed;
+        varSpeedUp = movementSpeed;
         
         if (movementSpeed == 0) movementSpeed = 5;
 	}
-	
-	
-
 	void Update ()
     {
         if(currentWayPoint < WayPoints.Length)
@@ -60,33 +55,52 @@ public class Boss2Behaviour : MonoBehaviour {
                         Shoot();
                         IsShooting = true;
                     }
-                    if (temp > 0 && IsShooting == true)
+                    if (tempShooting > 0 && IsShooting == true)
                     {
-                        temp = temp - Time.deltaTime;
+                        tempShooting = tempShooting - Time.deltaTime;
                         IsShooting = true;
                     }
                     else
                     {
                         IsShooting = false;
-                        temp = 3f;
+                        tempShooting = 3f;
                     }
-                    Idle();
-                    //MoveBoss(movementSpeed);
+                    if (tempIdle > 0)
+                    {
+                        Idle();
+                        tempIdle = tempIdle - Time.deltaTime;
+                        IsIdle = true;
+                    }
+                    else
+                    {
+                        MoveBoss(movementSpeed);
+                    }                   
                     break;
-                
+                case 5:
+                    bossSprite.flipX = true;
+                    MoveBoss(movementSpeed);
+                    RestartValues();
+                    break;
+                case 1:
+                    bossSprite.flipX = false;
+                    if(varSpeedUp > movementSpeed && varSpeedUp > 1) varSpeedUp = varSpeedUp - 35 * acceleration;
+                    MoveBoss(varSpeedUp);
+                    RestartValues();
+                    break;
+                case 0:
+                    if(varSpeedUp < 15) varSpeedUp = varSpeedUp + acceleration;
+                    MoveBoss(varSpeedUp);
+                    break;
+
                 default:
                     MoveBoss(movementSpeed);
                     break;
-
-                    
-
-
            }
 
             
         }
 	}
-    void MoveBoss(int sp)
+    void MoveBoss(float sp)
     {
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint.position, sp * Time.deltaTime);
 
@@ -96,6 +110,7 @@ public class Boss2Behaviour : MonoBehaviour {
             currentWayPoint = (currentWayPoint + 1) % WayPoints.Length;
             nextWayPoint = WayPoints[currentWayPoint];
         }
+        
     }
     private void Shoot()
     {
@@ -130,6 +145,14 @@ public class Boss2Behaviour : MonoBehaviour {
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
 
         transform.position = tempPos;
+    }
+    private void RestartValues()
+    {
+        IsShooting = false;
+        IsIdle = false;
+        tempIdle = 3f;
+        tempShooting = 3f;
+        varSpeedUp = movementSpeed;
     }
 
 }
