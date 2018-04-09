@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: 617c5d7fbc2690c48af4ce44c9a316cb
-timeCreated: 1520532464
+timeCreated: 1523290065
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Player: {instanceID: 0}
+  - granada: {fileID: 1769508638369846, guid: bd71abd748b5f0a4d936b9ff4575dcfd, type: 2}
+  - FeetCol: {instanceID: 0}
+  - SwordCol: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
