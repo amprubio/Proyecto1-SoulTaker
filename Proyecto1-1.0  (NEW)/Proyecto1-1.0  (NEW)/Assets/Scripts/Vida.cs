@@ -102,7 +102,23 @@ public class Vida : MonoBehaviour
         }
         
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Proyectile")
+        {
+            ProyectilBoss pro = collision.gameObject.GetComponent<ProyectilBoss>();
+            VidaActual = VidaActual - pro.damage;
+            VidaActual = Mathf.Clamp(VidaActual, 0, VidaMaxima);
+            ActualizaCorazones();
+            Colision = true;
+        }
+        else Colision = false;
+        if (VidaActual <= 0)
+        {
+            DestroyPlayer();
+        }
+    }
+
     public void CurarVida()
     {
         int y;

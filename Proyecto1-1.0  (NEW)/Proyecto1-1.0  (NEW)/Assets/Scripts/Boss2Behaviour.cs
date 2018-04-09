@@ -32,10 +32,13 @@ public class Boss2Behaviour : MonoBehaviour {
     public Vector3 posOffset = new Vector3();
     private float amplitude = 0.01f;
     private float frequency = 0.5f;
-    private float acceleration = 0.1f;
+    private float acceleration = 1f;
     
     void Start ()
     {
+        Collider2D colBoss = gameObject.GetComponent<Collider2D>();
+        Collider2D colPro = Proyectil.GetComponent<Collider2D>();
+        Physics2D.IgnoreCollision(colBoss,colPro);
         varSpeedUp = movementSpeed;
         
         if (movementSpeed == 0) movementSpeed = 5;
@@ -83,12 +86,13 @@ public class Boss2Behaviour : MonoBehaviour {
                     break;
                 case 1:
                     bossSprite.flipX = false;
-                    if(varSpeedUp > movementSpeed && varSpeedUp > 1) varSpeedUp = varSpeedUp - 35 * acceleration;
-                    MoveBoss(varSpeedUp);
+                    
+                    MoveBoss(movementSpeed);
                     RestartValues();
                     break;
                 case 0:
-                    if(varSpeedUp < 15) varSpeedUp = varSpeedUp + acceleration;
+                    if (varSpeedUp != 1f && varSpeedUp < 45f) varSpeedUp = varSpeedUp + acceleration;
+                    else varSpeedUp = 1f;
                     MoveBoss(varSpeedUp);
                     break;
 
@@ -154,5 +158,6 @@ public class Boss2Behaviour : MonoBehaviour {
         tempShooting = 3f;
         varSpeedUp = movementSpeed;
     }
+    
 
 }
