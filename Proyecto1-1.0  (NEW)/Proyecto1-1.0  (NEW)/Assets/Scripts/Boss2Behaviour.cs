@@ -32,7 +32,7 @@ public class Boss2Behaviour : MonoBehaviour {
     public Vector3 posOffset = new Vector3();
     private float amplitude = 0.01f;
     private float frequency = 0.5f;
-    private float acceleration = 1f;
+    private float acceleration = 0.5f;
     
     void Start ()
     {
