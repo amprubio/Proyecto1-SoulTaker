@@ -16,6 +16,8 @@ public class Boss2Behaviour : MonoBehaviour {
     public float movementSpeed;
     public GameObject Proyectil;
     public SpriteRenderer bossSprite;
+    public int numberProyectiles;
+    public GameObject player;
     
     [HideInInspector]
     public static bool Flip;
@@ -56,6 +58,8 @@ public class Boss2Behaviour : MonoBehaviour {
                     if (!IsShooting)
                     {
                         Shoot();
+                        Quaternion rotation = Quaternion.LookRotation(player.transform.position);
+
                         IsShooting = true;
                     }
                     if (tempShooting > 0 && IsShooting == true)
@@ -122,7 +126,7 @@ public class Boss2Behaviour : MonoBehaviour {
         int anguloBase = -45 + anguloAperturaDisparo;
         int desfaseAngulo = -anguloBase;
         Flip = bossSprite.flipX;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < numberProyectiles; i++)
         {
             GameObject Proyectiles = (GameObject)Instantiate(Proyectil, PuntoSpawn.transform.position, Quaternion.identity);
             if (anguloBase + (desfaseAngulo * i) > 0)

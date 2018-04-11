@@ -1312,6 +1312,8 @@ MonoBehaviour:
   movementSpeed: 3
   Proyectil: {fileID: 1807759331804660, guid: 6dee47166faa0734787e5b24380e8ea5, type: 2}
   bossSprite: {fileID: 1525036415}
+  numberProyectiles: 10
+  player: {fileID: 1898128402}
   currentWayPoint: 0
   varSpeedUp: 0
   tempShooting: 3
@@ -2100,6 +2102,11 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!1 &1898128402 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1606084122524072, guid: e5cd1ac60a27f964e996ee6472e6cea0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1584345347}
 --- !u!1 &1916534521
 GameObject:
   m_ObjectHideFlags: 0
