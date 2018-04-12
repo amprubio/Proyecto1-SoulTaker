@@ -1312,7 +1312,7 @@ MonoBehaviour:
   movementSpeed: 3
   Proyectil: {fileID: 1807759331804660, guid: 6dee47166faa0734787e5b24380e8ea5, type: 2}
   bossSprite: {fileID: 1525036415}
-  numberProyectiles: 10
+  numberProyectiles: 5
   player: {fileID: 1898128402}
   currentWayPoint: 0
   varSpeedUp: 0
@@ -1322,6 +1322,8 @@ MonoBehaviour:
   IsIdle: 0
   tempPos: {x: 0, y: 0, z: 0}
   posOffset: {x: 0, y: 0, z: 0}
+  angleOffset: 0
+  minAngle: 0
 --- !u!212 &1525036415
 SpriteRenderer:
   m_ObjectHideFlags: 0

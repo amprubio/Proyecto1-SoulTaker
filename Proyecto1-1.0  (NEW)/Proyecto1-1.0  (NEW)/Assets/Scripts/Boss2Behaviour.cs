@@ -35,7 +35,10 @@ public class Boss2Behaviour : MonoBehaviour {
     private float amplitude = 0.01f;
     private float frequency = 0.5f;
     private float acceleration = 0.5f;
-    
+    public float angleOffset;
+    public float minAngle;
+
+
     void Start ()
     {
         Collider2D colBoss = gameObject.GetComponent<Collider2D>();
@@ -47,6 +50,7 @@ public class Boss2Behaviour : MonoBehaviour {
 	}
 	void Update ()
     {
+        Debug.DrawLine(transform.position, player.transform.position, Color.red);
         if(currentWayPoint < WayPoints.Length)
         {
             if (nextWayPoint == null)
@@ -58,7 +62,7 @@ public class Boss2Behaviour : MonoBehaviour {
                     if (!IsShooting)
                     {
                         Shoot();
-                        Quaternion rotation = Quaternion.LookRotation(player.transform.position);
+                        
 
                         IsShooting = true;
                     }
@@ -123,28 +127,35 @@ public class Boss2Behaviour : MonoBehaviour {
     private void Shoot()
     {
         int x = 0;
-        int anguloBase = -45 + anguloAperturaDisparo;
-        int desfaseAngulo = -anguloBase;
         Flip = bossSprite.flipX;
+        //Rotacion del boss hacia el player
+        Vector3 direcc = player.transform.position - transform.position;
+        float rotz = LookAtPlayer(bossSprite.flipX,direcc);
+        transform.rotation = Quaternion.AngleAxis(rotz, Vector3.forward);
+
+        angleOffset = 90 / numberProyectiles;
+        minAngle = rotz + ((numberProyectiles / 2) * angleOffset);
+        
+        //Hacia positivos min angulo = rotz - (numberProyectiles / 2) * angleOffset
         for (int i = 0; i < numberProyectiles; i++)
         {
             GameObject Proyectiles = (GameObject)Instantiate(Proyectil, PuntoSpawn.transform.position, Quaternion.identity);
-            if (anguloBase + (desfaseAngulo * i) > 0)
-            {
-                x = -rotaciónLocalProyectil;
-            }
-            else if ((anguloBase + (desfaseAngulo * i)) == 0)
-            {
-                x = 0;
-            }
-            else
-            {
-                x = rotaciónLocalProyectil;
-            }
-
-            Proyectiles.transform.rotation = Quaternion.Euler(0, 0, anguloBase + (desfaseAngulo * i) + x);
+            //if (rotz + (angleOffset * (i+1)) > 0)
+            //{
+            //    x = -rotaciónLocalProyectil;
+            //}
+            //else if ((rotz + (angleOffset * i)) == 0)
+            //{
+            //    x = 0;
+            //}
+            //else
+            //{
+            //    x = rotaciónLocalProyectil;
+            //}
+            Proyectiles.transform.rotation = Quaternion.Euler(0, 0, minAngle - (angleOffset * i));
 
         }
+       
     }
 
     private void Idle()
@@ -162,6 +173,22 @@ public class Boss2Behaviour : MonoBehaviour {
         tempShooting = 3f;
         varSpeedUp = movementSpeed;
     }
+    private float LookAtPlayer(bool flip,Vector3 angBase)
+    {
+        
+        angBase.Normalize();
+        float rotz = Mathf.Atan2(angBase.y, angBase.x) * Mathf.Rad2Deg;
+
+        if(!flip)
+        {
+            rotz = rotz + 180;
+        }
+        
+
+        return rotz;
+        
+    }
+    
     
 
 }
