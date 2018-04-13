@@ -25,11 +25,11 @@ public class Boss2Behaviour : MonoBehaviour {
     
     public int currentWayPoint = 0;
     private Transform nextWayPoint;
-    public float varSpeedUp;
+    private float varSpeedUp;
     public float tempShooting = 3f;
     public float tempIdle = 3f;
-    public bool IsShooting = false;
-    public bool IsIdle = false;
+    private bool IsShooting = false;
+    private bool IsIdle = false;
     public Vector3 tempPos = new Vector3();
     public Vector3 posOffset = new Vector3();
     private float amplitude = 0.01f;
@@ -50,7 +50,8 @@ public class Boss2Behaviour : MonoBehaviour {
 	}
 	void Update ()
     {
-        Debug.DrawLine(transform.position, player.transform.position, Color.red);
+        
+        Debug.DrawLine(PuntoSpawn.transform.position, player.transform.position, Color.red);
         if(currentWayPoint < WayPoints.Length)
         {
             if (nextWayPoint == null)
@@ -89,6 +90,7 @@ public class Boss2Behaviour : MonoBehaviour {
                     break;
                 case 5:
                     bossSprite.flipX = true;
+                    
                     MoveBoss(movementSpeed);
                     RestartValues();
                     break;
@@ -129,7 +131,7 @@ public class Boss2Behaviour : MonoBehaviour {
         int x = 0;
         Flip = bossSprite.flipX;
         //Rotacion del boss hacia el player
-        Vector3 direcc = player.transform.position - transform.position;
+        Vector3 direcc = player.transform.position - PuntoSpawn.transform.position;
         float rotz = LookAtPlayer(bossSprite.flipX,direcc);
         transform.rotation = Quaternion.AngleAxis(rotz, Vector3.forward);
 

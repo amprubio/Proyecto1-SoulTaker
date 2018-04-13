@@ -904,7 +904,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142746435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.032960072, y: -5.58, z: 0.028385326}
+  m_LocalPosition: {x: -0.03296, y: -5.58, z: 0.028385326}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1723693199}
@@ -1312,14 +1312,11 @@ MonoBehaviour:
   movementSpeed: 3
   Proyectil: {fileID: 1807759331804660, guid: 6dee47166faa0734787e5b24380e8ea5, type: 2}
   bossSprite: {fileID: 1525036415}
-  numberProyectiles: 5
+  numberProyectiles: 3
   player: {fileID: 1898128402}
   currentWayPoint: 0
-  varSpeedUp: 0
   tempShooting: 3
   tempIdle: 3
-  IsShooting: 0
-  IsIdle: 0
   tempPos: {x: 0, y: 0, z: 0}
   posOffset: {x: 0, y: 0, z: 0}
   angleOffset: 0
@@ -1601,7 +1598,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4559135017519930, guid: e5cd1ac60a27f964e996ee6472e6cea0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.79
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: 4559135017519930, guid: e5cd1ac60a27f964e996ee6472e6cea0, type: 2}
       propertyPath: m_LocalPosition.y
