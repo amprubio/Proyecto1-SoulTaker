@@ -30,13 +30,15 @@ public class Boss2Behaviour : MonoBehaviour {
     public float tempIdle = 3f;
     private bool IsShooting = false;
     private bool IsIdle = false;
-    public Vector3 tempPos = new Vector3();
-    public Vector3 posOffset = new Vector3();
+    private Vector3 tempPos = new Vector3();
+    private Vector3 posOffset = new Vector3();
     private float amplitude = 0.01f;
     private float frequency = 0.5f;
     private float acceleration = 0.5f;
-    public float angleOffset;
-    public float minAngle;
+    private float angleOffset;
+    private float minAngle;
+    private bool MustRest;
+    public float tempResting = 3f;
 
 
     void Start ()
@@ -95,14 +97,32 @@ public class Boss2Behaviour : MonoBehaviour {
                     RestartValues();
                     break;
                 case 1:
-                    bossSprite.flipX = false;
-                    
                     MoveBoss(movementSpeed);
                     RestartValues();
                     break;
                 case 0:
-                    if (varSpeedUp != 1f && varSpeedUp < 45f) varSpeedUp = varSpeedUp + acceleration;
-                    else varSpeedUp = 1f;
+                    bossSprite.flipX = false;
+                    if (!MustRest)
+                    {
+                        MoveBoss(movementSpeed);
+                    }
+                    else
+                    {
+                        if(tempResting < 0)
+                        {
+                            MoveBoss(movementSpeed);
+                        }
+                        else
+                        {
+                            MoveBoss(0.5f);
+                        }
+                        tempResting = tempResting - Time.deltaTime;
+                    }
+                    
+                    break;
+                case 7:
+                    if (varSpeedUp != 0f && varSpeedUp < 30f) varSpeedUp = varSpeedUp + acceleration;
+                    MustRest = true;
                     MoveBoss(varSpeedUp);
                     break;
 
@@ -173,7 +193,8 @@ public class Boss2Behaviour : MonoBehaviour {
         IsIdle = false;
         tempIdle = 3f;
         tempShooting = 3f;
-        varSpeedUp = movementSpeed;
+        tempResting = 3f;
+        varSpeedUp = 1f;
     }
     private float LookAtPlayer(bool flip,Vector3 angBase)
     {

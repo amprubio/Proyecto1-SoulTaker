@@ -10,6 +10,7 @@ public class ProyectilBoss : MonoBehaviour {
     public float angulo;
     public float seno;
     public float coseno;
+    
     private Vector3 target;
     private SpriteRenderer render;
     private float tempDestroy = 10f;
@@ -20,10 +21,10 @@ public class ProyectilBoss : MonoBehaviour {
 	void Start ()
     {
         
-                Flipped = Boss2Behaviour.Flip; ;
+        Flipped = Boss2Behaviour.Flip; 
         render = gameObject.GetComponent<SpriteRenderer>();
         angulo = transform.rotation.z;
-        target = new Vector3(coseno = Mathf.Cos(angulo), seno = Mathf.Sin(angulo), 0).normalized;
+        //target = new Vector3(coseno = Mathf.Cos(angulo)*Mathf.Deg2Rad, seno = Mathf.Sin(angulo)*Mathf.Deg2Rad, 0).normalized;
 	}
 	
 	
@@ -40,7 +41,7 @@ public class ProyectilBoss : MonoBehaviour {
             direccion = 1;
             render.flipX = true;
         }
-        transform.position += target * speed * direccion * Time.deltaTime;
+        transform.position += transform.right * speed * direccion * Time.deltaTime;
         tempDestroy = tempDestroy - Time.deltaTime;
         if (tempDestroy < 0) Destroy(gameObject);
 	}
