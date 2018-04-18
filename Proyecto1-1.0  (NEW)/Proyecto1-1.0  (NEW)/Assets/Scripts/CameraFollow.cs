@@ -23,12 +23,14 @@ public class CameraFollow : MonoBehaviour {
     //public Enemy enm;
     
     
+
     void Start ()
     {
         player = GameObject.Find("Player").transform;
 	}
 	
 	
+
 	void LateUpdate ()
     {
         float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocidad.x, time);
