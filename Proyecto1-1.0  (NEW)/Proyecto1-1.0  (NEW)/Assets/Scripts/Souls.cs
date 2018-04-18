@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Souls : MonoBehaviour {
 
-    private float souls = 0f;
+    //private float souls = 0f;
     private Text soulsCount;
 
     

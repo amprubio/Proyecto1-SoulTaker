@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - UI
+  - DynamicPlatform
+  - Platform
+  - Thorns
   layers:
   - Default
   - TransparentFX
