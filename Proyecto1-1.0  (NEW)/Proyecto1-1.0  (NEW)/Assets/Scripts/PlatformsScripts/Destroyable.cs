@@ -6,9 +6,9 @@ public class Destroyable : MonoBehaviour {
 
     public float waitTime = 1.0f;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
             Destroy(this.gameObject, waitTime);
     }
 }

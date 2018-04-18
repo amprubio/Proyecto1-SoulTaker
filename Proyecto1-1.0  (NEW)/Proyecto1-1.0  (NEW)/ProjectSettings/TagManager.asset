@@ -4,15 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - UI
-<<<<<<< HEAD
-  - Proyectile
-=======
-  - DynamicPlatform
-  - Platform
   - Thorns
->>>>>>> Levels
+  - Platform
+  - DynamicPlatform
   layers:
   - Default
   - TransparentFX

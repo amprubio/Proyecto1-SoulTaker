@@ -3091,6 +3091,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61071205765159472, guid: ff3d1f751faef9f48a656ee0f9acf1d6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff3d1f751faef9f48a656ee0f9acf1d6, type: 2}
   m_IsPrefabParent: 0
@@ -5914,6 +5919,9 @@ MonoBehaviour:
   jumpImpulse: 2
   jumpForce: 2
   countDown: 0.3
+  countGranade: 7
+  Player: {fileID: 0}
+  granada: {fileID: 0}
   FeetCol: {fileID: 1956017781}
   SwordCol: {fileID: 321325697}
 --- !u!50 &1664540685
