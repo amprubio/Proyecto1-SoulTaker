@@ -6,7 +6,13 @@ TagManager:
   tags:
   - Enemy
   - UI
+<<<<<<< HEAD
   - Proyectile
+=======
+  - DynamicPlatform
+  - Platform
+  - Thorns
+>>>>>>> Levels
   layers:
   - Default
   - TransparentFX

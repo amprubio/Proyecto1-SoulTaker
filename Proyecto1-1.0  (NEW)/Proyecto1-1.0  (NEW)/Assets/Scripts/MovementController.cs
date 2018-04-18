@@ -97,13 +97,23 @@ public class MovementController : MonoBehaviour
 	}
 
 
-    public void OnTriggerStay2D()
+    public void OnTriggerStay2D(Collider2D other)
     {
-        Onfloor = true;
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        {
+            Onfloor = true;
+            transform.parent = other.transform;
+        }
     }
-    public void OnTriggerExit2D()
+    public void OnTriggerExit2D(Collider2D other)
     {
-        Onfloor = false;
+
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        {
+            Onfloor = false;
+            transform.parent = null;
+        }
+
     }
     
 }

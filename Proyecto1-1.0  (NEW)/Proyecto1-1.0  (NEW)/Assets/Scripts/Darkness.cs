@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Darkness : MonoBehaviour {
 
-    private float darkness = 0f;
+    //private float darkness = 0f;
     private Text darknessCount;
 
     
