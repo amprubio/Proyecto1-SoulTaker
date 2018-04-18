@@ -31,7 +31,6 @@ public class Boss2Behaviour : MonoBehaviour {
     private bool IsShooting = false;
     private bool IsIdle = false;
     private Vector3 tempPos = new Vector3();
-    private Vector3 posOffset = new Vector3();
     private float amplitude = 0.01f;
     private float frequency = 0.5f;
     private float acceleration = 0.5f;
@@ -148,7 +147,6 @@ public class Boss2Behaviour : MonoBehaviour {
     }
     private void Shoot()
     {
-        int x = 0;
         Flip = bossSprite.flipX;
         //Rotacion del boss hacia el player
         Vector3 direcc = player.transform.position - PuntoSpawn.transform.position;
