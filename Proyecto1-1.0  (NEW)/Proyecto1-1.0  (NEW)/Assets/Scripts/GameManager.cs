@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float souls;
 
+    ObjectManager objMan;
+
+    
+
 
     void Awake()
     {
@@ -42,6 +46,40 @@ public class GameManager : MonoBehaviour
     {
         darkness += amountDarkness;
 
+    }
+
+    public void SubsSouls(float amountSouls)
+    {
+        souls -= amountSouls;
+    }
+
+    public void SubsDarkness(float amountDarkness)
+    {
+        darkness -= amountDarkness;
+    }
+
+    public void changeStats()
+    {
+        switch(objMan.objectsArr[objMan.tmp].objeto.name)
+        {
+            case "ladron":
+
+                break;
+            case "kebab":
+                break;
+            case "piedradeafilar":
+                break;
+            case "bebida":
+                break;
+            case "becario":
+                break;
+            case "filoligero":
+                break;
+            case "mandoble":
+                break;
+            case "concentraccion":
+                break;
+        }
     }
 
 
