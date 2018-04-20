@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1993135178972774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36682257, y: 0.7078368, z: 0}
+  m_LocalPosition: {x: -0.011285305, y: 1.6277359, z: 0}
   m_LocalScale: {x: 1.8646731, y: 1.8646731, z: 1.8646731}
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   attack1Range: 1
   objectExplosion: {fileID: 1031296885168242, guid: 9337947f187aeea41883a47afc3027b6,
     type: 2}
+  t: 3
 --- !u!114 &114223227856445772
 MonoBehaviour:
   m_ObjectHideFlags: 1
