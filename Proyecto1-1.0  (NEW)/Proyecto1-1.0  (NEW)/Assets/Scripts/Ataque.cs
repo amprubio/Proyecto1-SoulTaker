@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ataque : MonoBehaviour {
 
     public Collider2D SwordCol;
-    public int DañoAtaque;
+    public float DañoAtaque;
     public float tRetardo = 2;
 
     private float x;

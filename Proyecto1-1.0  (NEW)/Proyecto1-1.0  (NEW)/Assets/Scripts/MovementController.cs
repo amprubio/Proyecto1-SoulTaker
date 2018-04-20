@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
     public float fall = 2.0f;
     public float jumpImpulse = 2.0f, jumpForce= 2.0f;
     public float countDown = 0.3f;
+    private float resetCountDown;
 	[Header("Contador")]
 	public int countGranade=7;
     bool Onfloor = false, jumpKeyHeld = false;
@@ -26,6 +27,7 @@ public class MovementController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Player = GetComponent<SpriteRenderer>();
         BodyCol = gameObject.GetComponent<CapsuleCollider2D>();
+        resetCountDown = countDown;
         
     }
     void Update()
@@ -72,7 +74,7 @@ public class MovementController : MonoBehaviour
 
         if (InputManager.AButtonUp())
         {
-            countDown = 0.3f;
+            countDown = resetCountDown;
             jumpKeyHeld = false;
         }
 
@@ -102,6 +104,11 @@ public class MovementController : MonoBehaviour
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
         {
             Onfloor = true;
+        }
+
+        if (other.gameObject.tag == "Elevator")
+        {
+            Onfloor = true;
             transform.parent = other.transform;
         }
     }
@@ -109,6 +116,11 @@ public class MovementController : MonoBehaviour
     {
 
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        {
+            Onfloor = false;
+        }
+
+        if (other.gameObject.tag == "Elevator")
         {
             Onfloor = false;
             transform.parent = null;

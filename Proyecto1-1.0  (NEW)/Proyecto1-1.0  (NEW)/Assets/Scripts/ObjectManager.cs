@@ -33,7 +33,7 @@ public class ObjectManager : MonoBehaviour {
 
         for (int i = 0; i < boosters.Length; i++)
         {
-            objectsArr[i].objeto = boosters[0];
+            objectsArr[i].objeto = boosters[i];
             objectsArr[i].instanciado = false;
         }
 

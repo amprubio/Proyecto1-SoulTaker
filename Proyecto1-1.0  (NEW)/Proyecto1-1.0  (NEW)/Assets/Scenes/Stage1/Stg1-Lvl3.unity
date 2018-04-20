@@ -3081,6 +3081,9 @@ MonoBehaviour:
   jumpImpulse: 2
   jumpForce: 2
   countDown: 0.3
+  countGranade: 7
+  Player: {fileID: 0}
+  granada: {fileID: 0}
   FeetCol: {fileID: 1065150676}
   SwordCol: {fileID: 2119789151}
 --- !u!50 &638717421
@@ -3362,6 +3365,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1790746238537304, guid: 4a7062de65d0fde45bf4fa609bdd3d3f, type: 2}
+      propertyPath: m_TagString
+      value: Elevator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a7062de65d0fde45bf4fa609bdd3d3f, type: 2}
   m_IsPrefabParent: 0
@@ -3525,7 +3532,7 @@ GameObject:
   - component: {fileID: 806207117}
   m_Layer: 0
   m_Name: ElevatorPlatform
-  m_TagString: DynamicPlatform
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8357,7 +8364,7 @@ GameObject:
   - component: {fileID: 1586789432}
   m_Layer: 0
   m_Name: Elevator2
-  m_TagString: DynamicPlatform
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8422,7 +8429,7 @@ GameObject:
   - component: {fileID: 1632477145}
   m_Layer: 0
   m_Name: Elevator3
-  m_TagString: DynamicPlatform
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10273,7 +10280,7 @@ GameObject:
   - component: {fileID: 2039190487}
   m_Layer: 0
   m_Name: ElevatorPlatform
-  m_TagString: DynamicPlatform
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

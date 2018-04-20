@@ -8,12 +8,20 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-
+    
     public static GameManager instance = null;
     [HideInInspector]
     public float darkness;
     [HideInInspector]
     public float souls;
+    public float perSouls = 1;
+    public float perDarkness = 1;
+
+    public Vida vida;
+    public Ataque ataque;
+    public MovementController movement;
+    [HideInInspector]
+    public BoxCollider2D sword;
 
     ObjectManager objMan;
 
@@ -37,14 +45,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        sword = GameObject.Find("Sword").GetComponent<BoxCollider2D>();
+        
+    }
+
     public void AddSouls(float amountSouls)
     {
-        souls += amountSouls;
+        souls += amountSouls*perSouls;
 
     }
     public void AddDarkness(float amountDarkness)
     {
-        darkness += amountDarkness;
+        darkness += amountDarkness * perDarkness;
 
     }
 
@@ -63,19 +77,26 @@ public class GameManager : MonoBehaviour
         switch(objMan.objectsArr[objMan.tmp].objeto.name)
         {
             case "ladron":
-
+                perSouls = 1.2f;
                 break;
             case "kebab":
+                vida.AniadeCorazon();
                 break;
             case "piedradeafilar":
+                ataque.DañoAtaque = ataque.DañoAtaque * 1.25f;
                 break;
             case "bebida":
+                movement.speed = movement.speed * 1.2f;
                 break;
             case "becario":
+                perDarkness = 1.2f;
                 break;
             case "filoligero":
+                ataque.tRetardo = ataque.tRetardo * 0.4f;
                 break;
             case "mandoble":
+                sword.offset = new Vector2 (1f, sword.offset.y);
+                sword.size  = new Vector2(1f, sword.size.y);
                 break;
             case "concentraccion":
                 break;

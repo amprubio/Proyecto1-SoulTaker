@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4536320620631688}
   m_Layer: 0
   m_Name: Elevator
-  m_TagString: DynamicPlatform
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 114075931479353122}
   m_Layer: 0
   m_Name: ElevatorPlatform
-  m_TagString: DynamicPlatform
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
