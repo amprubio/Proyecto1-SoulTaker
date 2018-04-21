@@ -8,7 +8,7 @@ public class Ataque : MonoBehaviour {
     public float DañoAtaque;
     public float tRetardo = 2;
 
-    private float x;
+    public float x;
     private bool ColliderActivo = false;
     private bool Hit = false;
     

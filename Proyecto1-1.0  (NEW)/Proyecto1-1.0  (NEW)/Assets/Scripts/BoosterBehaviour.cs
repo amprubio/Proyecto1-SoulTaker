@@ -6,6 +6,7 @@ public class BoosterBehaviour : MonoBehaviour {
 
     public int amountDarkness;
     public int amountSouls;
+   
 
 
 	// Use this for initialization
@@ -30,5 +31,6 @@ public class BoosterBehaviour : MonoBehaviour {
     {
         GameManager.instance.SubsDarkness(amountDarkness);
         GameManager.instance.SubsSouls(amountSouls);
+        GameManager.instance.ChangeStats(gameObject.name);
     }
 }

@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     public MovementController movement;
     [HideInInspector]
     public BoxCollider2D sword;
-
-    ObjectManager objMan;
+    
+    
 
     
 
@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+    
+
     public void AddSouls(float amountSouls)
     {
         souls += amountSouls*perSouls;
@@ -72,36 +74,88 @@ public class GameManager : MonoBehaviour
         darkness -= amountDarkness;
     }
 
-    public void changeStats()
+    public void ChangeStats(string nameMethod)
     {
-        switch(objMan.objectsArr[objMan.tmp].objeto.name)
+        Debug.Log("ayjoder");
+        switch(nameMethod)
         {
-            case "ladron":
-                perSouls = 1.2f;
+            case "Ladron(Clone)":
+                Ladron();
                 break;
-            case "kebab":
-                vida.AniadeCorazon();
+
+            case "BebidaEnergetica(Clone)":
+                BebidaEnergetica();
                 break;
-            case "piedradeafilar":
-                ataque.DañoAtaque = ataque.DañoAtaque * 1.25f;
+
+            case "Becario(Clone)":
+                Becario();
                 break;
-            case "bebida":
-                movement.speed = movement.speed * 1.2f;
+
+            case "Mandoble(Clone)":
+                Mandoble();
+                break; 
+
+            case "FiloLigero(Clone)":
+                FiloLigero();
                 break;
-            case "becario":
-                perDarkness = 1.2f;
+
+            case "PiedraDeAfilar(Clone)":
+                PiedraDeAfilar();
                 break;
-            case "filoligero":
-                ataque.tRetardo = ataque.tRetardo * 0.4f;
+
+            case "Kebab(Clone)":
+                Kebab();
                 break;
-            case "mandoble":
-                sword.offset = new Vector2 (1f, sword.offset.y);
-                sword.size  = new Vector2(1f, sword.size.y);
+
+            case "Concentracion(Clone)":
+                Concentracion();
                 break;
-            case "concentraccion":
-                break;
+
+            
+
         }
+
     }
 
+
+    public void Ladron()
+    {
+        perSouls = 1.2f;
+        Debug.Log("hay hola");
+    }
+    public void BebidaEnergetica()
+    {
+        movement.speed = movement.speed * 1.2f;
+        Debug.Log("hay hola");
+    }
+    public void Becario()
+    {
+        perDarkness = 1.2f;
+        Debug.Log("hay hola");
+    }
+    public void Mandoble()
+    {
+        sword.offset = new Vector2(1f, sword.offset.y);
+        Debug.Log("hay hola");
+    }
+    public void FiloLigero()
+    {
+        ataque.tRetardo = ataque.tRetardo * 0.4f;
+        Debug.Log("hay hola");
+    }
+    public void PiedraDeAfilar()
+    {
+        ataque.DañoAtaque = ataque.DañoAtaque * 1.25f;
+        Debug.Log("hay hola");
+    }
+    public void Kebab()
+    {
+        vida.AniadeCorazon();
+        Debug.Log("hay hola");
+    }
+    public void Concentracion()
+    {
+
+    }
 
 }
