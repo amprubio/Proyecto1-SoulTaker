@@ -19,6 +19,8 @@ public class MovementController : MonoBehaviour
     public Collider2D FeetCol;
     public Collider2D SwordCol;
     private Collider2D BodyCol;
+    [HideInInspector]
+    public float swordColOff;
 
     
 
@@ -28,7 +30,9 @@ public class MovementController : MonoBehaviour
         Player = GetComponent<SpriteRenderer>();
         BodyCol = gameObject.GetComponent<CapsuleCollider2D>();
         resetCountDown = countDown;
-        
+        if(swordColOff == 0) swordColOff = SwordCol.offset.x;
+
+
     }
     void Update()
     {
@@ -36,24 +40,26 @@ public class MovementController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
-
+        float x;
         // Movement
 
         float axisX = InputManager.MainHorizontal();
         transform.Translate(new Vector3(axisX, 0) * Time.deltaTime * speed);
         if (axisX < 0)
         {
+            x = -1;
             Player.flipX = true;
             BodyCol.offset = new Vector2(-0.1f,0.05f);
             FeetCol.offset = new Vector2(-0.15f,-0.5f);
-            SwordCol.offset = new Vector2(-0.85f,0);
+            SwordCol.offset = new Vector2(swordColOff * x ,0);
         }
         else if (axisX > 0)
         {
+            x = 1;
             Player.flipX = false;
             BodyCol.offset = new Vector2(0.1f, 0.05f);
             FeetCol.offset = new Vector2(0.15f, -0.5f);
-            SwordCol.offset = new Vector2(0.85f, 0);
+            SwordCol.offset = new Vector2(swordColOff * x, 0);
 
         }
 

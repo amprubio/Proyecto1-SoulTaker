@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public Ataque ataque;
     public MovementController movement;
     [HideInInspector]
+    public GameObject Player;
+    Transform PlayerTr;
     public BoxCollider2D sword;
     
     
@@ -47,7 +49,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        sword = GameObject.Find("Sword").GetComponent<BoxCollider2D>();
+        Player = GameObject.Find("Player");
+        sword = Player.transform.GetChild(1).GetComponent<BoxCollider2D>();
         
     }
 
@@ -136,11 +139,12 @@ public class GameManager : MonoBehaviour
     public void Mandoble()
     {
         sword.offset = new Vector2(1f, sword.offset.y);
+        sword.size = new Vector2(1f, sword.size.y);
         Debug.Log("hay hola");
     }
     public void FiloLigero()
     {
-        ataque.tRetardo = ataque.tRetardo * 0.4f;
+        ataque.x = ataque.x * 0.4f;
         Debug.Log("hay hola");
     }
     public void PiedraDeAfilar()

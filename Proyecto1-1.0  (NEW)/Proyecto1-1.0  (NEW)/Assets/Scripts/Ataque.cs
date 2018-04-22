@@ -6,7 +6,7 @@ public class Ataque : MonoBehaviour {
 
     public Collider2D SwordCol;
     public float DañoAtaque;
-    public float tRetardo = 2;
+    public float tRetardo;
 
     public float x;
     private bool ColliderActivo = false;
