@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 2
-  angulo: 120
+  angulo: 45
   seno: 0.3
   coseno: 0
 --- !u!212 &212380056467825088
