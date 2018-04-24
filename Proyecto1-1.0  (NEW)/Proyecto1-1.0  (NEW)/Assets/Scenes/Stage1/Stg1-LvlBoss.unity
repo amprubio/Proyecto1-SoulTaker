@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 294347519}
   - component: {fileID: 294347518}
   - component: {fileID: 294347516}
+  - component: {fileID: 294347520}
   m_Layer: 0
   m_Name: Sprite sheet sylvanos (Barrido)_0
   m_TagString: Untagged
@@ -777,7 +778,7 @@ MonoBehaviour:
   - {fileID: 391201091}
   player: {fileID: 25459369}
   bossSprite: {fileID: 294347514}
-  Proyectil: {fileID: 0}
+  Proyectil: {fileID: 1694658068913892, guid: aa0c8530e92f2c8459af51b41f1c506c, type: 2}
   numberProyectiles: 5
   currentWayPoint: 0
   PuntoSpawn: {fileID: 1835991134}
@@ -801,6 +802,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 2
+--- !u!95 &294347520
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294347513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31111bf19a6899146a96b7abb667dcd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &370744664
 Prefab:
   m_ObjectHideFlags: 0

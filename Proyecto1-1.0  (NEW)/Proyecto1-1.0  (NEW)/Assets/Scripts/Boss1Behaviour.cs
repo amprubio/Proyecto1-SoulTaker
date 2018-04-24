@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+//arreglar parada en shoot();
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +35,7 @@ public class Boss1Behaviour : MonoBehaviour {
 		//Le pone la correa al good boy
 		Debug.DrawLine(player.transform.position, bossSprite.transform.position, Color.black);
 		//Va para el nodo siguiente
-		bossSprite.transform.position = Vector3.MoveTowards(bossSprite.transform.position, nextWayPoint.transform.position, 5 * Time.deltaTime);
+		bossSprite.transform.position = Vector3.MoveTowards(bossSprite.transform.position, nextWayPoint.transform.position, 3 * Time.deltaTime);
 
 		//IMPORTANTE TU NODO NUMERO 6 VA A SER EN EL QUE QUIERES QUE GIRE DE DERECHA A IZQUIERDA.
 		//MIS NODOS ESTAN PUESTOS DE ESTA MANERA 7...6...1...2.5...4...3
@@ -66,12 +69,11 @@ public class Boss1Behaviour : MonoBehaviour {
 		//esto no sirve en verdad
 		Flip = bossSprite.flipX;
 		//Rotacion del boss hacia el player
-		if (player.transform.position.x - bossSprite.transform.position.x > 0) {
+		if(currentWayPoint<=WayPoints.Length)
+			bossSprite.transform.position = Vector3.MoveTowards(bossSprite.transform.position, WayPoints[currentWayPoint-2].transform.position, 0 * Time.deltaTime);
+
 			GameObject Proyectiles = (GameObject)Instantiate(Proyectil, bossSprite.transform.position, Quaternion.identity);
 
-		}
-		if (player.transform.position.x - bossSprite.transform.position.x < 0) {
-			GameObject Proyectiles = (GameObject)Instantiate(Proyectil, bossSprite.transform.position, Quaternion.identity);
 		}
 		//float rotz = LookAtPlayer(bossSprite.flipX,direcc);
 		//transform.rotation = Quaternion.AngleAxis(rotz, Vector3.forward);
@@ -99,20 +101,3 @@ public class Boss1Behaviour : MonoBehaviour {
 
 	}
 	//esto no lo he usado tampoco pero bueno a lo mejor para los disparos teledirigdos sirve
-	private float LookAtPlayer(bool flip,Vector3 angBase)
-	{
-
-		angBase.Normalize();
-		float rotz = Mathf.Atan2(angBase.y, angBase.x) * Mathf.Rad2Deg;
-
-		if(!flip)
-		{
-			rotz = rotz + 180;
-		}
-
-
-		return rotz;
-
-	}
-
-}
