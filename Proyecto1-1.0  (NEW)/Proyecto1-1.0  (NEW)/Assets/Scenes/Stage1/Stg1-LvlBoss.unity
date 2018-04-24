@@ -781,6 +781,7 @@ MonoBehaviour:
   Proyectil: {fileID: 1694658068913892, guid: aa0c8530e92f2c8459af51b41f1c506c, type: 2}
   numberProyectiles: 5
   currentWayPoint: 0
+  timeofshoot: 10
   PuntoSpawn: {fileID: 1835991134}
 --- !u!50 &294347519
 Rigidbody2D:

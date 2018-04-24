@@ -14,6 +14,7 @@ public class Boss1Behaviour : MonoBehaviour {
 	public GameObject Proyectil;
 	public int numberProyectiles = 5;
 	public int currentWayPoint = 0;
+	public int timeofshoot=5;
 	public static bool Flip;
 	public Transform PuntoSpawn;
 	private float angleOffset;
@@ -66,15 +67,20 @@ public class Boss1Behaviour : MonoBehaviour {
 	}
 	private void Shoot()
 	{
+		float count = 0;
 		//esto no sirve en verdad
 		Flip = bossSprite.flipX;
+
+		while(count<timeofshoot){
 		//Rotacion del boss hacia el player
 		if(currentWayPoint<=WayPoints.Length)
-			bossSprite.transform.position = Vector3.MoveTowards(bossSprite.transform.position, WayPoints[currentWayPoint-2].transform.position, 0 * Time.deltaTime);
+			bossSprite.transform.position = Vector3.MoveTowards(bossSprite.transform.position, WayPoints[currentWayPoint-2].transform.position, 0.01f* Time.deltaTime);
 
-			GameObject Proyectiles = (GameObject)Instantiate(Proyectil, bossSprite.transform.position, Quaternion.identity);
 
+			count += Time.deltaTime;
 		}
+		GameObject Proyectiles = (GameObject)Instantiate(Proyectil, bossSprite.transform.position, Quaternion.AngleAxis(GetComponent<BulletBoss1Behaviour>().angulo,bossSprite.transform.position));
+	}
 		//float rotz = LookAtPlayer(bossSprite.flipX,direcc);
 		//transform.rotation = Quaternion.AngleAxis(rotz, Vector3.forward);
 
