@@ -51,53 +51,32 @@ public class Boss1Behaviour : MonoBehaviour {
 		if (currentWayPoint == 3) {
 			bossSprite.flipX = true;
 			Debug.Log ("Flipo");
-			currentWayPoint = 4;
 			nextWayPoint = WayPoints[currentWayPoint];
 
 		}
-		if(transform.position == nextWayPoint.position)
-		{
-			//PACHUM PACHUM
-
-				Debug.Log ("PACHUUM");
-
-				anim.SetBool ("disparo",true);
-				Shoot ();
-
-
-			currentWayPoint = (currentWayPoint + 1) % WayPoints.Length;
-			nextWayPoint = WayPoints[currentWayPoint];
-		}
-
-	}
-	private void Shoot()
-	{
-		Flip = bossSprite.flipX;
-		Debug.DrawLine (WayPoints[currentWayPoint].position,nextWayPoint.position,Color.cyan);
-		float count = 0;
-		//esto no sirve en verdad
-		while(count<timeofshoot){
-			anim.SetBool ("descanso",true);
-			bossSprite.transform.position = Vector3.MoveTowards(WayPoints[currentWayPoint].transform.position, WayPoints[currentWayPoint-1].transform.position, 0.001f* Time.deltaTime);
-			count += Time.deltaTime;
-			}	
-		MoveBoss ();
-		}
-	void Sh(){
-	Vector3 direcc = player.transform.position - PuntoSpawn.transform.position;
-		float angle= 90 / numberProyectiles;
-		transform.rotation= Quaternion.AngleAxis(angle,Vector3.forward);
 
 	
+		InvokeRepeating ("Shoot", 5, 20);
 
-	//Hacia positivos min angulo = rotz - (numberProyectiles / 2) * angleOffset
-	for (int i = 0; i < numberProyectiles; i++)
-	{
-		GameObject Proyectiles = (GameObject)Instantiate(Proyectil, PuntoSpawn.transform.position, Quaternion.identity);
-		
+		currentWayPoint = (currentWayPoint + 1) % WayPoints.Length;
+		nextWayPoint = WayPoints[currentWayPoint];
 
 	}
+	private void Shoot ()
+	{	anim.SetTrigger ("disparo");
+		Flip = bossSprite.flipX;
+		Debug.DrawLine (WayPoints [currentWayPoint].position, nextWayPoint.position, Color.cyan);
+		float count = 0;
+		//esto no sirve en verdad
+		while (count < timeofshoot) {
 
+			anim.SetTrigger ("descanso");
+
+			bossSprite.transform.position = Vector3.MoveTowards (WayPoints [currentWayPoint].transform.position, WayPoints [currentWayPoint - 1].transform.position, 0.001f * Time.deltaTime);
+
+			count += Time.deltaTime;
+
+		}	
+		MoveBoss ();
+	}
 }
-}
-	//esto no lo he usado tampoco pero bueno a lo mejor para los disparos teledirigdos sirve

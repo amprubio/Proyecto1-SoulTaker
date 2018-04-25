@@ -16,12 +16,12 @@ public class BulletBoss1Behaviour : MonoBehaviour {
 	private SpriteRenderer render;
 	private float tempDestroy = 10f;
 	private bool Flipped;
-
+	public Transform player;
 
 
 	void Start ()
 	{
-
+		player = GetComponent<Transform> ();
 		Flipped = Boss1Behaviour.Flip; 
 		render = gameObject.GetComponent<SpriteRenderer>();
 		angulo = transform.rotation.z;
@@ -31,20 +31,10 @@ public class BulletBoss1Behaviour : MonoBehaviour {
 
 	void Update ()
 	{
-		int direccion;
-		if (!Flipped)
-		{
-			direccion = -1;
-			render.flipX = false;
-		}
-		else
-		{
-			direccion = 1;
-			render.flipX = true;
-		}
-		transform.position += transform.right * speed * direccion * Time.deltaTime;
+		Vector3.MoveTowards( render.transform.position,player.position, speed  * Time.deltaTime);
 		tempDestroy = tempDestroy - Time.deltaTime;
-		if (tempDestroy < 0) Destroy(gameObject);
+		if (tempDestroy < 0) 
+			Destroy(gameObject);
 	}
 
 	private void OnBecameInvisible()

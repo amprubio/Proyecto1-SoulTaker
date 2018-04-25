@@ -913,6 +913,32 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 7.09
       objectReference: {fileID: 0}
+    - target: {fileID: 212278125062061884, guid: 351456d60a9ebda44bbc7d4b14a1ca5f,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212278125062061884, guid: 351456d60a9ebda44bbc7d4b14a1ca5f,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750737584475990, guid: 351456d60a9ebda44bbc7d4b14a1ca5f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750737584475990, guid: 351456d60a9ebda44bbc7d4b14a1ca5f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.28407177
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750737584475990, guid: 351456d60a9ebda44bbc7d4b14a1ca5f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750737584475990, guid: 351456d60a9ebda44bbc7d4b14a1ca5f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.20567824
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 351456d60a9ebda44bbc7d4b14a1ca5f, type: 2}
   m_IsPrefabParent: 0
@@ -2255,6 +2281,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1835991134}
+  - component: {fileID: 1835991136}
+  - component: {fileID: 1835991135}
   m_Layer: 0
   m_Name: nodoViajero
   m_TagString: Untagged
@@ -2269,12 +2297,46 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1835991133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.29, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 294347515}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1835991135
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835991133}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1835991136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835991133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b633ee4689dc76146896a4367d1dfd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1694658068913892, guid: aa0c8530e92f2c8459af51b41f1c506c, type: 2}
+  player: {fileID: 25459369}
+  boss: {fileID: 294347513}
 --- !u!1 &1846007583
 GameObject:
   m_ObjectHideFlags: 0
