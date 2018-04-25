@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - DynamicPlatform
   - Elevator
+  - EndLevel
   layers:
   - Default
   - TransparentFX
