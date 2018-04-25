@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
     public float fall = 2.0f;
     public float jumpImpulse = 2.0f, jumpForce= 2.0f;
     public float countDown = 0.3f;
+    private float resetCountDown;
 	[Header("Contador")]
 	public int countGranade=7;
     bool Onfloor = false, jumpKeyHeld = false;
@@ -18,6 +19,8 @@ public class MovementController : MonoBehaviour
     public Collider2D FeetCol;
     public Collider2D SwordCol;
     private Collider2D BodyCol;
+    [HideInInspector]
+    public float swordColOff;
 
     
 
@@ -26,7 +29,10 @@ public class MovementController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Player = GetComponent<SpriteRenderer>();
         BodyCol = gameObject.GetComponent<CapsuleCollider2D>();
-        
+        resetCountDown = countDown;
+        if(swordColOff == 0) swordColOff = SwordCol.offset.x;
+
+
     }
     void Update()
     {
@@ -34,24 +40,26 @@ public class MovementController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
-
+        float x;
         // Movement
 
         float axisX = InputManager.MainHorizontal();
         transform.Translate(new Vector3(axisX, 0) * Time.deltaTime * speed);
         if (axisX < 0)
         {
+            x = -1;
             Player.flipX = true;
             BodyCol.offset = new Vector2(-0.1f,0.05f);
             FeetCol.offset = new Vector2(-0.15f,-0.5f);
-            SwordCol.offset = new Vector2(-0.85f,0);
+            SwordCol.offset = new Vector2(swordColOff * x ,0);
         }
         else if (axisX > 0)
         {
+            x = 1;
             Player.flipX = false;
             BodyCol.offset = new Vector2(0.1f, 0.05f);
             FeetCol.offset = new Vector2(0.15f, -0.5f);
-            SwordCol.offset = new Vector2(0.85f, 0);
+            SwordCol.offset = new Vector2(swordColOff * x, 0);
 
         }
 
@@ -72,7 +80,7 @@ public class MovementController : MonoBehaviour
 
         if (InputManager.AButtonUp())
         {
-            countDown = 0.3f;
+            countDown = resetCountDown;
             jumpKeyHeld = false;
         }
 
@@ -102,6 +110,11 @@ public class MovementController : MonoBehaviour
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
         {
             Onfloor = true;
+        }
+
+        if (other.gameObject.tag == "Elevator")
+        {
+            Onfloor = true;
             transform.parent = other.transform;
         }
     }
@@ -109,6 +122,11 @@ public class MovementController : MonoBehaviour
     {
 
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        {
+            Onfloor = false;
+        }
+
+        if (other.gameObject.tag == "Elevator")
         {
             Onfloor = false;
             transform.parent = null;

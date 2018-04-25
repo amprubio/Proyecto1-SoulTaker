@@ -11,7 +11,7 @@ public class EnemyLifeSystem : MonoBehaviour {
     [Header("Atributos de la vida del enemigo")]
     public int MaxHealth;
     [HideInInspector]
-    public int CurrentHealth;
+    public float CurrentHealth;
     public float souls;
     public float darkness;
     private Souls giveSouls;
@@ -35,7 +35,7 @@ public class EnemyLifeSystem : MonoBehaviour {
         CurrentHealth = MaxHealth;
     }
 
-    public void LoseHealth(int i)
+    public void LoseHealth(float i)
     {
         CurrentHealth = CurrentHealth - i;
         Debug.Log("CurrentHealth - i : " + CurrentHealth);

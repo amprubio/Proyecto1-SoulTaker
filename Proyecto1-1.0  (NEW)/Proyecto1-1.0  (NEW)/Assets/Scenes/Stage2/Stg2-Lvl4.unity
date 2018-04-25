@@ -289,8 +289,12 @@ MonoBehaviour:
   jumpImpulse: 2
   jumpForce: 2
   countDown: 0.3
+  countGranade: 7
+  Player: {fileID: 0}
+  granada: {fileID: 0}
   FeetCol: {fileID: 1625253713}
   SwordCol: {fileID: 679516857}
+  swordColOff: 0
 --- !u!50 &17358630
 Rigidbody2D:
   serializedVersion: 4
@@ -383,7 +387,7 @@ Transform:
   - {fileID: 1625253714}
   - {fileID: 679516859}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &21379817
 Prefab:
@@ -2870,6 +2874,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4133466061719042, guid: d80dd3aae428037428f83e45d834c5ba,
     type: 2}
   m_PrefabInternal: {fileID: 384150302}
+--- !u!1001 &514609409
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 19.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.748047
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476481743934834, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e04835bfa1cf3024cb22cc1ce5f952d7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &518053867 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4350363537471056, guid: 1646f6a75a16ea04aa07f400d67889a4,
@@ -3579,6 +3625,7 @@ MonoBehaviour:
   SwordCol: {fileID: 679516857}
   "Da\xF1oAtaque": 5
   tRetardo: 2
+  x: 0
 --- !u!4 &679516859
 Transform:
   m_ObjectHideFlags: 0
@@ -9471,7 +9518,7 @@ Transform:
   - {fileID: 1234181833}
   - {fileID: 1980270557}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1574444561 stripped
 Transform:
