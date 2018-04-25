@@ -4,29 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Souls : MonoBehaviour {
-    private float souls = 0f;
+
+    //private float souls = 0f;
     private Text soulsCount;
 
-	// Use this for initialization
-	void Start () 
+    
+    void Start ()
     {
         SetInitialReferences();
         InitialSouls();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    }
     void SetInitialReferences()
     {
         soulsCount = GameObject.Find("SoulsCount").GetComponent<Text>();
     }
-
     void InitialSouls()
     {
-        if (soulsCount != null)
-            soulsCount.text = ("" + souls);
+        soulsCount.text = ("0");
+    }
+
+    private void Update()
+    {
+        soulsCount.text = GameManager.instance.souls.ToString();
     }
 }

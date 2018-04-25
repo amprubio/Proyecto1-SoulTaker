@@ -5,30 +5,30 @@ using UnityEngine.UI;
 
 public class Darkness : MonoBehaviour {
 
-    private float darkness = 0f;
+    //private float darkness = 0f;
     private Text darknessCount;
 
-
-	// Use this for initialization
-	void Start () 
+    
+    void Start ()
     {
         SetInitialReferences();
         InitialDarkness();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    }
+    void InitialDarkness()
+    {
+        
+            darknessCount.text = ("0");
+    }
+    
     void SetInitialReferences()
     {
         darknessCount = GameObject.Find("DarknessCount").GetComponent<Text>();
     }
 
-    void InitialDarkness()
+    private void Update()
     {
-        if (darknessCount != null)
-            darknessCount.text = ("" + darkness);
+        darknessCount.text = GameManager.instance.darkness.ToString();
     }
+
+
 }

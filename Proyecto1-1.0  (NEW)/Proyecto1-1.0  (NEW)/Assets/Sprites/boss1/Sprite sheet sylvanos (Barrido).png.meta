@@ -1,0 +1,1292 @@
+fileFormatVersion: 2
+guid: 246db0a3213429e4eb077fc331c1253a
+timeCreated: 1524174700
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sprite sheet sylvanos (Barrido)_0
+    21300002: Sprite sheet sylvanos (Barrido)_1
+    21300004: Sprite sheet sylvanos (Barrido)_2
+    21300006: Sprite sheet sylvanos (Barrido)_3
+    21300008: Sprite sheet sylvanos (Barrido)_4
+    21300010: Sprite sheet sylvanos (Barrido)_5
+    21300012: Sprite sheet sylvanos (Barrido)_6
+    21300014: Sprite sheet sylvanos (Barrido)_7
+    21300016: Sprite sheet sylvanos (Barrido)_8
+    21300018: Sprite sheet sylvanos (Barrido)_9
+    21300020: Sprite sheet sylvanos (Barrido)_10
+    21300022: Sprite sheet sylvanos (Barrido)_11
+    21300024: Sprite sheet sylvanos (Barrido)_12
+    21300026: Sprite sheet sylvanos (Barrido)_13
+    21300028: Sprite sheet sylvanos (Barrido)_14
+    21300030: Sprite sheet sylvanos (Barrido)_15
+    21300032: Sprite sheet sylvanos (Barrido)_16
+    21300034: Sprite sheet sylvanos (Barrido)_17
+    21300036: Sprite sheet sylvanos (Barrido)_18
+    21300038: Sprite sheet sylvanos (Barrido)_19
+    21300040: Sprite sheet sylvanos (Barrido)_20
+    21300042: Sprite sheet sylvanos (Barrido)_21
+    21300044: Sprite sheet sylvanos (Barrido)_22
+    21300046: Sprite sheet sylvanos (Barrido)_23
+    21300048: Sprite sheet sylvanos (Barrido)_24
+    21300050: Sprite sheet sylvanos (Barrido)_25
+    21300052: Sprite sheet sylvanos (Barrido)_26
+    21300054: Sprite sheet sylvanos (Barrido)_27
+    21300056: Sprite sheet sylvanos (Barrido)_28
+    21300058: Sprite sheet sylvanos (Barrido)_29
+    21300060: Sprite sheet sylvanos (Barrido)_30
+    21300062: Sprite sheet sylvanos (Barrido)_31
+    21300064: Sprite sheet sylvanos (Barrido)_32
+    21300066: Sprite sheet sylvanos (Barrido)_33
+    21300068: Sprite sheet sylvanos (Barrido)_34
+    21300070: Sprite sheet sylvanos (Barrido)_35
+    21300072: Sprite sheet sylvanos (Barrido)_36
+    21300074: Sprite sheet sylvanos (Barrido)_37
+    21300076: Sprite sheet sylvanos (Barrido)_38
+    21300078: Sprite sheet sylvanos (Barrido)_39
+    21300080: Sprite sheet sylvanos (Barrido)_40
+    21300082: Sprite sheet sylvanos (Barrido)_41
+    21300084: Sprite sheet sylvanos (Barrido)_42
+    21300086: Sprite sheet sylvanos (Barrido)_43
+    21300088: Sprite sheet sylvanos (Barrido)_44
+    21300090: Sprite sheet sylvanos (Barrido)_45
+    21300092: Sprite sheet sylvanos (Barrido)_46
+    21300094: Sprite sheet sylvanos (Barrido)_47
+    21300096: Sprite sheet sylvanos (Barrido)_48
+    21300098: Sprite sheet sylvanos (Barrido)_49
+    21300100: Sprite sheet sylvanos (Barrido)_50
+    21300102: Sprite sheet sylvanos (Barrido)_51
+    21300104: Sprite sheet sylvanos (Barrido)_52
+    21300106: Sprite sheet sylvanos (Barrido)_53
+    21300108: Sprite sheet sylvanos (Barrido)_54
+    21300110: Sprite sheet sylvanos (Barrido)_55
+    21300112: Sprite sheet sylvanos (Barrido)_56
+    21300114: Sprite sheet sylvanos (Barrido)_57
+    21300116: Sprite sheet sylvanos (Barrido)_58
+    21300118: Sprite sheet sylvanos (Barrido)_59
+    21300120: Sprite sheet sylvanos (Barrido)_60
+    21300122: Sprite sheet sylvanos (Barrido)_61
+    21300124: Sprite sheet sylvanos (Barrido)_62
+    21300126: Sprite sheet sylvanos (Barrido)_63
+    21300128: Sprite sheet sylvanos (Barrido)_64
+    21300130: Sprite sheet sylvanos (Barrido)_65
+    21300132: Sprite sheet sylvanos (Barrido)_66
+    21300134: Sprite sheet sylvanos (Barrido)_67
+    21300136: Sprite sheet sylvanos (Barrido)_68
+    21300138: Sprite sheet sylvanos (Barrido)_69
+    21300140: Sprite sheet sylvanos (Barrido)_70
+    21300142: Sprite sheet sylvanos (Barrido)_71
+    21300144: Sprite sheet sylvanos (Barrido)_72
+    21300146: Sprite sheet sylvanos (Barrido)_73
+    21300148: Sprite sheet sylvanos (Barrido)_74
+    21300150: Sprite sheet sylvanos (Barrido)_75
+    21300152: Sprite sheet sylvanos (Barrido)_76
+    21300154: Sprite sheet sylvanos (Barrido)_77
+    21300156: Sprite sheet sylvanos (Barrido)_78
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 4230
+        width: 279
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_1
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 4230
+        width: 274
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_2
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 4230
+        width: 277
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_3
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 4230
+        width: 279
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_4
+      rect:
+        serializedVersion: 2
+        x: 2157
+        y: 4230
+        width: 279
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_5
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 4230
+        width: 278
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_6
+      rect:
+        serializedVersion: 2
+        x: 3192
+        y: 4230
+        width: 281
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_7
+      rect:
+        serializedVersion: 2
+        x: 3714
+        y: 4230
+        width: 275
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_8
+      rect:
+        serializedVersion: 2
+        x: 4222
+        y: 4230
+        width: 279
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 3715
+        width: 276
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_10
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 3715
+        width: 279
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_11
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 3715
+        width: 276
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_12
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 3715
+        width: 276
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_13
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 3715
+        width: 276
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_14
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 3715
+        width: 279
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_15
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 3715
+        width: 279
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_16
+      rect:
+        serializedVersion: 2
+        x: 3707
+        y: 3715
+        width: 279
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_17
+      rect:
+        serializedVersion: 2
+        x: 4222
+        y: 3715
+        width: 279
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_18
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 3200
+        width: 284
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_19
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 3200
+        width: 274
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_20
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 3200
+        width: 276
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_21
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 3200
+        width: 260
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_22
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 3200
+        width: 258
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_23
+      rect:
+        serializedVersion: 2
+        x: 2694
+        y: 3200
+        width: 231
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_24
+      rect:
+        serializedVersion: 2
+        x: 3218
+        y: 3195
+        width: 210
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_25
+      rect:
+        serializedVersion: 2
+        x: 3738
+        y: 3200
+        width: 196
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_26
+      rect:
+        serializedVersion: 2
+        x: 4222
+        y: 3200
+        width: 284
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_27
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 2682
+        width: 220
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_28
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 2682
+        width: 222
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_29
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 2682
+        width: 238
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_30
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 2680
+        width: 267
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_31
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 2682
+        width: 279
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_32
+      rect:
+        serializedVersion: 2
+        x: 2678
+        y: 2682
+        width: 279
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_33
+      rect:
+        serializedVersion: 2
+        x: 3194
+        y: 2682
+        width: 279
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_34
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 2682
+        width: 274
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_35
+      rect:
+        serializedVersion: 2
+        x: 4222
+        y: 2682
+        width: 284
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_36
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 2167
+        width: 274
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_37
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 2167
+        width: 280
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_38
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 2167
+        width: 267
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_39
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 2167
+        width: 267
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_40
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 2167
+        width: 263
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_41
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 2167
+        width: 246
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_42
+      rect:
+        serializedVersion: 2
+        x: 3211
+        y: 2165
+        width: 234
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_43
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 2165
+        width: 276
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_44
+      rect:
+        serializedVersion: 2
+        x: 4229
+        y: 2167
+        width: 277
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_45
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1647
+        width: 346
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_46
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1647
+        width: 321
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_47
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1647
+        width: 295
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_48
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 1647
+        width: 286
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_49
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 1647
+        width: 343
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_50
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 1649
+        width: 297
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_51
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 1647
+        width: 259
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_52
+      rect:
+        serializedVersion: 2
+        x: 3710
+        y: 1649
+        width: 278
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_53
+      rect:
+        serializedVersion: 2
+        x: 4230
+        y: 1650
+        width: 276
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_54
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1133
+        width: 347
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_55
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1132
+        width: 321
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_56
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1132
+        width: 297
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_57
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 1134
+        width: 286
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_58
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 1132
+        width: 343
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_59
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 1134
+        width: 295
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_60
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 1132
+        width: 258
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_61
+      rect:
+        serializedVersion: 2
+        x: 3724
+        y: 1132
+        width: 244
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_62
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 1134
+        width: 279
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_63
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 617
+        width: 234
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_64
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 617
+        width: 236
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_65
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 617
+        width: 220
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_66
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 619
+        width: 255
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_67
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 619
+        width: 279
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_68
+      rect:
+        serializedVersion: 2
+        x: 2679
+        y: 619
+        width: 275
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_69
+      rect:
+        serializedVersion: 2
+        x: 3194
+        y: 619
+        width: 275
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_70
+      rect:
+        serializedVersion: 2
+        x: 3710
+        y: 619
+        width: 276
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_71
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 618
+        width: 274
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_72
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 102
+        width: 274
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_73
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 102
+        width: 274
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_74
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 102
+        width: 279
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_75
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 102
+        width: 279
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_76
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 102
+        width: 282
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_77
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 102
+        width: 282
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite sheet sylvanos (Barrido)_78
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 102
+        width: 274
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

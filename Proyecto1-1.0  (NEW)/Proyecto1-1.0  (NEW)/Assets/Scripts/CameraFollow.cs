@@ -4,31 +4,33 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
     
+    [Header("Limitación de la camara")]
     public float xMax;
     public float xMin;
     public float yMax;
     public float yMin;
+    [Header("Variables para que se agite la camara")]
     public float time;
-
+    public float shakePower;
+    public float shakeDuration;
+    
 
     private float shakeTimer;
     private float shakeForce;
-    public float shakePower;
-    public float shakeDuration;
-
-
     private Transform player;
     private Vector2 velocidad;
 
     //public Enemy enm;
     
-    // Use this for initialization
+    
+
     void Start ()
     {
         player = GameObject.Find("Player").transform;
 	}
 	
-	// Update is called once per frame
+	
+
 	void LateUpdate ()
     {
         float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocidad.x, time);
@@ -39,7 +41,7 @@ public class CameraFollow : MonoBehaviour {
         
 
     }
-    /* Esta parte del codigo depende de la existencia de enemigos 
+    
     private void Update()
     {
         if(shakeTimer >= 0)
@@ -52,13 +54,13 @@ public class CameraFollow : MonoBehaviour {
             shakeTimer = shakeTimer - Time.deltaTime;
             Debug.Log("He colisionado");
         }
-
-        if (enm.HaColisionado == true)
+        
+        if (Vida.Colision == true)
         {
             ShakeCamera(shakePower, shakeDuration);
-            enm.HaColisionado = false;
+             Vida.Colision = false;
         }
-    }*/
+    }
     public void ShakeCamera(float shakePower,float shakeDuration)
     {
         shakeForce = shakePower;

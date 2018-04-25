@@ -8,7 +8,6 @@ public class Vida : MonoBehaviour
 
     
     public int VidaInicio = 5;
-    public int VidaActual;
 
     private int CorazonesMax = 8;
     private int VidaMaxima;
@@ -16,8 +15,13 @@ public class Vida : MonoBehaviour
 
     public Image[] imagenVidas;
     public Sprite[] spriteVidas;
+    [HideInInspector]
+    public int VidaActual;
+    static public bool Colision;
 
-    //public Enemy dmg;
+    
+
+    
 
     void Start()
     {
@@ -72,10 +76,6 @@ public class Vida : MonoBehaviour
                 }
             }
         }
-        if (VidaActual <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
     public void AniadeCorazon()
     {
@@ -84,14 +84,41 @@ public class Vida : MonoBehaviour
 
         CalculaVida();
     }
-    /* Se implementara cuando los enemigos hagan daño.
-    public void SufreDanio()
+    //El player recibe daño del enemigo mediante este OnCollision
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        VidaActual= VidaActual - dmg.DañoEnemigo;
-        VidaActual = Mathf.Clamp(VidaActual, 0, VidaMaxima);
+        if (collision.gameObject.tag == "Enemy")
+        {
+            EnemyLifeSystem enemy = collision.gameObject.GetComponent<EnemyLifeSystem>();
+            VidaActual = VidaActual - enemy.EnemyDamage;
+            VidaActual = Mathf.Clamp(VidaActual, 0, VidaMaxima);
+            ActualizaCorazones();
+            Colision = true;
+        }
+        else Colision = false;
+        if(VidaActual <= 0)
+        {
+            DestroyPlayer();
+        }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Proyectile")
+        {
+            ProyectilBoss pro = collision.gameObject.GetComponent<ProyectilBoss>();
+            VidaActual = VidaActual - pro.damage;
+            VidaActual = Mathf.Clamp(VidaActual, 0, VidaMaxima);
+            ActualizaCorazones();
+            Colision = true;
+        }
+        else Colision = false;
+        if (VidaActual <= 0)
+        {
+            DestroyPlayer();
+        }
+    }
 
-        ActualizaCorazones();
-    }*/
     public void CurarVida()
     {
         int y;
@@ -102,6 +129,11 @@ public class Vida : MonoBehaviour
 
         ActualizaCorazones();
         
+    }
+    public void DestroyPlayer()
+    {
+        imagenVidas[0].sprite = spriteVidas[0];
+        Destroy(gameObject); 
     }
 
 

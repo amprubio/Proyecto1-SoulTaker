@@ -8,8 +8,11 @@ public class MovementController : MonoBehaviour
     public float fall = 2.0f;
     public float jumpImpulse = 2.0f, jumpForce= 2.0f;
     public float countDown = 0.3f;
+	[Header("Contador")]
+	public int countGranade=7;
     bool Onfloor = false, jumpKeyHeld = false;
-    SpriteRenderer Player;
+    public SpriteRenderer Player;
+	public GameObject granada;
 
     [Header("Flip de los colliders del player")]
     public Collider2D FeetCol;
@@ -52,7 +55,12 @@ public class MovementController : MonoBehaviour
 
         }
 
-
+		if (InputManager.RBButton ()) {
+			if (countGranade != 0)
+				Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
+			else
+				Invoke ("Counter", 18000);
+		}
         // Jump
         
         if (InputManager.AButtonDown() && Onfloor)
@@ -83,16 +91,29 @@ public class MovementController : MonoBehaviour
              GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall) * Time.deltaTime;
     }
 
-    
+	private void Counter(ref int countGranade)
+	{
+		countGranade++;
+	}
 
 
-    public void OnTriggerStay2D()
+    public void OnTriggerStay2D(Collider2D other)
     {
-        Onfloor = true;
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        {
+            Onfloor = true;
+            transform.parent = other.transform;
+        }
     }
-    public void OnTriggerExit2D()
+    public void OnTriggerExit2D(Collider2D other)
     {
-        Onfloor = false;
+
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        {
+            Onfloor = false;
+            transform.parent = null;
+        }
+
     }
     
 }

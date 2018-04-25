@@ -5,11 +5,13 @@ using UnityEngine;
 public class Ataque : MonoBehaviour {
 
     public Collider2D SwordCol;
-
+    public int DañoAtaque;
     public float tRetardo = 2;
+
     private float x;
     private bool ColliderActivo = false;
-    public int DañoAtaque;
+    private bool Hit = false;
+    
 
 	void Start ()
     {
@@ -18,8 +20,6 @@ public class Ataque : MonoBehaviour {
         x = tRetardo;
         
 	}
-	
-	
 	void Update ()
     {
         tRetardo -= Time.deltaTime;
@@ -49,6 +49,17 @@ public class Ataque : MonoBehaviour {
         SwordCol.enabled = false;
         tRetardo = x;
         ColliderActivo = false;
+        Hit = false;
     }
-   
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && (collision.isTrigger == false) && !Hit)
+        {
+            EnemyLifeSystem enemy = collision.gameObject.GetComponent<EnemyLifeSystem>();
+            enemy.LoseHealth(DañoAtaque);
+            Debug.Log("Hit" + DañoAtaque);
+            Hit = true;
+        }
+    }
+
 }
