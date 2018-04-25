@@ -1,7 +1,6 @@
 ﻿
 //arreglar parada en shoot();
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +13,16 @@ public class Boss1Behaviour : MonoBehaviour {
 	public GameObject Proyectil;
 	public int numberProyectiles = 5;
 	public int currentWayPoint = 0;
-	public int timeofshoot=5;
+	public int timeofshoot=10;
 	public static bool Flip;
 	public Transform PuntoSpawn;
+	private Animator anim;
 	private float angleOffset;
 	private float minAngle;
+
 	// Use this for initialization
-	System.Random rnd= new System.Random();
 	void Start () {
+		anim = GetComponent<Animator> ();
 		Collider2D colBoss = gameObject.GetComponent<Collider2D>();
 		nextWayPoint = WayPoints [1];
 	}
@@ -37,7 +38,7 @@ public class Boss1Behaviour : MonoBehaviour {
 		Debug.DrawLine(player.transform.position, bossSprite.transform.position, Color.black);
 		//Va para el nodo siguiente
 		bossSprite.transform.position = Vector3.MoveTowards(bossSprite.transform.position, nextWayPoint.transform.position, 3 * Time.deltaTime);
-
+		anim.SetBool("ataque",true);
 		//IMPORTANTE TU NODO NUMERO 6 VA A SER EN EL QUE QUIERES QUE GIRE DE DERECHA A IZQUIERDA.
 		//MIS NODOS ESTAN PUESTOS DE ESTA MANERA 7...6...1...2.5...4...3
 		if (currentWayPoint == 6) {
@@ -50,16 +51,20 @@ public class Boss1Behaviour : MonoBehaviour {
 		if (currentWayPoint == 3) {
 			bossSprite.flipX = true;
 			Debug.Log ("Flipo");
-			currentWayPoint = (currentWayPoint + 1) % WayPoints.Length;
+			currentWayPoint = 4;
 			nextWayPoint = WayPoints[currentWayPoint];
 
 		}
 		if(transform.position == nextWayPoint.position)
 		{
 			//PACHUM PACHUM
-			if (rnd.Next(-10, 10) > -9f){
+
+				Debug.Log ("PACHUUM");
+
+				anim.SetBool ("disparo",true);
 				Shoot ();
-			}
+
+
 			currentWayPoint = (currentWayPoint + 1) % WayPoints.Length;
 			nextWayPoint = WayPoints[currentWayPoint];
 		}
@@ -67,43 +72,32 @@ public class Boss1Behaviour : MonoBehaviour {
 	}
 	private void Shoot()
 	{
+		Flip = bossSprite.flipX;
+		Debug.DrawLine (WayPoints[currentWayPoint].position,nextWayPoint.position,Color.cyan);
 		float count = 0;
 		//esto no sirve en verdad
-		Flip = bossSprite.flipX;
-
 		while(count<timeofshoot){
-		//Rotacion del boss hacia el player
-		if(currentWayPoint<=WayPoints.Length)
-			bossSprite.transform.position = Vector3.MoveTowards(bossSprite.transform.position, WayPoints[currentWayPoint-2].transform.position, 0.01f* Time.deltaTime);
-
-
+			anim.SetBool ("descanso",true);
+			bossSprite.transform.position = Vector3.MoveTowards(WayPoints[currentWayPoint].transform.position, WayPoints[currentWayPoint-1].transform.position, 0.001f* Time.deltaTime);
 			count += Time.deltaTime;
+			}	
+		MoveBoss ();
 		}
-		GameObject Proyectiles = (GameObject)Instantiate(Proyectil, bossSprite.transform.position, Quaternion.AngleAxis(GetComponent<BulletBoss1Behaviour>().angulo,bossSprite.transform.position));
-	}
-		//float rotz = LookAtPlayer(bossSprite.flipX,direcc);
-		//transform.rotation = Quaternion.AngleAxis(rotz, Vector3.forward);
+	void Sh(){
+	Vector3 direcc = player.transform.position - PuntoSpawn.transform.position;
+		float angle= 90 / numberProyectiles;
+		transform.rotation= Quaternion.AngleAxis(angle,Vector3.forward);
 
-		//angleOffset = 90 / numberProyectiles;
-		//minAngle = rotz + ((numberProyectiles / 2) * angleOffset);
+	
 
-		//Hacia positivos min angulo = rotz - (numberProyectiles / 2) * angleOffset
-
-		//if (rotz + (angleOffset * (i+1)) > 0)
-		//{
-		//    x = -rotaciónLocalProyectil;
-		//}
-		//else if ((rotz + (angleOffset * i)) == 0)
-		//{
-		//    x = 0;
-		//}
-		//else
-		//{
-		//    x = rotaciónLocalProyectil;
-		//}
-		//Proyectiles.transform.rotation = Quaternion.Euler(0, 0, minAngle - (angleOffset * i));
-
-
+	//Hacia positivos min angulo = rotz - (numberProyectiles / 2) * angleOffset
+	for (int i = 0; i < numberProyectiles; i++)
+	{
+		GameObject Proyectiles = (GameObject)Instantiate(Proyectil, PuntoSpawn.transform.position, Quaternion.identity);
+		
 
 	}
+
+}
+}
 	//esto no lo he usado tampoco pero bueno a lo mejor para los disparos teledirigdos sirve
