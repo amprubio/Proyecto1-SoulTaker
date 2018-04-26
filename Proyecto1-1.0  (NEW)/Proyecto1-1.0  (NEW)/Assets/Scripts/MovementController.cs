@@ -9,7 +9,7 @@ public class MovementController : MonoBehaviour
     public float jumpImpulse = 2.0f, jumpForce= 2.0f;
     public float countDown = 0.3f;
     private float resetCountDown;
-	//public Animator anim;
+	public Animator anim;
 	[Header("Contador")]
 	public int countGranade=7;
     bool Onfloor = false, jumpKeyHeld = false;
@@ -27,7 +27,7 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
-	//	anim = GetComponent<Animator> ();
+	anim = GetComponent<Animator> ();
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Player = GetComponent<SpriteRenderer>();
         BodyCol = gameObject.GetComponent<CapsuleCollider2D>();
@@ -49,13 +49,13 @@ public class MovementController : MonoBehaviour
 		transform.Translate (new Vector3 (axisX, 0) * Time.deltaTime * speed);
 		if (axisX < 0) {
 			x = -1;
-			//anim.Play ("mc_move");
+			anim.Play ("mc_move");
 			Player.flipX = true;
 			BodyCol.offset = new Vector2 (-0.1f, 0.05f);
 			FeetCol.offset = new Vector2 (-0.15f, -0.5f);
 			SwordCol.offset = new Vector2 (swordColOff * x, 0);
 		} else if (axisX > 0) {
-			//anim.Play ("mc_move");
+			anim.Play ("mc_move");
 			x = 1;
 			Player.flipX = false;
 			BodyCol.offset = new Vector2 (0.1f, 0.05f);
