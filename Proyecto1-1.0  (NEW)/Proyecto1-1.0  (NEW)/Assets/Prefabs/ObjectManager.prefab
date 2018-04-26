@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1271216546573566}
+  m_IsPrefabParent: 1
+--- !u!1 &1271216546573566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4852070397162136}
+  - component: {fileID: 114556597982503652}
+  m_Layer: 0
+  m_Name: ObjectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4852070397162136
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271216546573566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 223.96964, y: 111.79622, z: 3.1875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114556597982503652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271216546573566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5524793684fba614287b62bc41f747ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objMan: {fileID: 0}
+  boosters:
+  - {fileID: 1121815156453236, guid: 5893b7eaf1d15804f8e6dfd42962a38e, type: 2}
+  - {fileID: 1647481397481618, guid: 00ebd094c47f1894ea69a0cfebec252c, type: 2}
+  - {fileID: 1489548501322858, guid: e52110224c032854fa7acd34b78a080e, type: 2}
+  - {fileID: 1290126840933766, guid: 0bf148ad5535e6c458b1a8ec0182893d, type: 2}
+  - {fileID: 1819284559543264, guid: 30d128b43e2ef8942ac2cdd1c44b5250, type: 2}
+  - {fileID: 1325003020259368, guid: a52ca4432513ab84a98b8ba5d09f16f1, type: 2}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  tmp: 0

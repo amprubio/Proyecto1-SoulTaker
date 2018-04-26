@@ -204,6 +204,8 @@ MonoBehaviour:
   SwordCol: {fileID: 61460070201480348}
   "Da\xF1oAtaque": 5
   tRetardo: 2
+  x: 0
+  anima: {fileID: 0}
 --- !u!114 &114862791680638560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,11 +248,13 @@ MonoBehaviour:
   jumpImpulse: 2
   jumpForce: 2
   countDown: 0.3
+  anim: {fileID: 0}
   countGranade: 7
   Player: {fileID: 0}
   granada: {fileID: 0}
   FeetCol: {fileID: 61393603192225952}
   SwordCol: {fileID: 61460070201480348}
+  swordColOff: 0
 --- !u!212 &212625890396417482
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -285,7 +289,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7e33d10efc033148b7cbabfcd28afd7, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 2e9cfb21f009b1c4297148997057504b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

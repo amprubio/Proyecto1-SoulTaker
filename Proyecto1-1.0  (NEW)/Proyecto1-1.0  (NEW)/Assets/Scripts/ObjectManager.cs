@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectManager : MonoBehaviour {
 
     int i;
-    
+    public ObjectManager objMan;
 
     public struct Objects
     {
@@ -22,9 +22,21 @@ public class ObjectManager : MonoBehaviour {
     [HideInInspector]
     public int tmp;
 
-   
 
 
+    void Awake()
+    {
+
+        if (objMan == null)
+        {
+            objMan = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
     // Use this for initialization
     private void Start ()
     {

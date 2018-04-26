@@ -12,6 +12,8 @@ TagManager:
   - Proyectile
   - DynamicPlatform
   - EndLevel
+  - flip
+  - Enemy
   layers:
   - Default
   - TransparentFX

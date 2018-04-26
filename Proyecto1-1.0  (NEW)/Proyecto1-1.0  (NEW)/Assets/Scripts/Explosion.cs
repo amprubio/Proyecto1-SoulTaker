@@ -13,31 +13,47 @@ public class Explosion : MonoBehaviour
 
     public void Update()
     {
-        InvocaBoom();
+        CheckBoom();
     }
 
-    public void InvocaBoom()
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        if (Vector3.Distance(transform.position, target.position) < attack1Range)
+        if(coll.gameObject.tag == "Player")
         {
-            Invoke("ActivaExplosion", 1f);
+            ActivaExplosion();
+            Boom();
+        }
+
+    }
+
+    public void CheckBoom()
+    {
+        float dist = Vector3.Distance(transform.position, target.position);
+        if (dist < 0) dist = dist * -1;
+
+        if (dist < attack1Range)
+        {
+            ActivaExplosion();
             Boom();
         }
     }
 
     public void Boom()
     {
-        if (Vector3.Distance(transform.position, target.position) < attack1Range && activaExplosion == true)
+        if (activaExplosion == true)
         {
             explosion = GameObject.Instantiate(objectExplosion);
             explosion.transform.position = transform.position;
             Destroy(gameObject);
-        }
-        activaExplosion = false;
+
+        }else activaExplosion = false;
+
     }
 
     public void ActivaExplosion()
     {
         activaExplosion = true;
     }
+
+    
 }
