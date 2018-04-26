@@ -6757,6 +6757,31 @@ Prefab:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1590074099}
+    - target: {fileID: 212625890396417482, guid: dd78d2c9eb26b964fa04256b4b97b8f7,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: 2e9cfb21f009b1c4297148997057504b,
+        type: 3}
+    - target: {fileID: 4018633574638694, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114221220708411548, guid: dd78d2c9eb26b964fa04256b4b97b8f7,
+        type: 2}
+      propertyPath: anima
+      value: 
+      objectReference: {fileID: 719864407}
+    - target: {fileID: 114911665239738276, guid: dd78d2c9eb26b964fa04256b4b97b8f7,
+        type: 2}
+      propertyPath: jumpImpulse
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114911665239738276, guid: dd78d2c9eb26b964fa04256b4b97b8f7,
+        type: 2}
+      propertyPath: jumpForce
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
   m_IsPrefabParent: 0

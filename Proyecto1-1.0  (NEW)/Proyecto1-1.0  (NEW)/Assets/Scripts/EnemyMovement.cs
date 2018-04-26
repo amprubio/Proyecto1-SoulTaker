@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
+	public Animator anim;
     public GameObject enemyGraphic;
     bool canFlip = true;
     bool facingRight = false;
@@ -20,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		anim = GetComponent<Animator> ();
         enemyRB = GetComponent<Rigidbody2D>();
     }
 
@@ -34,15 +35,18 @@ public class EnemyMovement : MonoBehaviour
             }
             int randomNumber = Random.Range(0, 10);
             if (randomNumber >= 2)
-            {
+			{
+				anim.Play ("paso");
                 if (facingRight)
                 {
+					
                     enemyRB.velocity = new Vector2((enemySpeed - 2), 0f);
                 }
                 else
                 {
                     enemyRB.velocity = new Vector2((-enemySpeed + 2), 0f);
                 }
+				anim.Play ("parado");
             }
             else
             {
@@ -100,6 +104,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (canFlip)
         {
+			anim.Play ("movement");
             float facingX = enemyGraphic.transform.localScale.x;
             facingX *= -1f;
             enemyGraphic.transform.localScale = new Vector3(facingX, enemyGraphic.transform.localScale.y, enemyGraphic.transform.localScale.z);

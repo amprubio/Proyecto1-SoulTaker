@@ -46,6 +46,7 @@ public class MovementController : MonoBehaviour
 		// Movement
 
 		float axisX = InputManager.MainHorizontal ();
+		transform.localScale = new Vector3 (1f, 1f, 0);
 		transform.Translate (new Vector3 (axisX, 0) * Time.deltaTime * speed);
 		if (axisX < 0) {
 			x = -1;
@@ -62,7 +63,8 @@ public class MovementController : MonoBehaviour
 			FeetCol.offset = new Vector2 (0.15f, -0.5f);
 			SwordCol.offset = new Vector2 (swordColOff * x, 0);
 
-		} else if (axisX == 0)
+		} else if ( GetComponent<Rigidbody2D>().velocity.x==0)
+
 			anim.Play ("mc_iddle");
 
 		if (InputManager.RBButton ()) {
@@ -71,35 +73,32 @@ public class MovementController : MonoBehaviour
 			else
 				Invoke ("Counter", 18000);
 		}
-        // Jump
+		// Jump
         
-        if (InputManager.AButtonDown() && Onfloor)
-        {
-            jumpKeyHeld = true;
-            GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpImpulse, ForceMode2D.Impulse);
+		if (InputManager.AButtonDown () && Onfloor) {
+			jumpKeyHeld = true;
+			GetComponent<Rigidbody2D> ().AddForce (Vector3.up * jumpImpulse, ForceMode2D.Impulse);
 
-        }
+		}
 
-        if (InputManager.AButtonUp())
-        {
-            countDown = resetCountDown;
-            jumpKeyHeld = false;
-        }
+		if (InputManager.AButtonUp ()) {
+			countDown = resetCountDown;
+			jumpKeyHeld = false;
+		} else if (InputManager.AButton ()) {
+			transform.localScale = new Vector3 (0.3f, 0.3f, 0);
+			anim.Play ("salto");
+			countDown -= Time.deltaTime;
+			if (jumpKeyHeld && countDown > 0f) {
+				
 
-        else if (InputManager.AButton())
-        {
-            
-            countDown -= Time.deltaTime;
-            if (jumpKeyHeld && countDown > 0f)
-            {
-                GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10 * jumpForce, ForceMode2D.Force);
-            }
-
-        }
-        
-        if (GetComponent<Rigidbody2D>().velocity.y < 0)
-             GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall) * Time.deltaTime;
-    }
+				GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 10 * jumpForce, ForceMode2D.Force);
+			}
+       
+			if (GetComponent<Rigidbody2D> ().velocity.y < 0) {
+				GetComponent<Rigidbody2D> ().velocity += Vector2.up * Physics2D.gravity.y * (fall) * Time.deltaTime;
+			}
+		}
+	}
 
 	private void Counter(ref int countGranade)
 	{
