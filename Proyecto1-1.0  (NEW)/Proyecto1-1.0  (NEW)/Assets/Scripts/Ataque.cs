@@ -11,11 +11,11 @@ public class Ataque : MonoBehaviour {
     public float x;
     private bool ColliderActivo = false;
     private bool Hit = false;
-    
+	public Animator anima;
 
 	void Start ()
     {
-        
+		anima = GetComponent<MovementController> ().anim;
         SwordCol.enabled = false;
         x = tRetardo;
         
@@ -39,6 +39,7 @@ public class Ataque : MonoBehaviour {
 
     private void ActivaCollider()
     {
+		anima.Play ("mc_atk");
         SwordCol.enabled = true;
         tRetardo -= Time.deltaTime;
        // Debug.Log(tRetardo);
@@ -46,6 +47,7 @@ public class Ataque : MonoBehaviour {
     }
     private void DesactivaCollider()
     {
+		anima.Play ("mc_iddle");
         SwordCol.enabled = false;
         tRetardo = x;
         ColliderActivo = false;
