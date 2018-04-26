@@ -3095,6 +3095,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &719864403 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1020038534895844, guid: dd78d2c9eb26b964fa04256b4b97b8f7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1590074097}
+--- !u!95 &719864407
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 719864403}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5f6bcb76fb47ec45a7a03070ebec253, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &743555300
 GameObject:
   m_ObjectHideFlags: 0
@@ -6730,6 +6752,11 @@ Prefab:
       propertyPath: imagenVidas.Array.data[7]
       value: 
       objectReference: {fileID: 1554707279}
+    - target: {fileID: 114911665239738276, guid: dd78d2c9eb26b964fa04256b4b97b8f7,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1590074099}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
   m_IsPrefabParent: 0
