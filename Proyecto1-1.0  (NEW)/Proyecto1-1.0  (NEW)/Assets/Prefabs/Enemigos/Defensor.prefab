@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114983089303104464}
   - component: {fileID: 114314250615969068}
   - component: {fileID: 50408471354209024}
+  - component: {fileID: 95897950819130208}
   m_Layer: 0
   m_Name: Defensor
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447250959645254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2168922, y: 5.645213, z: 0}
+  m_LocalPosition: {x: -11.36401, y: 8.14, z: 0}
   m_LocalScale: {x: 1.832122, y: 1.8321224, z: 1.8321224}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +116,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27101424, y: 0.61}
   m_EdgeRadius: 0
+--- !u!95 &95897950819130208
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447250959645254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed88cf84e3063014da84b2f7c66eac67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114314250615969068
 MonoBehaviour:
   m_ObjectHideFlags: 1
