@@ -11651,7 +11651,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1533741771}
+      - m_Target: {fileID: 134539194}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
