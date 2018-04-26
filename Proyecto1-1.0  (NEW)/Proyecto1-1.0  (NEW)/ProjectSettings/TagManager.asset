@@ -6,8 +6,11 @@ TagManager:
   tags:
   - Thorns
   - Platform
-  - DynamicPlatform
+  - Nodo
+  - disparo
   - Elevator
+  - Proyectile
+  - DynamicPlatform
   - EndLevel
   layers:
   - Default

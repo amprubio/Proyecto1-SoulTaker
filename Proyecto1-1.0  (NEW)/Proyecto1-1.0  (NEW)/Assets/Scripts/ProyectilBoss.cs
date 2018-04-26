@@ -7,6 +7,7 @@ public class ProyectilBoss : MonoBehaviour {
     public int speed;
     public int damage;
 	private Vector3 vectorDirector;
+	 
     public float angulo;
     public float seno;
     public float coseno;
