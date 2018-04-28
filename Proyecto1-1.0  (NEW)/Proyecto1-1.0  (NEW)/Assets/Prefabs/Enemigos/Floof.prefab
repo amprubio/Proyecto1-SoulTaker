@@ -20,11 +20,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4963031990347636}
   - component: {fileID: 212917111023411282}
-  - component: {fileID: 61374960821403216}
   - component: {fileID: 61358222097304110}
   - component: {fileID: 114042200553057456}
   - component: {fileID: 114540537894547686}
   - component: {fileID: 50919420459062484}
+  - component: {fileID: 61765495413557980}
+  - component: {fileID: 95588473228613780}
+  - component: {fileID: 114311307091957212}
   m_Layer: 0
   m_Name: Floof
   m_TagString: Enemy
@@ -39,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987257594673054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7883306, y: 6.2470407, z: 0}
+  m_LocalPosition: {x: -4.8153343, y: 5.0533767, z: 0}
   m_LocalScale: {x: 2.221634, y: 2.221634, z: 2.221634}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,7 +92,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1761403, y: 0.2967983}
   m_EdgeRadius: 0
---- !u!61 &61374960821403216
+--- !u!61 &61765495413557980
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,7 +104,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0024201572, y: -0.020167947}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,8 +115,25 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24675661, y: 0.2896641}
+  m_Size: {x: 0.3, y: 0.33}
   m_EdgeRadius: 0
+--- !u!95 &95588473228613780
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987257594673054}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a766eb55d3ce3347a053202557ec874, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114042200553057456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,6 +150,17 @@ MonoBehaviour:
   CurrentHealth: 0
   souls: 40
   darkness: 25
+--- !u!114 &114311307091957212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987257594673054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6fa6589981c1a4eadaa1c814f6f9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114540537894547686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,8 +173,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyGraphic: {fileID: 1987257594673054}
+  facingRight: 0
+  enemy: {fileID: 212917111023411282}
   chargeTime: 3
   enemySpeed: 5
+  anim: {fileID: 95588473228613780}
 --- !u!212 &212917111023411282
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,25 +7,35 @@ public class EnemyMovement : MonoBehaviour
 
     public GameObject enemyGraphic;
     bool canFlip = true;
-    bool facingRight = false;
+	public bool facingRight = false;
     float flipTime = 5f;
     float nextFlipChance = 0f;
-
+	public SpriteRenderer enemy;
     public float chargeTime;
     public float enemySpeed;
     float startChargeTime;
-
+	public Animator anim;
     Rigidbody2D enemyRB;
 
     // Use this for initialization
     void Start()
     {
+		StartCoroutine (Stop ());
         enemyRB = GetComponent<Rigidbody2D>();
     }
+	IEnumerator Stop(){
+	 
+		if (enemyRB.velocity.x != 0) {
+			anim.Play ("movement");
+		}
+		yield return null;
+	}
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (Time.time > nextFlipChance)
         {
             if (Random.Range(0, 10) >= 2)
@@ -37,15 +47,18 @@ public class EnemyMovement : MonoBehaviour
             {
                 if (facingRight)
                 {
+					enemy.flipX = true;
                     enemyRB.velocity = new Vector2((enemySpeed - 2), 0f);
                 }
                 else
                 {
+					enemy.flipX = false;
                     enemyRB.velocity = new Vector2((-enemySpeed + 2), 0f);
                 }
             }
             else
             {
+				StopCoroutine (Stop ());
                 enemyRB.velocity = new Vector2(0f, 0f);
             }
             nextFlipChance = Time.time + flipTime;
