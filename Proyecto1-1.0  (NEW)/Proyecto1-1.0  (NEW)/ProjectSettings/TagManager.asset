@@ -14,6 +14,7 @@ TagManager:
   - EndLevel
   - flip
   - Enemy
+  - floor
   layers:
   - Default
   - TransparentFX
