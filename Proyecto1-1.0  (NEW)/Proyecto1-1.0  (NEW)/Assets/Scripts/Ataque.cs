@@ -7,6 +7,7 @@ public class Ataque : MonoBehaviour {
     public Collider2D SwordCol;
     public float DañoAtaque;
     public float tRetardo;
+    public MovementController attack;
 
     public float x;
     private bool ColliderActivo = false;
@@ -18,6 +19,7 @@ public class Ataque : MonoBehaviour {
         
         SwordCol.enabled = false;
         x = tRetardo;
+        attack = GameObject.Find("Player").GetComponent<MovementController>();
         
 	}
 	void Update ()
@@ -37,18 +39,18 @@ public class Ataque : MonoBehaviour {
         }
     }
 
-    private void ActivaCollider()
+    public void ActivaCollider()
     {
         SwordCol.enabled = true;
         tRetardo -= Time.deltaTime;
-       // Debug.Log(tRetardo);
-        //Debug.Log("SwordCol.enabled = " + SwordCol.enabled);
+        attack.anim.SetBool("Attack", true);
     }
     private void DesactivaCollider()
     {
         SwordCol.enabled = false;
         tRetardo = x;
         ColliderActivo = false;
+        attack.anim.SetBool("Attack", false);
         Hit = false;
     }
     private void OnTriggerStay2D(Collider2D collision)

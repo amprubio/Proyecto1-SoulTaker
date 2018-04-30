@@ -5,10 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour {
 
+    private LevelManager level;
+
+    private void Start()
+    {
+        level = FindObjectOfType<LevelManager>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        {
+            level.ExitLevel();
+            Debug.Log("Tengosueñito");
+        }
     }
 
    

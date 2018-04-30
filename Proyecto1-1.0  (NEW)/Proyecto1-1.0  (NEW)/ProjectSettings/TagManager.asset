@@ -9,6 +9,7 @@ TagManager:
   - DynamicPlatform
   - Elevator
   - EndLevel
+  - Water
   layers:
   - Default
   - TransparentFX

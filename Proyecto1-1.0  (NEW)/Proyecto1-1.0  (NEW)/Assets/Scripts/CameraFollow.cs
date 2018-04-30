@@ -19,8 +19,6 @@ public class CameraFollow : MonoBehaviour {
     private float shakeForce;
     private Transform player;
     private Vector2 velocidad;
-
-    //public Enemy enm;
     
     
 
@@ -52,7 +50,6 @@ public class CameraFollow : MonoBehaviour {
 
 
             shakeTimer = shakeTimer - Time.deltaTime;
-            Debug.Log("He colisionado");
         }
         
         if (Vida.Colision == true)
