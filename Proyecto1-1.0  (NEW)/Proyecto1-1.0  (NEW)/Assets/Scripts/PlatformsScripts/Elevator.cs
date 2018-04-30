@@ -7,6 +7,7 @@ public class Elevator : MonoBehaviour {
     public float speed;
     public Transform top;
     public Transform bottom;
+    public Animator anim;
     [SerializeField]
     private bool active = false;
     [SerializeField]
@@ -14,6 +15,10 @@ public class Elevator : MonoBehaviour {
     [SerializeField]
     private bool movingDown = false;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update ()
@@ -32,6 +37,7 @@ public class Elevator : MonoBehaviour {
             {
                 active = false;
                 movingUp = false;
+                anim.SetBool("ElevatorOn", false);
             }
         }
     }
@@ -46,6 +52,7 @@ public class Elevator : MonoBehaviour {
             {
                 active = false;
                 movingDown = false;
+                anim.SetBool("ElevatorOn", false);
             }
 
         }
@@ -57,6 +64,7 @@ public class Elevator : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             active = true;
+            anim.SetBool("ElevatorOn", true);
         }
     }
 }

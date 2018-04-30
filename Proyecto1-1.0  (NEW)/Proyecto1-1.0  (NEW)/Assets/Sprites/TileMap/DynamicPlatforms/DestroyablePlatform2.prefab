@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4029695641791240}
   - component: {fileID: 212227462666422238}
   - component: {fileID: 61071205765159472}
-  - component: {fileID: 114479932025925386}
+  - component: {fileID: 114120969680805342}
   m_Layer: 0
   m_Name: DestroyablePlatform2
   m_TagString: DynamicPlatform
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5259879, y: 0.32157528}
   m_EdgeRadius: 0
---- !u!114 &114479932025925386
+--- !u!114 &114120969680805342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 1
+  respawnTime: 2
 --- !u!212 &212227462666422238
 SpriteRenderer:
   m_ObjectHideFlags: 1
