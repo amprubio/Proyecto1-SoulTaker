@@ -20,21 +20,24 @@ public class EnemyMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		StartCoroutine (Stop ());
+		/*StartCoroutine (Stop ());*/
         enemyRB = GetComponent<Rigidbody2D>();
     }
-	IEnumerator Stop(){
+	/*IEnumerator Stop(){
 	 
 		if (enemyRB.velocity.x != 0) {
 			anim.Play ("movement");
 		}
 		yield return null;
-	}
+	}*/
 
     // Update is called once per frame
     void Update()
     {
-
+        if (enemyRB.velocity.x == 0)
+        {
+            anim.SetTrigger("ProtectorIddle");
+        }
 
         if (Time.time > nextFlipChance)
         {
@@ -49,16 +52,18 @@ public class EnemyMovement : MonoBehaviour
                 {
 					enemy.flipX = true;
                     enemyRB.velocity = new Vector2((enemySpeed - 2), 0f);
+                    anim.SetTrigger("protectormove");
                 }
                 else
                 {
 					enemy.flipX = false;
                     enemyRB.velocity = new Vector2((-enemySpeed + 2), 0f);
+                    anim.SetTrigger("protectormove");
                 }
             }
             else
             {
-				StopCoroutine (Stop ());
+				/*StopCoroutine (Stop ());*/
                 enemyRB.velocity = new Vector2(0f, 0f);
             }
             nextFlipChance = Time.time + flipTime;
@@ -94,8 +99,10 @@ public class EnemyMovement : MonoBehaviour
                 if (!facingRight)
                 {
                     enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
+                    anim.SetTrigger("protectormove");
                 }
                 else enemyRB.AddForce(new Vector2(+1, 0) * enemySpeed);
+                anim.SetTrigger("protectormove");
             }
         }
     }

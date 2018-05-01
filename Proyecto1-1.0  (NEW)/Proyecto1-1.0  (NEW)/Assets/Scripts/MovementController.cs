@@ -151,15 +151,15 @@ public class MovementController : MonoBehaviour
 
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
         {
-            Onfloor = false;
             anim.SetBool("Jump", true);
+            Onfloor = false;
         }
 
         else if (other.gameObject.tag == "Elevator")
         {
+            anim.SetBool("Jump", true);
             Onfloor = false;
             transform.parent = null;
-            anim.SetBool("Jump", true);
         }
 
     }
