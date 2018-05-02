@@ -128,11 +128,11 @@ public class EnemyMovement : MonoBehaviour
 			if (startChargeTime < Time.time) {
 				if (!facingRight) {
 					facingRight = true;
-					enemyRB.AddForce (new Vector2 (0.01f, 0f) * enemySpeed);
+					enemyRB.AddForce (new Vector2 (0.2f, 0f) * enemySpeed);
 					anim.SetBool ("move", true);
 				} else {
 					facingRight = false;
-					enemyRB.AddForce (new Vector2 (-0.01f, 0f) * enemySpeed);
+					enemyRB.AddForce (new Vector2 (-0.2f, 0f) * enemySpeed);
 				}
 				anim.SetBool ("move", true);
 			}
