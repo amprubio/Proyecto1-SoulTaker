@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (enemyRB.velocity.x == 0)
         {
-            anim.SetTrigger("ProtectorIddle");
+            anim.SetBool("move", false);
         }
 
         if (Time.time > nextFlipChance)
@@ -52,13 +52,13 @@ public class EnemyMovement : MonoBehaviour
                 {
 					enemy.flipX = true;
                     enemyRB.velocity = new Vector2((enemySpeed - 2), 0f);
-                    anim.SetTrigger("protectormove");
+                    anim.SetBool("move", true);
                 }
                 else
                 {
 					enemy.flipX = false;
                     enemyRB.velocity = new Vector2((-enemySpeed + 2), 0f);
-                    anim.SetTrigger("protectormove");
+                    anim.SetBool("move", true);
                 }
             }
             else
@@ -99,10 +99,10 @@ public class EnemyMovement : MonoBehaviour
                 if (!facingRight)
                 {
                     enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
-                    anim.SetTrigger("protectormove");
+                    anim.SetBool("move", true);
                 }
                 else enemyRB.AddForce(new Vector2(+1, 0) * enemySpeed);
-                anim.SetTrigger("protectormove");
+                anim.SetBool("move", true);
             }
         }
     }
