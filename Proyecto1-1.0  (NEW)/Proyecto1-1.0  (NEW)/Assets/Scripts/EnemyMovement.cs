@@ -118,11 +118,11 @@ public class EnemyMovement : MonoBehaviour
 
     void flipFacing()
     {
-        if (canFlip)
+        if (!canFlip)
         {
             float facingX = enemyGraphic.transform.localScale.x;
             facingX *= -1f;
-            enemyGraphic.transform.localScale = new Vector3(facingX, enemyGraphic.transform.localScale.y, enemyGraphic.transform.localScale.z);
+            enemy.flipX = !enemy.flipX;
             facingRight = !facingRight;
         }
 
