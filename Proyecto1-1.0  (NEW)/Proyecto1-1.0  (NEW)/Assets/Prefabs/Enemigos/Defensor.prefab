@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114314250615969068}
   - component: {fileID: 50408471354209024}
   - component: {fileID: 95897950819130208}
-  - component: {fileID: 114827338844369074}
   m_Layer: 0
   m_Name: Defensor
   m_TagString: Untagged
@@ -151,17 +150,6 @@ MonoBehaviour:
   chargeTime: 2
   enemySpeed: 7
   anim: {fileID: 95897950819130208}
---- !u!114 &114827338844369074
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1447250959645254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6fa6589981c1a4eadaa1c814f6f9b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114983089303104464
 MonoBehaviour:
   m_ObjectHideFlags: 1
