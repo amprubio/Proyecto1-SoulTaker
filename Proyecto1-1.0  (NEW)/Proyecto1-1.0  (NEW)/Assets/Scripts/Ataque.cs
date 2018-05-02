@@ -6,56 +6,31 @@ public class Ataque : MonoBehaviour {
 
     public Collider2D SwordCol;
     public float DañoAtaque;
-    public float tRetardo;
+    public float tRetardo = 2;
     public MovementController attack;
+    public AnimationClip attackAnim;
 
-    public float x;
-    private bool ColliderActivo = false;
+    private bool rdy = true;
     private bool Hit = false;
-
+    private SpriteRenderer player;
     
+
 	void Start ()
     {
-		
+        
         SwordCol.enabled = false;
-        x = tRetardo;
         attack = GameObject.Find("Player").GetComponent<MovementController>();
+        player = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         
 	}
 	void Update ()
     {
-        tRetardo -= Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && rdy)
         {
-           
-            ColliderActivo = true;
-        }
-        if (tRetardo > 0 && ColliderActivo)
-        {
-            ActivaCollider();
-        }
-        else
-        {
-            DesactivaCollider();
+            StartCoroutine(AttackTime(tRetardo));
         }
     }
-
-    public void ActivaCollider()
-    {
-		
-        SwordCol.enabled = true;
-        tRetardo -= Time.deltaTime;
-        attack.anim.SetBool("Attack", true);
-    }
-    private void DesactivaCollider()
-    {
-		//anima.Play ("mc_iddle");
-        SwordCol.enabled = false;
-        tRetardo = x;
-        ColliderActivo = false;
-        attack.anim.SetBool("Attack", false);
-        Hit = false;
-    }
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && (collision.isTrigger == false) && !Hit)
@@ -67,4 +42,17 @@ public class Ataque : MonoBehaviour {
         }
     }
 
+    IEnumerator AttackTime(float time)
+    {
+        SwordCol.enabled = true;
+        attack.anim.SetBool("Attack", true);
+        yield return new WaitForSeconds(attackAnim.length);
+        attack.anim.SetBool("Attack", false);
+        rdy = false;
+        SwordCol.enabled = false;
+        Hit = false;
+        yield return new WaitForSeconds(time);
+        rdy = true;
+    }
+    
 }

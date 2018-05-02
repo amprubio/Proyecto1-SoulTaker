@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour {
     void Start ()
     {
         player = FindObjectOfType<MovementController>();
+        Cursor.visible = false;
     }
 
     public void ExitLevel()

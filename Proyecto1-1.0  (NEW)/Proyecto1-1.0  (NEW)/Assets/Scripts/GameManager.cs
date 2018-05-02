@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
     }
     public void FiloLigero()
     {
-        ataque.x = ataque.x * 0.4f;
+        ataque.tRetardo = ataque.tRetardo * 0.4f;
         Debug.Log("hay hola");
     }
     public void PiedraDeAfilar()

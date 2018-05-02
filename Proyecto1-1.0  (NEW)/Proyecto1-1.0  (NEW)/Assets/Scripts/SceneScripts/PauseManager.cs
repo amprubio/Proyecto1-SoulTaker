@@ -31,9 +31,15 @@ public class PauseManager : MonoBehaviour {
         if (InputManager.StartButton())
         {
             if (GameIsPaused)
+            {
                 Continue();
+                Cursor.visible = false;
+            }
             else
+            {
                 Pause();
+                Cursor.visible = true;
+            }
         }
 	}
 

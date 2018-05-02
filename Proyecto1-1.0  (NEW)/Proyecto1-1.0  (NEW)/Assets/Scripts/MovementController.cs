@@ -32,7 +32,7 @@ public class MovementController : MonoBehaviour
 	anim = GetComponent<Animator> ();
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Player = GetComponent<SpriteRenderer>();
-        BodyCol = gameObject.GetComponent<CapsuleCollider2D>();
+        BodyCol = gameObject.GetComponent<BoxCollider2D>();
         resetCountDown = countDown;
         if(swordColOff == 0)
             swordColOff = SwordCol.offset.x;
@@ -55,8 +55,8 @@ public class MovementController : MonoBehaviour
             x = -1;
             Player.flipX = true;
             BodyCol.offset = new Vector2(-0.1f, 0.05f);
-            FeetCol.offset = new Vector2(-0.15f, -0.5f);
-            SwordCol.offset = new Vector2(swordColOff * x, 0);
+            //FeetCol.offset = new Vector2(-0.15f, -0.5f);
+            SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
         }
         else if (axisX > 0)
@@ -64,8 +64,8 @@ public class MovementController : MonoBehaviour
             x = 1;
             Player.flipX = false;
             BodyCol.offset = new Vector2(0.1f, 0.05f);
-            FeetCol.offset = new Vector2(0.15f, -0.5f);
-            SwordCol.offset = new Vector2(swordColOff * x, 0);
+            //FeetCol.offset = new Vector2(0.15f, -0.5f);
+            SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
         }
         else if (axisX == 0)
@@ -151,17 +151,17 @@ public class MovementController : MonoBehaviour
 
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
         {
-            anim.SetBool("Jump", true);
             Onfloor = false;
+            anim.SetBool("Jump", true);
         }
 
         else if (other.gameObject.tag == "Elevator")
         {
-            anim.SetBool("Jump", true);
             Onfloor = false;
             transform.parent = null;
+            anim.SetBool("Jump", true);
         }
 
     }
-    
+
 }
