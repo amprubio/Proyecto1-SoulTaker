@@ -7,7 +7,7 @@ public class Potions : MonoBehaviour {
 
     Vida vida;
     const int MaximumPotions = 3;
-    public GameObject healingEffect;
+    ParticleSystem healingEffect;
     bool ActiveEffect = false;
     public float tempEffect = 0.75f;
     private int CurrentPotions;
@@ -20,6 +20,8 @@ public class Potions : MonoBehaviour {
         vida = gameObject.GetComponent<Vida>();
         CurrentPotions = MaximumPotions;
         CalculatePotions();
+        healingEffect = gameObject.GetComponent<ParticleSystem>();
+        healingEffect.Pause();
 
 	}
 
@@ -31,22 +33,13 @@ public class Potions : MonoBehaviour {
             
             vida.CurarVida();
             CurrentPotions--;
+            healingEffect.Play();
             Debug.Log("Me he tomado una pocion");
-            healingEffect.transform.position = transform.position;
-            GameObject effectGO = GameObject.Instantiate(healingEffect,transform);
-            ParticleSystem effect = effectGO.GetComponent<ParticleSystem>();
+            
             UpdatePotions();
         }
 
-        if(tempEffect > 0)
-        {
-            tempEffect = tempEffect - Time.deltaTime;
-        }else
-        {
-            tempEffect = 0.75f;
-            
-
-        }
+        Debug.Log(healingEffect.isPlaying);
     }
 
     void CalculatePotions()
