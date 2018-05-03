@@ -70,6 +70,17 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
+	void flipFacing()
+	{
+		if (!canFlip)
+		{
+			float facingX = enemyGraphic.transform.localScale.x;
+			facingX *= -1f;
+			enemy.flipX = !enemy.flipX;
+			facingRight = !facingRight;
+		}
+
+	}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -92,19 +103,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Player")
-        {
-            if (startChargeTime < Time.time)
-            {
-                if (!facingRight)
-                {
-                    enemyRB.AddForce(new Vector2(-1, 0) * enemySpeed);
-                    anim.SetBool("move", true);
-                }
-                else enemyRB.AddForce(new Vector2(+1, 0) * enemySpeed);
-                anim.SetBool("move", true);
-            }
-        }
+		if (other.tag == "Player") {
+			if (startChargeTime < Time.time) {
+				if (!facingRight) {
+					enemyRB.AddForce (new Vector2 (-1, 0) * enemySpeed);
+					anim.SetBool ("move", true);
+				} else
+					enemyRB.AddForce (new Vector2 (+1, 0) * enemySpeed);
+				anim.SetBool ("move", true);
+			}
+		} 
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -115,16 +123,30 @@ public class EnemyMovement : MonoBehaviour
             enemyRB.velocity = new Vector2(0f, 0f);
         }
     }
+	private void OnCollisionEnter2D(Collision2D limite){
+		if (limite.gameObject.CompareTag ("flip")) {
+			if (startChargeTime < Time.time) {
+				if (!facingRight) {
+					facingRight = true;
+					enemyRB.AddForce (new Vector2 (0.2f, 0f) * enemySpeed);
+					anim.SetBool ("move", true);
+				} else {
+					facingRight = false;
+					enemyRB.AddForce (new Vector2 (-0.2f, 0f) * enemySpeed);
+				}
+				anim.SetBool ("move", true);
+			}
+		}
+			
+	}
 
-    void flipFacing()
-    {
-        if (!canFlip)
-        {
-            float facingX = enemyGraphic.transform.localScale.x;
-            facingX *= -1f;
-            enemy.flipX = !enemy.flipX;
-            facingRight = !facingRight;
-        }
-
-    }
+	private void OnCollisionExit2D(Collision2D limite)
+	{
+		if (limite.gameObject.CompareTag ("flip"))
+		{
+			canFlip = true;
+			enemyRB.velocity = new Vector2(0f, 0f);
+		}
+	}
+    
 }
