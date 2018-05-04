@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 95897950819130208}
   m_Layer: 0
   m_Name: Defensor
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447250959645254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2488546, y: -6.803639, z: 0}
+  m_LocalPosition: {x: -4.440326, y: 4.09573, z: 0}
   m_LocalScale: {x: 1.832122, y: 1.8321224, z: 1.8321224}
   m_Children: []
   m_Father: {fileID: 0}

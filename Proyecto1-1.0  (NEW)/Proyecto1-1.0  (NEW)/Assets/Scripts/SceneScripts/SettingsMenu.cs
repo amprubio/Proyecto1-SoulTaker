@@ -17,6 +17,8 @@ public class SettingsMenu : MonoBehaviour {
 
     private void Start()
     {
+        Cursor.visible = true;
+
         resolutions = Screen.resolutions;
 
         dropdownResolution.ClearOptions();
