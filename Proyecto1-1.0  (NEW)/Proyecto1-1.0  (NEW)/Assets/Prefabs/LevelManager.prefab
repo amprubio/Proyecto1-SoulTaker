@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 0}
+  exitLevel: {fileID: 7400000, guid: 9367ebb13ad61794da78713b5feba154, type: 2}
   anim: {fileID: 0}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Vida : MonoBehaviour
 {
@@ -95,10 +96,12 @@ public class Vida : MonoBehaviour
             ActualizaCorazones();
             Colision = true;
         }
+        //else if (collision.gameObject.tag == "Water" || collision.gameObject.tag == "Thorns")
         else Colision = false;
         if(VidaActual <= 0)
         {
             DestroyPlayer();
+            SceneManager.LoadScene(0);
         }
         
     }
@@ -116,6 +119,7 @@ public class Vida : MonoBehaviour
         if (VidaActual <= 0)
         {
             DestroyPlayer();
+            SceneManager.LoadScene(0);
         }
     }
 

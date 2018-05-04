@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         else
         {
 
-            Destroy(this.gameObject);
+            DestroyImmediate(this.gameObject);
         }
     }
 

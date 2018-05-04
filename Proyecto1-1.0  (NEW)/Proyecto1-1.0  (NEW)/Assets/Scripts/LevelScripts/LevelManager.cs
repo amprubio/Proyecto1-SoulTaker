@@ -3,28 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour
+{
 
     public GameObject currentCheckpoint;
     private MovementController player;
     public static LevelManager instance;
+    public AnimationClip exitLevel;
     public Animator anim;
 
-    void Awake()
-    {
 
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         player = FindObjectOfType<MovementController>();
         Cursor.visible = false;
@@ -33,10 +23,10 @@ public class LevelManager : MonoBehaviour {
     public void ExitLevel()
     {
         anim.SetBool("ExitLevel", true);
-        StartCoroutine(TransitionTime(anim.GetCurrentAnimatorStateInfo(0).length+0.2f));
+        StartCoroutine(TransitionTime(exitLevel.length));
     }
 
-    public void RespawnPlayer()  
+    public void RespawnPlayer()
     {
         player.transform.position = currentCheckpoint.transform.position;
     }
