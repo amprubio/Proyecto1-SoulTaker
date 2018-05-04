@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class IgnorePlayer : MonoBehaviour {
-	public Collider2D player, detect, feet,sword;
 
-	// Use this for initialization
-	void Start () {
-		player = GetComponent<Collider2D> ();
-		detect = GetComponent<Collider2D> ();
-		feet = GetComponent<Collider2D> ();
-		}
+
+    Collider2D player;
+    private Collider2D detect;
+
+    // Use this for initialization
+    void Start ()
+    {
+        player = GameObject.Find("Player").GetComponent<Collider2D>();
+        detect = GetComponent<Collider2D>();
+        Physics2D.IgnoreCollision(detect, player);
+    }
 	
-	// Update is called once per frame
-	void Update() {
-		Physics2D.IgnoreCollision(detect,player);
-		Physics2D.IgnoreCollision(detect,feet);
-	}
 }
