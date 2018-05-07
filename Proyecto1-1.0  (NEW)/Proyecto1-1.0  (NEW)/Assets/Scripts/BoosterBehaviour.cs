@@ -19,18 +19,18 @@ public class BoosterBehaviour : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+		if(collision.gameObject.tag == "Sword" && GameManager.instance.souls-amountSouls != 0 && GameManager.instance.darkness-amountDarkness != 0)
         {
+			GameManager.instance.SubsSouls (amountSouls);
+			GameManager.instance.SubsDarkness (amountDarkness);
             Destroy(gameObject);
         }
     }
 
     private void OnDestroy()
     {
-        GameManager.instance.SubsDarkness(amountDarkness);
-        GameManager.instance.SubsSouls(amountSouls);
         GameManager.instance.ChangeStats(gameObject.name);
     }
 }
