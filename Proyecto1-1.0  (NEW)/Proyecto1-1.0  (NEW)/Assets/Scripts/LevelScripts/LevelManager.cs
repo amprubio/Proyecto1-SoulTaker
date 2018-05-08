@@ -10,20 +10,39 @@ public class LevelManager : MonoBehaviour
     private MovementController player;
     public static LevelManager instance;
     public AnimationClip exitLevel;
-    public Animator anim;
+    public AnimationClip enterLevel;
+    private Animator animTransition;
+    private Animator animPlayer;
+    bool entering=false;
 
 
     // Use this for initialization
     void Start()
     {
+        int level = SceneManager.GetActiveScene().buildIndex;
         player = FindObjectOfType<MovementController>();
+        animTransition = GameObject.Find("LevelTransition").GetComponent<Animator>();
+        animPlayer = GameObject.Find("Player").GetComponent<Animator>();
         Cursor.visible = false;
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(TransitionEnterTime(enterLevel.length-0.3f));
+    }
+    private void Update()
+    {
+        if (entering)
+        {
+            animPlayer.SetBool("Idle", false);
+            player.transform.Translate(new Vector3(1, 0) * Time.deltaTime * player.speed * 0.5f);
+        }
     }
 
     public void ExitLevel()
     {
-        anim.SetBool("ExitLevel", true);
-        StartCoroutine(TransitionTime(exitLevel.length));
+        animTransition.SetBool("ExitLevel", true);
+        StartCoroutine(TransitionExitTime(exitLevel.length));
     }
 
     public void RespawnPlayer()
@@ -31,9 +50,18 @@ public class LevelManager : MonoBehaviour
         player.transform.position = currentCheckpoint.transform.position;
     }
 
-    IEnumerator TransitionTime(float time)
+    IEnumerator TransitionExitTime(float time)
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator TransitionEnterTime(float time)
+    {
+        //animPlayer.SetBool("Idle", false);
+        entering = true;
+        yield return new WaitForSeconds(time);
+        entering = false;
+        //animPlayer.SetBool("Idle", true);
     }
 }

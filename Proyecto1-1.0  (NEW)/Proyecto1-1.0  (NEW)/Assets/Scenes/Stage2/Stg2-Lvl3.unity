@@ -2266,6 +2266,11 @@ Prefab:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1762106413}
+    - target: {fileID: 114693383039662100, guid: 13810bdf576f2924fbf8f76701eb3c9c,
+        type: 2}
+      propertyPath: animTransition
+      value: 
+      objectReference: {fileID: 1762106413}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13810bdf576f2924fbf8f76701eb3c9c, type: 2}
   m_IsPrefabParent: 0
@@ -5061,7 +5066,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4706796515524464, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.4410977
+      value: 3.43
       objectReference: {fileID: 0}
     - target: {fileID: 4706796515524464, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
       propertyPath: m_LocalPosition.z

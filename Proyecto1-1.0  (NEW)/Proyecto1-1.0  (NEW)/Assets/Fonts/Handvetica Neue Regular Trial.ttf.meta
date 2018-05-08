@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6472a11cd4e01b2438f2d094b2d2eb1c
-timeCreated: 1524603604
+guid: 0920ad74d758101409ac4aed41713004
+timeCreated: 1525465240
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -10,9 +10,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Black Rose
+  fontName: Handvetica Neue
   fontNames:
-  - Black Rose
+  - Handvetica Neue
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

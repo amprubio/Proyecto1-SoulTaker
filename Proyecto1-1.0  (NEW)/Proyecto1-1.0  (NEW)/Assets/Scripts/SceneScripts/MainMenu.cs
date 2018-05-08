@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
+    EventSystem eventSystem;
+    public GameObject go;
+
+    private void Start()
+    {
+        eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        eventSystem.SetSelectedGameObject(go);
+    }
 
     public void PlayGame()
     {

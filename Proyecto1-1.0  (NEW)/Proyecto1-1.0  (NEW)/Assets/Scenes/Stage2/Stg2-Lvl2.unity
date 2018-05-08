@@ -717,7 +717,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4706796515524464, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.512073
+      value: -13.29
       objectReference: {fileID: 0}
     - target: {fileID: 4706796515524464, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2027,6 +2027,11 @@ Prefab:
     - target: {fileID: 114693383039662100, guid: 13810bdf576f2924fbf8f76701eb3c9c,
         type: 2}
       propertyPath: anim
+      value: 
+      objectReference: {fileID: 885895070}
+    - target: {fileID: 114693383039662100, guid: 13810bdf576f2924fbf8f76701eb3c9c,
+        type: 2}
+      propertyPath: animTransition
       value: 
       objectReference: {fileID: 885895070}
     m_RemovedComponents: []
