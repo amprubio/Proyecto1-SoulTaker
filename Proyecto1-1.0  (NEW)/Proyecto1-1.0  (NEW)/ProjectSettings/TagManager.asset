@@ -13,6 +13,7 @@ TagManager:
   - DynamicPlatform
   - EndLevel
   - Water
+  - Sword
   layers:
   - Default
   - TransparentFX
