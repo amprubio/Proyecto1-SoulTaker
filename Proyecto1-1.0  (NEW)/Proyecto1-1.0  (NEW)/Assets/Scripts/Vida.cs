@@ -19,6 +19,8 @@ public class Vida : MonoBehaviour
     [HideInInspector]
     public int VidaActual;
     static public bool Colision;
+    Escudo esc;
+    
 
     
 
@@ -29,6 +31,7 @@ public class Vida : MonoBehaviour
         VidaActual = VidaInicio * VidaPorCorazon;
         VidaMaxima = CorazonesMax * VidaPorCorazon;
         CalculaVida();
+        esc = GameObject.Find("Player").GetComponent<Escudo>();
     }
     void CalculaVida()
     {
@@ -88,7 +91,7 @@ public class Vida : MonoBehaviour
     //El player recibe daño del enemigo mediante este OnCollision
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && !esc.ActivadoEscudo)
         {
             EnemyLifeSystem enemy = collision.gameObject.GetComponent<EnemyLifeSystem>();
             VidaActual = VidaActual - enemy.EnemyDamage;
