@@ -14,11 +14,11 @@ public class BoosterBehaviour : MonoBehaviour {
 
 	}
 
-    private void OnTriggerEnter2D()
-    {
-		if(collision.gameObject.tag == "Sword" && GameManager.instance.souls-amountSouls >= 0 && GameManager.instance.darkness-amountDarkness >= 0)
+    private void OnTriggerStay2D()
+	{Debug.Log ("pum");
+		if((collision.gameObject.tag == "Player") && ((GameManager.instance.souls-amountSouls) > 0) && ((GameManager.instance.darkness-amountDarkness) > 0))
         {
-			Debug.Log ("pum");
+			
 			GameManager.instance.SubsSouls (amountSouls);
 			GameManager.instance.SubsDarkness (amountDarkness);
             Destroy(gameObject);
