@@ -6,25 +6,30 @@ public class BoosterBehaviour : MonoBehaviour {
 
     public int amountDarkness;
     public int amountSouls;
-	public Collider2D collision;   
+	public Collider2D collision;
+
+    private float totalSouls;
+    private float totalDarkness;
 
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+    {
+        totalDarkness = GameManager.instance.darkness;
+        totalSouls = GameManager.instance.souls;
 	}
 
-    private void OnTriggerStay2D()
-	{Debug.Log ("pum");
-		if((collision.gameObject.tag == "Player") && ((GameManager.instance.souls-amountSouls) > 0) && ((GameManager.instance.darkness-amountDarkness) > 0))
+    void OnTriggerStay2D(Collider2D other)
+    {
+        
+        if (collision.gameObject.tag == "Sword" )//&& (totalSouls - amountSouls) > 0 && (totalDarkness - amountDarkness) > 0) 
         {
-			
-			GameManager.instance.SubsSouls (amountSouls);
-			GameManager.instance.SubsDarkness (amountDarkness);
-            Destroy(gameObject);
-		
-		}
 
+            GameManager.instance.SubsSouls(amountSouls);
+            GameManager.instance.SubsDarkness(amountDarkness);
+            Destroy(gameObject);
+
+        }
     }
 
     private void OnDestroy()
