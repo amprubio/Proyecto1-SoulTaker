@@ -76,11 +76,13 @@ public class MovementController : MonoBehaviour
         
 
 
-        if (InputManager.RBButton ()) {
-			if (countGranade != 0)
-				Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
-			else
-				Invoke ("Counter", 18000);
+		if (InputManager.RBButton ()) { //granada
+			if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
+				if (countGranade != 0)
+					Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
+				else
+					Invoke ("Counter", 18000);
+			}
 		}
         // Jump
         
