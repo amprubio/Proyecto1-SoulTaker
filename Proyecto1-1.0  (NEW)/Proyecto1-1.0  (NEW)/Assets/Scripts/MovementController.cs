@@ -48,10 +48,11 @@ public class MovementController : MonoBehaviour
         float x;
         // Movement
         
-        float axisX = InputManager.MainHorizontal();
-        transform.Translate(new Vector3(axisX, 0) * Time.deltaTime * speed);
-        if (axisX < 0)
+        //float axisX = InputManager.MainHorizontal();
+        //transform.Translate(new Vector3(axisX, 0) * Time.deltaTime * speed);
+        if (/*axisX < 0*/GameInputManager.GetKey("LeftKey"))
         {
+            transform.Translate(new Vector3(-1, 0) * Time.deltaTime * speed);
             x = -1;
             Player.flipX = true;
             BodyCol.offset = new Vector2(-0.1f, 0.05f);
@@ -59,8 +60,9 @@ public class MovementController : MonoBehaviour
             SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
         }
-        else if (axisX > 0)
+        else if (/*axisX > 0*/GameInputManager.GetKey("RightKey"))
         {
+            transform.Translate(new Vector3(1, 0) * Time.deltaTime * speed);
             x = 1;
             Player.flipX = false;
             BodyCol.offset = new Vector2(0.1f, 0.05f);
@@ -68,7 +70,7 @@ public class MovementController : MonoBehaviour
             SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
         }
-        else if (axisX == 0)
+        else /*if (axisX == 0)*/
         {
             anim.SetBool("Idle", true);
         }
