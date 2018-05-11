@@ -4951,6 +4951,25 @@ Prefab:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 1284504946691152, guid: b4c29a3787c4d584590f5214c8a96205, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224552842046584884, guid: b4c29a3787c4d584590f5214c8a96205,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224476987694230522, guid: b4c29a3787c4d584590f5214c8a96205,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204707758472146, guid: b4c29a3787c4d584590f5214c8a96205,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4c29a3787c4d584590f5214c8a96205, type: 2}
   m_IsPrefabParent: 0

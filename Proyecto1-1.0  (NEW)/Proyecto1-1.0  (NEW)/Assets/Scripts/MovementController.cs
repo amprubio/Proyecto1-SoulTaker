@@ -39,7 +39,7 @@ public class MovementController : MonoBehaviour
         anim = GetComponent<Animator>();
 
     }
-    void Update()
+    void FixedUpdate()
     {
         //Rotation
 
@@ -52,7 +52,7 @@ public class MovementController : MonoBehaviour
         //transform.Translate(new Vector3(axisX, 0) * Time.deltaTime * speed);
         if (/*axisX < 0*/GameInputManager.GetKey("LeftKey"))
         {
-            transform.Translate(new Vector3(-1, 0) * Time.deltaTime * speed);
+            transform.Translate(new Vector3(-1, 0) * Time.fixedDeltaTime * speed);
             x = -1;
             Player.flipX = true;
             BodyCol.offset = new Vector2(-0.1f, 0.05f);
@@ -62,7 +62,7 @@ public class MovementController : MonoBehaviour
         }
         else if (/*axisX > 0*/GameInputManager.GetKey("RightKey"))
         {
-            transform.Translate(new Vector3(1, 0) * Time.deltaTime * speed);
+            transform.Translate(new Vector3(1, 0) * Time.fixedDeltaTime * speed);
             x = 1;
             Player.flipX = false;
             BodyCol.offset = new Vector2(0.1f, 0.05f);
@@ -79,12 +79,12 @@ public class MovementController : MonoBehaviour
         //Granade
 
         if (GameInputManager.GetKeyDown("GranadeKey")) {
-			if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
+			//if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
 				if (countGranade != 0)
 					Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
 				else
 					Invoke ("Counter", 18000);
-			}
+			//}
 		}
         // Jump
         
@@ -115,7 +115,7 @@ public class MovementController : MonoBehaviour
 
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
-            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall-1) * Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall-1) * Time.fixedDeltaTime;
             anim.SetBool("Fall", true);
         }
         else
