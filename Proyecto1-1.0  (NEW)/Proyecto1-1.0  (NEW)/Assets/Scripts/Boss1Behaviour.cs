@@ -31,7 +31,8 @@ public class Boss1Behaviour : MonoBehaviour {
     bool IsShooting = false;
     bool IsIdle = false;
     public int random;
-
+	[HideInInspector]
+	public bool deadboss1 = false;
     System.Random rnd= new System.Random();
 
     void Start () {
@@ -45,21 +46,23 @@ public class Boss1Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Fase2();
+		while (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0) {
+			Fase2 ();
 
-        random = rnd.Next(0, 11);
-        if (currentWayPoint == 0)
-        {
-            if(random < 5)
-            {
-                Fase1();
-            }
+			random = rnd.Next (0, 11);
+			if (currentWayPoint == 0) {
+				if (random < 5) {
+					Fase1 ();
+				}
             
-        }
+			}
+		}
+		Destroy (this.gameObject);
+	}
+	void OnDestroy(){
+		deadboss1 = true;
+	}
 
-
-
-    }
 	void MoveBoss(float speedM)
 	{
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint.position, speedM * Time.deltaTime);
