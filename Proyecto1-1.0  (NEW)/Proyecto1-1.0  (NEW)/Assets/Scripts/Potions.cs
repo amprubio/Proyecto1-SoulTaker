@@ -28,7 +28,7 @@ public class Potions : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (/*Input.GetKeyDown(KeyCode.Q)*/GameInputManager.GetKeyDown("HealKey"))
         {
             
             vida.CurarVida();

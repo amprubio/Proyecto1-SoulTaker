@@ -75,10 +75,10 @@ public class MovementController : MonoBehaviour
             anim.SetBool("Idle", true);
         }
 
-        
 
+        //Granade
 
-		if (InputManager.RBButton ()) { //granada
+        if (GameInputManager.GetKeyDown("GranadeKey")) {
 			if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
 				if (countGranade != 0)
 					Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
@@ -88,20 +88,20 @@ public class MovementController : MonoBehaviour
 		}
         // Jump
         
-        if (InputManager.AButtonDown() && Onfloor)
+        if (GameInputManager.GetKeyDown("JumpKey") && Onfloor)
         {
             jumpKeyHeld = true;
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpImpulse, ForceMode2D.Impulse);
 
         }
 
-        if (InputManager.AButtonUp())
+        if (GameInputManager.GetKeyUp("JumpKey"))
         {
             countDown = resetCountDown;
             jumpKeyHeld = false;
         }
 
-        else if (InputManager.AButton())
+        else if (GameInputManager.GetKey("JumpKey"))
         {
             
             countDown -= Time.deltaTime;

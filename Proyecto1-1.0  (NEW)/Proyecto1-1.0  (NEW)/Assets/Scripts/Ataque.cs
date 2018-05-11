@@ -25,7 +25,7 @@ public class Ataque : MonoBehaviour {
 	}
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && rdy)
+        if (GameInputManager.GetKeyDown("AttackKey") && rdy)
         {
             StartCoroutine(AttackTime(tRetardo));
         }
