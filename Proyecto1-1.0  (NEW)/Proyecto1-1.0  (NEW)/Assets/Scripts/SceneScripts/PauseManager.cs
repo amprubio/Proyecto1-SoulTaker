@@ -32,7 +32,7 @@ public class PauseManager : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (InputManager.StartButton())
+        if (GameInputManager.StartButton() || GameInputManager.GetKeyDown("StartKey"))
         {
             if (pauseMenuUI.activeSelf)
             {

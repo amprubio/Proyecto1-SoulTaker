@@ -23,9 +23,9 @@ public class Ataque : MonoBehaviour {
         player = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         
 	}
-	void Update ()
+	void FixedUpdate ()
     {
-        if (GameInputManager.GetKeyDown("AttackKey") && rdy)
+        if ((GameInputManager.GetKeyDown("AttackKey") && rdy) || (GameInputManager.XButton() && rdy))
         {
             StartCoroutine(AttackTime(tRetardo));
         }

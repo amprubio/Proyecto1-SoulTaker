@@ -29,7 +29,7 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
-	anim = GetComponent<Animator> ();
+	    anim = GetComponent<Animator> ();
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Player = GetComponent<SpriteRenderer>();
         BodyCol = gameObject.GetComponent<BoxCollider2D>();
@@ -39,7 +39,7 @@ public class MovementController : MonoBehaviour
         anim = GetComponent<Animator>();
 
     }
-    void Update()
+    void FixedUpdate()
     {
         //Rotation
 
@@ -47,12 +47,12 @@ public class MovementController : MonoBehaviour
 
         float x;
         // Movement
-        
-        //float axisX = InputManager.MainHorizontal();
-        //transform.Translate(new Vector3(axisX, 0) * Time.deltaTime * speed);
-        if (/*axisX < 0*/GameInputManager.GetKey("LeftKey"))
+
+        float axisX = GameInputManager.MainHorizontal();
+
+        if (axisX < 0 || GameInputManager.GetKey("LeftKey"))
         {
-            transform.Translate(new Vector3(-1, 0) * Time.deltaTime * speed);
+            transform.Translate(new Vector3(-1, 0) * Time.fixedDeltaTime * speed);
             x = -1;
             Player.flipX = true;
             BodyCol.offset = new Vector2(-0.1f, 0.05f);
@@ -60,9 +60,9 @@ public class MovementController : MonoBehaviour
             SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
         }
-        else if (/*axisX > 0*/GameInputManager.GetKey("RightKey"))
+        else if (axisX > 0|| GameInputManager.GetKey("RightKey"))
         {
-            transform.Translate(new Vector3(1, 0) * Time.deltaTime * speed);
+            transform.Translate(new Vector3(1, 0) * Time.fixedDeltaTime * speed);
             x = 1;
             Player.flipX = false;
             BodyCol.offset = new Vector2(0.1f, 0.05f);
@@ -70,7 +70,7 @@ public class MovementController : MonoBehaviour
             SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
         }
-        else /*if (axisX == 0)*/
+        else 
         {
             anim.SetBool("Idle", true);
         }
@@ -78,33 +78,35 @@ public class MovementController : MonoBehaviour
 
         //Granade
 
-        if (GameInputManager.GetKeyDown("GranadeKey")) {
-			if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
+        float axisTriggers = GameInputManager.JTriggers();
+
+        if (GameInputManager.GetKeyDown("GranadeKey") || axisTriggers<0) {
+			//if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
 				if (countGranade != 0)
 					Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
 				else
 					Invoke ("Counter", 18000);
-			}
+			//}
 		}
         // Jump
         
-        if (GameInputManager.GetKeyDown("JumpKey") && Onfloor)
+        if ((GameInputManager.GetKeyDown("JumpKey") && Onfloor) || (GameInputManager.AButtonDown() && Onfloor))
         {
             jumpKeyHeld = true;
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpImpulse, ForceMode2D.Impulse);
 
         }
 
-        if (GameInputManager.GetKeyUp("JumpKey"))
+        if (GameInputManager.GetKeyUp("JumpKey") || GameInputManager.AButtonUp())
         {
             countDown = resetCountDown;
             jumpKeyHeld = false;
         }
 
-        else if (GameInputManager.GetKey("JumpKey"))
+        else if (GameInputManager.GetKey("JumpKey") || GameInputManager.AButton())
         {
             
-            countDown -= Time.deltaTime;
+            countDown -= Time.fixedDeltaTime;
             if (jumpKeyHeld && countDown > 0f)
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10 * jumpForce, ForceMode2D.Force);
@@ -115,7 +117,7 @@ public class MovementController : MonoBehaviour
 
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
-            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall-1) * Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall-1) * Time.fixedDeltaTime;
             anim.SetBool("Fall", true);
         }
         else

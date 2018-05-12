@@ -285,7 +285,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   countGranade: 7
   Player: {fileID: 0}
-  granada: {fileID: 0}
+  granada: {fileID: 1769508638369846, guid: bd71abd748b5f0a4d936b9ff4575dcfd, type: 2}
   FeetCol: {fileID: 61313686104114622}
   SwordCol: {fileID: 61315961728269528}
   swordColOff: 0

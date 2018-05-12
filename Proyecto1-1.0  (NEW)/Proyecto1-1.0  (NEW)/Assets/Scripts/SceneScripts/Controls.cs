@@ -8,6 +8,7 @@ public class Controls : MonoBehaviour
     public Text[] keyControls;
 
     private GameObject currentKey;
+    private string selected = "PressKey";
 
     // Use this for initialization
     void Start ()
@@ -33,8 +34,8 @@ public class Controls : MonoBehaviour
     }
 
     public void ChangeKey(GameObject clicked)
-    {
-        currentKey = clicked;
+    {        currentKey = clicked;
+        currentKey.transform.GetChild(0).GetComponent<Text>().text = selected;
     }
 
 

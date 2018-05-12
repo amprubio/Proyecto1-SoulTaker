@@ -28,7 +28,7 @@ public class Potions : MonoBehaviour {
 
     void Update()
     {
-        if (/*Input.GetKeyDown(KeyCode.Q)*/GameInputManager.GetKeyDown("HealKey"))
+        if (GameInputManager.GetKeyDown("HealKey") || GameInputManager.YButton())
         {
             
             vida.CurarVida();
@@ -39,7 +39,7 @@ public class Potions : MonoBehaviour {
             UpdatePotions();
         }
 
-        Debug.Log(healingEffect.isPlaying);
+        //Debug.Log(healingEffect.isPlaying);
     }
 
     void CalculatePotions()

@@ -13,7 +13,7 @@ public SpriteRenderer Avatar;
 private bool flipped;
 void Awake (){
 	//igualamos nuestro transform al transform de la granada ya que el avatar será el punto inicial de referencia
-	float axisX = InputManager.MainHorizontal ();
+	float axisX = GameInputManager.MainHorizontal ();
 	if (axisX<0) {
 		flipped = true;
 	}
