@@ -21,11 +21,11 @@ public class Escudo : MonoBehaviour {
 	
 	void Update ()
     {
-		if(InputManager.LBButton() && !ActivadoEscudo)
-        {
-            StartCoroutine(ActivaEscudo());
+		//if(InputManager.LBButton() && !ActivadoEscudo)
+  //      {
+  //          StartCoroutine(ActivaEscudo());
             
-        }
+  //      }
         
 	}
 
