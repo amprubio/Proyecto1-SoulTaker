@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212904273699196896}
   - component: {fileID: 114827720577442178}
   - component: {fileID: 58841336417667830}
+  - component: {fileID: 50233752223006470}
   m_Layer: 0
   m_Name: PiedraDefFilar
   m_TagString: Untagged
@@ -42,6 +43,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50233752223006470
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1290126840933766}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 2
 --- !u!58 &58841336417667830
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -70,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountDarkness: 0
   amountSouls: 0
+  collision: {fileID: 61315961728269528, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
 --- !u!212 &212904273699196896
 SpriteRenderer:
   m_ObjectHideFlags: 1

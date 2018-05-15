@@ -23,21 +23,6 @@ public class ObjectManager : MonoBehaviour {
     public int tmp;
 
 
-
-    void Awake()
-    {
-
-        if (objMan == null)
-        {
-            objMan = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    // Use this for initialization
     private void Start ()
     {
         objectsArr = new Objects[boosters.Length];
