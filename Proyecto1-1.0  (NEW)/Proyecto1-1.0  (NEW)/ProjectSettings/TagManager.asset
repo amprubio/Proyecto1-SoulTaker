@@ -12,7 +12,7 @@ TagManager:
   - Proyectile
   - DynamicPlatform
   - EndLevel
-  - Water
+  - Water&Thorns
   layers:
   - Default
   - TransparentFX
