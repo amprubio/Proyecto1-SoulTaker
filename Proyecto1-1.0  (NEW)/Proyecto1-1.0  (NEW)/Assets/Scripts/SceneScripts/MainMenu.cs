@@ -8,11 +8,18 @@ public class MainMenu : MonoBehaviour
 {
     EventSystem eventSystem;
     public GameObject go;
+    Animation startAnim;
+
+    private void Awake()
+    {
+        eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        startAnim = GameObject.FindObjectOfType<Animation>();
+    }
 
     private void Start()
     {
-        eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         eventSystem.SetSelectedGameObject(go);
+        startAnim.Play();
     }
 
     public void PlayGame()

@@ -31972,6 +31972,7 @@ GameObject:
   - component: {fileID: 1904205958}
   - component: {fileID: 1904205957}
   - component: {fileID: 1904205961}
+  - component: {fileID: 1904205962}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -32078,6 +32079,21 @@ MonoBehaviour:
   fullScreenOff: {fileID: 973000807}
   dropdownGraphics: {fileID: 1493917685}
   dropdownResolution: {fileID: 200338681}
+--- !u!111 &1904205962
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904205956}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 68e71a6116202144895028fb884ce341, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 68e71a6116202144895028fb884ce341, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1912275972
 GameObject:
   m_ObjectHideFlags: 0

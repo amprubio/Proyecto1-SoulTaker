@@ -39,7 +39,7 @@ public class MovementController : MonoBehaviour
         anim = GetComponent<Animator>();
 
     }
-    void FixedUpdate()
+    void Update()
     {
         //Rotation
 
@@ -89,12 +89,11 @@ public class MovementController : MonoBehaviour
 			//}
 		}
         // Jump
-        
+
         if ((GameInputManager.GetKeyDown("JumpKey") && Onfloor) || (GameInputManager.AButtonDown() && Onfloor))
         {
             jumpKeyHeld = true;
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpImpulse, ForceMode2D.Impulse);
-
         }
 
         if (GameInputManager.GetKeyUp("JumpKey") || GameInputManager.AButtonUp())
@@ -124,11 +123,8 @@ public class MovementController : MonoBehaviour
         {
             anim.SetBool("Fall", false);
         }
-
-
-
-
     }
+
 
 	private void Counter(ref int countGranade)
 	{
