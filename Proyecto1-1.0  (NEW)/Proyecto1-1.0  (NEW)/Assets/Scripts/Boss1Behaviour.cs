@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Boss1Behaviour : MonoBehaviour {
 	public Transform[] WayPoints= new Transform[6];
-	public GameObject player;
+	public GameObject player, habilidad;
 	public SpriteRenderer bossSprite;
 	private Transform nextWayPoint;
     public float speed = 1f;
@@ -45,7 +45,7 @@ public class Boss1Behaviour : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update ()
-    {
+	{
 		while (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0) {
 			Fase2 ();
 
@@ -57,10 +57,11 @@ public class Boss1Behaviour : MonoBehaviour {
             
 			}
 		}
-		Destroy (this.gameObject);
+
+		Destroy (this.gameObject, 4);
 	}
 	void OnDestroy(){
-		deadboss1 = true;
+		Instantiate (habilidad.gameObject);
 	}
 
 	void MoveBoss(float speedM)
