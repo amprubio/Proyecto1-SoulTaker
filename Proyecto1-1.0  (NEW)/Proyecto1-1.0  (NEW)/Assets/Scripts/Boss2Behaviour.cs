@@ -14,14 +14,15 @@ public class Boss2Behaviour : MonoBehaviour {
     public int anguloAperturaDisparo;
     public int rotaciónLocalProyectil;
     public float movementSpeed;
-    public GameObject Proyectil;
+    public GameObject Proyectil, habilidad;
     public SpriteRenderer bossSprite;
     public int numberProyectiles;
     public GameObject player;
     
     [HideInInspector]
     public static bool Flip;
-
+	[HideInInspector]
+	public bool deadboss2=false;
     
     public int currentWayPoint = 0;
     private Transform nextWayPoint;
@@ -51,89 +52,80 @@ public class Boss2Behaviour : MonoBehaviour {
 	}
 	void Update ()
     {
-        
-        Debug.DrawLine(PuntoSpawn.transform.position, player.transform.position, Color.red);
-        if(currentWayPoint < WayPoints.Length)
-        {
-            if (nextWayPoint == null)
-                nextWayPoint = WayPoints[currentWayPoint];
-           switch(currentWayPoint)
-           {
-                case 2:
-                case 6:
-                    if (!IsShooting)
-                    {
-                        Shoot();
+		while (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0) {
+			Debug.DrawLine (PuntoSpawn.transform.position, player.transform.position, Color.red);
+			if (currentWayPoint < WayPoints.Length) {
+				if (nextWayPoint == null)
+					nextWayPoint = WayPoints [currentWayPoint];
+				switch (currentWayPoint) {
+				case 2:
+				case 6:
+					if (!IsShooting) {
+						Shoot ();
                         
 
-                        IsShooting = true;
-                    }
-                    if (tempShooting > 0 && IsShooting == true)
-                    {
-                        tempShooting = tempShooting - Time.deltaTime;
-                        IsShooting = true;
-                    }
-                    else
-                    {
-                        IsShooting = false;
-                        tempShooting = 3f;
-                    }
-                    if (tempIdle > 0)
-                    {
-                        Idle();
-                        tempIdle = tempIdle - Time.deltaTime;
-                        IsIdle = true;
-                    }
-                    else
-                    {
-                        MoveBoss(movementSpeed);
-                    }                   
-                    break;
-                case 5:
-                    bossSprite.flipX = true;
+						IsShooting = true;
+					}
+					if (tempShooting > 0 && IsShooting == true) {
+						tempShooting = tempShooting - Time.deltaTime;
+						IsShooting = true;
+					} else {
+						IsShooting = false;
+						tempShooting = 3f;
+					}
+					if (tempIdle > 0) {
+						Idle ();
+						tempIdle = tempIdle - Time.deltaTime;
+						IsIdle = true;
+					} else {
+						MoveBoss (movementSpeed);
+					}                   
+					break;
+				case 5:
+					bossSprite.flipX = true;
                     
-                    MoveBoss(movementSpeed);
-                    RestartValues();
-                    break;
-                case 1:
-                    MoveBoss(movementSpeed);
-                    RestartValues();
-                    break;
-                case 0:
-                    bossSprite.flipX = false;
-                    if (!MustRest)
-                    {
-                        MoveBoss(movementSpeed);
-                    }
-                    else
-                    {
-                        if(tempResting < 0)
-                        {
-                            MoveBoss(movementSpeed);
-                        }
-                        else
-                        {
-                            MoveBoss(0.5f);
-                        }
-                        tempResting = tempResting - Time.deltaTime;
-                    }
+					MoveBoss (movementSpeed);
+					RestartValues ();
+					break;
+				case 1:
+					MoveBoss (movementSpeed);
+					RestartValues ();
+					break;
+				case 0:
+					bossSprite.flipX = false;
+					if (!MustRest) {
+						MoveBoss (movementSpeed);
+					} else {
+						if (tempResting < 0) {
+							MoveBoss (movementSpeed);
+						} else {
+							MoveBoss (0.5f);
+						}
+						tempResting = tempResting - Time.deltaTime;
+					}
                     
-                    break;
-                case 7:
-                    if (varSpeedUp != 0f && varSpeedUp < 30f) varSpeedUp = varSpeedUp + acceleration;
-                    MustRest = true;
-                    MoveBoss(varSpeedUp);
-                    break;
+					break;
+				case 7:
+					if (varSpeedUp != 0f && varSpeedUp < 30f)
+						varSpeedUp = varSpeedUp + acceleration;
+					MustRest = true;
+					MoveBoss (varSpeedUp);
+					break;
 
-                default:
-                    MoveBoss(movementSpeed);
-                    break;
-           }
+				default:
+					MoveBoss (movementSpeed);
+					break;
+				}
 
-            
-        }
+		
+			}
+		}
+		Destroy (this.gameObject,4);
 	}
-    void MoveBoss(float sp)
+	void OnDestroy(){
+		Instantiate (habilidad.gameObject);
+	}
+	void MoveBoss(float sp)
     {
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint.position, sp * Time.deltaTime);
 
