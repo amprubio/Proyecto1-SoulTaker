@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 1
-  respawnTime: 2
+  respawnTime: 1000000
 --- !u!212 &212227462666422238
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0584221f68d972a4b8a9fb4253a05bb3, type: 3}
-  m_Color: {r: 1, g: 0.9044118, b: 0.4852941, a: 1}
+  m_Color: {r: 0.834, g: 0.482052, b: 0.482052, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

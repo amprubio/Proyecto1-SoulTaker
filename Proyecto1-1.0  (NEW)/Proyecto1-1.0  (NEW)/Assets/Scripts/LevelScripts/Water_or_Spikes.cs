@@ -13,7 +13,12 @@ public class Water_or_Spikes : MonoBehaviour {
         levelManager = FindObjectOfType<LevelManager>();
     }
     
-    private void OnCollisionEnter2D(Collision2D other)
+    //private void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.gameObject.name == "Player")
+    //        levelManager.RespawnPlayer();
+    //}
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
             levelManager.RespawnPlayer();
