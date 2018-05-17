@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator TransitionExitTime(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)% SceneManager.sceneCountInBuildSettings);
     }
 
     IEnumerator TransitionEnterTime(float time)

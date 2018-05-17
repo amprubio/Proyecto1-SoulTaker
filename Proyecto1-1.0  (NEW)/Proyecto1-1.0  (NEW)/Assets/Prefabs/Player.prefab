@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  fall: 3
+  fall: 1
   jumpImpulse: 0.2
   jumpForce: 3.2
   countDown: 0.2

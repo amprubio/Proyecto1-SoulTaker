@@ -121,7 +121,7 @@ public class MovementController : MonoBehaviour
 
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
-            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (fall - 1) * Time.fixedDeltaTime;
+            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.fixedDeltaTime;
             anim.SetBool("Fall", true);
         }
         else
@@ -139,7 +139,7 @@ public class MovementController : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Foreground")
         {
             Onfloor = true;
             anim.SetBool("Jump", false);
@@ -156,7 +156,7 @@ public class MovementController : MonoBehaviour
     public void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "DynamicPlatform")
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Foreground")
         {
             Onfloor = false;
             anim.SetBool("Jump", true);

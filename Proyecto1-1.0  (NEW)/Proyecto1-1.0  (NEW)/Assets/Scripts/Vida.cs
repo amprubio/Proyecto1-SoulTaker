@@ -140,7 +140,8 @@ public class Vida : MonoBehaviour
     public void DestroyPlayer()
     {
         imagenVidas[0].sprite = spriteVidas[0];
-        Destroy(gameObject); 
+        Destroy(gameObject);
+        
     }
 
 

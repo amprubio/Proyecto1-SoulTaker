@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114120969680805342}
   m_Layer: 0
   m_Name: DestroyablePlatform2
-  m_TagString: DynamicPlatform
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819b7c269d8251d4a9131c5a1082d0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 1
+  waitTime: 0
   respawnTime: 1000000
 --- !u!212 &212227462666422238
 SpriteRenderer:
