@@ -14,7 +14,7 @@ public class SpawnHabilityBeahaviour : MonoBehaviour {
 	{
 		if (cool.gameObject.CompareTag ("Player")) {
 			switch (this.gameObject.name) {
-			case "Granada(Clone)":
+			case  "Granada(Clone)":
 				bossmuerto1 = GetComponent<Boss1Behaviour> ().deadboss1;
 				bossmuerto1 = true;
 				break;
