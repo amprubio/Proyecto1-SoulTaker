@@ -10,7 +10,7 @@ public class Potions : MonoBehaviour {
     ParticleSystem healingEffect;
     bool ActiveEffect = false;
     public float tempEffect = 0.75f;
-    private int CurrentPotions;
+    public int CurrentPotions;
 
     public Image[] potions;
     public Sprite[] potionGUI;
@@ -33,6 +33,7 @@ public class Potions : MonoBehaviour {
             
             vida.CurarVida();
             CurrentPotions--;
+            GameManager.instance.NumPociones = CurrentPotions;
             healingEffect.Play();
             Debug.Log("Me he tomado una pocion");
             

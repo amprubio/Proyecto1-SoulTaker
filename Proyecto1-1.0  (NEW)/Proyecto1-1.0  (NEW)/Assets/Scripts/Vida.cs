@@ -50,6 +50,7 @@ public class Vida : MonoBehaviour
     }
     void ActualizaCorazones()
     {
+        GameManager.instance.VidaMax = VidaInicio;
         bool vacio = false;
         int j;
         int x = 0;
@@ -84,6 +85,7 @@ public class Vida : MonoBehaviour
     public void AniadeCorazon()
     {
         VidaInicio++;
+        GameManager.instance.VidaMax = VidaInicio;
         VidaInicio = Mathf.Clamp(VidaInicio, 0, CorazonesMax);
 
         CalculaVida();

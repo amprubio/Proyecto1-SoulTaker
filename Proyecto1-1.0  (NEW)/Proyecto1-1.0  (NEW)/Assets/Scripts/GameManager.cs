@@ -18,18 +18,17 @@ public class GameManager : MonoBehaviour
     public float perDarkness = 1;
 
     public Vida vida;
+    public Potions pot;
     public Ataque ataque;
     public MovementController movement;
     [HideInInspector]
     public GameObject Player;
     Transform PlayerTr;
     public BoxCollider2D sword;
+    public int VidaPlayer;
+    public int NumPociones;
+    public int VidaMax;
     
-    
-
-    
-
-
     void Awake()
     {
 
@@ -55,6 +54,7 @@ public class GameManager : MonoBehaviour
     }
 
     
+   
 
     public void AddSouls(float amountSouls)
     {
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeStats(string nameMethod)
     {
-        Debug.Log("ayjoder");
+       
         switch(nameMethod)
         {
             case "Ladron(Clone)":
