@@ -5145,6 +5145,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1030753055}
+  - component: {fileID: 1030753057}
+  - component: {fileID: 1030753056}
   m_Layer: 0
   m_Name: TommySeed
   m_TagString: Untagged
@@ -5167,6 +5169,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030753056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030753054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec990bc81e5b804798e2b58aa88c140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rango: 4
+  cadencia: 2
+  tagPlayer: Player
+  balaPrefab: {fileID: 1323562272507326, guid: a4de1cbfe14c4b94188e885558cd1b1c, type: 2}
+  puntoInstanciado: {fileID: 1436341664}
+  ParteARotar: {fileID: 1753816265}
+  HaEntrado: 0
+  direccion: {x: 0, y: 0, z: 0}
+--- !u!58 &1030753057
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030753054}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1034622021
 GameObject:
   m_ObjectHideFlags: 0
@@ -9241,7 +9277,7 @@ Transform:
   - {fileID: 872631081}
   - {fileID: 1263697101}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539348159
 GameObject:
@@ -9959,7 +9995,7 @@ Transform:
   - {fileID: 1142186552}
   - {fileID: 137293839}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665468598
 GameObject:
@@ -10822,7 +10858,7 @@ Transform:
   - {fileID: 456629551}
   - {fileID: 1361217504}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1709282451
 GameObject:
@@ -11207,8 +11243,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1753816266}
-  - component: {fileID: 1753816267}
-  - component: {fileID: 1753816268}
   m_Layer: 0
   m_Name: ParteQueGira
   m_TagString: Untagged
@@ -11231,39 +11265,6 @@ Transform:
   m_Father: {fileID: 1030753055}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1753816267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1753816265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec990bc81e5b804798e2b58aa88c140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rango: 15
-  cadencia: 2
-  tagPlayer: Player
-  balaPrefab: {fileID: 1323562272507326, guid: a4de1cbfe14c4b94188e885558cd1b1c, type: 2}
-  puntoInstanciado: {fileID: 1436341664}
-  HaEntrado: 0
-  direccion: {x: 0, y: 0, z: 0}
---- !u!58 &1753816268
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1753816265}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &1763032108
 GameObject:
   m_ObjectHideFlags: 0
