@@ -110,7 +110,7 @@ public class MovementController : MonoBehaviour
         else if (GameInputManager.GetKey("JumpKey") || GameInputManager.AButton())
         {
 
-            countDown -= Time.fixedDeltaTime;
+            countDown -= Time.deltaTime;
             if (jumpKeyHeld && countDown > 0f)
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10 * jumpForce, ForceMode2D.Force);
@@ -121,7 +121,7 @@ public class MovementController : MonoBehaviour
 
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
-            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.fixedDeltaTime;
+            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.deltaTime;
             anim.SetBool("Fall", true);
         }
         else

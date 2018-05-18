@@ -13,7 +13,7 @@ public class Water_or_Spikes : MonoBehaviour {
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
-        vidaPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Vida>();
+        //vidaPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Vida>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -21,7 +21,7 @@ public class Water_or_Spikes : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             levelManager.RespawnPlayer();
-            vidaPlayer.VidaActual = vidaPlayer.VidaActual - 1;
+            //vidaPlayer.VidaActual = vidaPlayer.VidaActual - 1;
         }
             
     }
@@ -30,7 +30,7 @@ public class Water_or_Spikes : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             levelManager.RespawnPlayer();
-            vidaPlayer.VidaActual = vidaPlayer.VidaActual - 1;
+            //vidaPlayer.VidaActual = vidaPlayer.VidaActual - 1;
         }
             
     }
