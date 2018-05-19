@@ -12,7 +12,7 @@ public class MovementController : MonoBehaviour
     public Animator anim;
 
     [Header("Contador")]
-	public int countGranade=7;
+	public int countGranade = 7;
     bool Onfloor = false, jumpKeyHeld = false;
     public SpriteRenderer Player;
 	public GameObject granada;
@@ -73,21 +73,7 @@ public class MovementController : MonoBehaviour
         else 
         {
             anim.SetBool("Idle", true);
-        }
-
-
-        //Granade
-
-        float axisTriggers = GameInputManager.JTriggers();
-
-        if (GameInputManager.GetKeyDown("GranadeKey") || axisTriggers<0) {
-			//if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
-				if (countGranade != 0)
-					Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
-				else
-					Invoke ("Counter", 18000);
-			//}
-		}
+        }       
     }
 
     private void Update()
@@ -131,10 +117,7 @@ public class MovementController : MonoBehaviour
     }
 
 
-    private void Counter(ref int countGranade)
-	{
-		countGranade++;
-	}
+   
    
 
     public void OnTriggerStay2D(Collider2D other)
@@ -169,6 +152,11 @@ public class MovementController : MonoBehaviour
             anim.SetBool("Jump", true);
         }
 
+    }
+
+    public void ActivaGranada()
+    {
+        Instantiate(granada, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
     }
 
 }
