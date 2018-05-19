@@ -29,15 +29,15 @@ public class SkillController : MonoBehaviour {
     {
         
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && !escudo.ActivadoEscudo)
         {
             if(skills[0].currentCooldown >= skills[0].cooldown)
             {
                 escudo.ActivaEscudo();
                 skills[0].currentCooldown = 0;
-            }else
+            }else if(skills[0].currentCooldown >= 5)
             {
-                escudo.ActivadoEscudo = false;
+                escudo.DesactivaEscudo();
             }
         }else if(GameInputManager.GetKeyDown("GranadeKey") || GameInputManager.JTriggers() < 0)
         {

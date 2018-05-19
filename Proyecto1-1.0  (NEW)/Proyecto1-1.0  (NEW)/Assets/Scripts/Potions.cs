@@ -21,7 +21,7 @@ public class Potions : MonoBehaviour {
         
         vidaManager = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
         potionsManager = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
-        healingEffect = gameObject.GetComponent<ParticleSystem>();
+        healingEffect = gameObject.transform.GetChild(3).GetComponent<ParticleSystem>();
         healingEffect.Pause();
         PotionsManager.MaximumPotions = MaxPotions;
 
