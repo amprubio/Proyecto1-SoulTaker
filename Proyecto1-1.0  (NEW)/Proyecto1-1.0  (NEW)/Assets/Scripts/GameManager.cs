@@ -1,10 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Gestor del juego (singleton simplificado). Controlará el estado del juego
-/// y tendrá métodos llamados desde los distintos objetos que lo hacen avanzar.
-/// Debe haber una única instancia. 
-/// </summary>
 public class GameManager : MonoBehaviour
 {
 
@@ -17,8 +13,8 @@ public class GameManager : MonoBehaviour
     public float perSouls = 1;
     public float perDarkness = 1;
 
-    public Vida vida;
-    public Potions pot;
+    public VidaManager vidaManagerGM;
+    public PotionsManager potionsManagerGM;
     public Ataque ataque;
     public MovementController movement;
     [HideInInspector]
@@ -27,7 +23,11 @@ public class GameManager : MonoBehaviour
     public BoxCollider2D sword;
     public int VidaPlayer;
     public int NumPociones;
-    public int VidaMax;
+    public int VidaInicio;
+
+    private Scene currentScene;
+    
+    
     
     void Awake()
     {
@@ -48,12 +48,46 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Player = GameObject.Find("Player");
-        sword = Player.transform.GetChild(1).GetComponent<BoxCollider2D>();
-        
+        sword = GameObject.Find("Player").transform.GetChild(1).GetComponent<BoxCollider2D>(); 
+        vidaManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
+        potionsManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
+        ataque = GameObject.Find("Player").GetComponent<Ataque>();
+        movement = GameObject.Find("Player").GetComponent<MovementController>();
+        currentScene = SceneManager.GetActiveScene();
     }
 
-    
+    void Update()
+    {
+        SceneController(currentScene);
+       
+    }
+
+
+
+
+
+    void SceneController(Scene currentScene)
+    {
+        if(currentScene != SceneManager.GetActiveScene())
+        {
+            LoadValuesScene();
+            VidaManager.VidaActual = VidaPlayer;
+            VidaManager.VidaInicio = VidaInicio;
+            PotionsManager.CurrentPotions = NumPociones;
+            currentScene = SceneManager.GetActiveScene();
+        }
+    }
+
+
+
+    public void LoadValuesScene()
+    {
+        sword = GameObject.Find("Player").transform.GetChild(1).GetComponent<BoxCollider2D>();
+        vidaManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
+        potionsManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
+        ataque = GameObject.Find("Player").transform.GetChild(1).GetComponent<Ataque>();
+        movement = GameObject.Find("Player").GetComponent<MovementController>();
+    }
    
 
     public void AddSouls(float amountSouls)
@@ -154,7 +188,7 @@ public class GameManager : MonoBehaviour
     }
     public void Kebab()
     {
-        vida.AniadeCorazon();
+        vidaManagerGM.AniadeCorazon();
         Debug.Log("hay hola");
     }
     public void Concentracion()
