@@ -29,13 +29,11 @@ public class Escudo : MonoBehaviour {
         
 	}
 
-    IEnumerator ActivaEscudo()
+    public void ActivaEscudo()
     {
         ActivadoEscudo = true;
-        Debug.Log("Tengoganasdematarte");
         escudo.Play();
-        yield return new WaitForSeconds(escudo.main.duration);
-        ActivadoEscudo = false;
-        Debug.Log("Posyano");
+        
+       
     }
 }

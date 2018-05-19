@@ -24,13 +24,12 @@ void Awake (){
 }
 public IEnumerator Lanzamiento(){
 	Avatar = GetComponent<SpriteRenderer> ();
-	Debug.Log ("Dentro de la corrutina");
-	Debug.Log ("Más Dentro de la corrutina");
+	
 	//retardo corto antes del lanzamiento
 	//yield return new WaitForSecondsRealtime (0); //revisar segun la animacion del avatar y el spawneo
 	//movimiento del proyectil a la posicion de lanzamiento + offset si es necesario (revisar)
 	//calculo de distancia al enemigo
-	Debug.Log ("jaja si Dentro de la corrutina");
+	
 	float s= Vector3.Distance(granada.position, granada.position+ new Vector3(distance,0f,0f));
 	//velocidad inicial
 	float velocidad_inicial=s/(Mathf.Sin(2*angulo*Mathf.Deg2Rad)/gravedad);
@@ -41,9 +40,7 @@ public IEnumerator Lanzamiento(){
 	float t= s/velocidad_X;
 	//movimiento de parabola en sí
 	float time=0;
-	//Pon aqui un if esta girado
-	Debug.Log ("jaja si antes del if");
-
+	
 	if (flipped) {
 		velocidad_X = -velocidad_X;
 	}
