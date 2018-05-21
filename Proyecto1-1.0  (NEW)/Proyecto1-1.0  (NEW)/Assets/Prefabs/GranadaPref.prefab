@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58825058859851602}
   - component: {fileID: 212662450572772374}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: GranadaPref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769508638369846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: -95.685974, y: -2624.0693, z: 0}
+  m_LocalScale: {x: 2.0081735, y: 2.0081735, z: 0.20081735}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &58825058859851602
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -75,9 +75,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0021156634, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.1678849
 --- !u!114 &114952436735766870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,14 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcc4c5016ef44d439f91cce072e5c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
-  angulo: 45
-  gravedad: 9.8
-  speed: 1
+  anguloSalida: 135
+  fuerzaSalida: 8
   prefabExplosion: {fileID: 1368295580995558, guid: b180a7760f91d1e4bacc481890a899b1,
     type: 2}
-  granada: {fileID: 4267478123196310}
-  Avatar: {fileID: 212937264381903068, guid: dd78d2c9eb26b964fa04256b4b97b8f7, type: 2}
+  radioExplosion: 10
+  "da\xF1oGranada": 0
 --- !u!212 &212662450572772374
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: -68194805
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 2e9cfb21f009b1c4297148997057504b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cd5d3f37a98f84418df881558319cef, type: 3}
   m_Color: {r: 0, g: 0.2794118, b: 0.25594798, a: 1}
   m_FlipX: 1
   m_FlipY: 0
