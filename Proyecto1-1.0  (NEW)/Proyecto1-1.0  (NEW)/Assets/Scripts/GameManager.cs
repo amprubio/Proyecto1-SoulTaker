@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
+   
     // Objetos
     public void Ladron()
     {
