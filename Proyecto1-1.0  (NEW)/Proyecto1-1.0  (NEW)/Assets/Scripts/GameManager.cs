@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
                 Kebab();
                 break;
 
-            case "Concentracion(Clone)":
+            case "Focus(Clone)":
                 Concentracion();
                 break;
 
