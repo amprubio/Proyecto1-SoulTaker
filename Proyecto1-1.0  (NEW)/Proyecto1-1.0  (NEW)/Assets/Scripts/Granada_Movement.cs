@@ -7,7 +7,7 @@ public class Granada_Movement : MonoBehaviour {
 
     public float anguloSalida;
     public float fuerzaSalida;
-    public GameObject prefabExplosion;
+    public GameObject particulasExplosion;
     private Transform granada;
     public float radioExplosion;
     public float dañoGranada;
@@ -17,24 +17,20 @@ public class Granada_Movement : MonoBehaviour {
     private float anguloConvertido;
     private Rigidbody2D rb;
     private Vector2 posLanzamiento;
-    private bool flipped;
+    public bool flipped;
     private Collider2D col;
-    
+    private SpriteRenderer playerRenderer;
    
 
     void Start ()
     {
         float axisX = GameInputManager.MainHorizontal();
-        if (axisX <= 0)
-        {
-            flipped = true;
-        }
-        else if (axisX >= 0)
-        {
-            flipped = false;
-        }
+        playerRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
 
-       
+        flipped = playerRenderer.flipX;
+
+        
+
         rb = gameObject.GetComponent<Rigidbody2D>();
         col = gameObject.GetComponent<Collider2D>();
         Lanzamiento();
@@ -45,10 +41,10 @@ public class Granada_Movement : MonoBehaviour {
 
         int cambiaDireccion = 1;
 
-        //if (flipped)
-        //{
-        //    anguloSalida = 135;
-        //}
+        if (flipped)
+        {
+            anguloSalida = 135;
+        }
 
 
 
@@ -60,19 +56,21 @@ public class Granada_Movement : MonoBehaviour {
         
         rb.AddForce(posLanzamiento.normalized * fuerzaSalida * cambiaDireccion, ForceMode2D.Impulse);
 
-        //Explosion();   
+           
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Destroy(gameObject);
+        Explosion();
+        
 
     }
 
 
     void Explosion()
     {
-        Instantiate(prefabExplosion, granada.transform.position, Quaternion.identity);
+
+        //Instantiate(particulasExplosion, transform.position, transform.rotation);
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radioExplosion);
 
@@ -88,8 +86,8 @@ public class Granada_Movement : MonoBehaviour {
 
 
 
-        Destroy(this.gameObject, 0f);
-        Destroy(prefabExplosion.gameObject, 1f);
+        Destroy(gameObject);
+       
     }
 }
 

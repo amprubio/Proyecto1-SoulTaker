@@ -89,12 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcc4c5016ef44d439f91cce072e5c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anguloSalida: 135
-  fuerzaSalida: 8
-  prefabExplosion: {fileID: 1368295580995558, guid: b180a7760f91d1e4bacc481890a899b1,
-    type: 2}
+  anguloSalida: 20
+  fuerzaSalida: 10
+  particulasExplosion: {fileID: 0}
   radioExplosion: 10
   "da\xF1oGranada": 0
+  flipped: 0
 --- !u!212 &212662450572772374
 SpriteRenderer:
   m_ObjectHideFlags: 1
