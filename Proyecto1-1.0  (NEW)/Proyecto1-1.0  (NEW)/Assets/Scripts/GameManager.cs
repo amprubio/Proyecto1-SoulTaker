@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    // Objetos
     public void Ladron()
     {
         perSouls = 1.2f;
