@@ -5,23 +5,25 @@ using UnityEngine.UI;
 
 public class Potions : MonoBehaviour {
 
-    Vida vida;
-    const int MaximumPotions = 3;
+    VidaManager vidaManager;
+    PotionsManager potionsManager;
+    public int MaxPotions;
     ParticleSystem healingEffect;
     bool ActiveEffect = false;
     public float tempEffect = 0.75f;
-    public int CurrentPotions;
+    
 
     public Image[] potions;
     public Sprite[] potionGUI;
 
 	void Start ()
     {
-        vida = gameObject.GetComponent<Vida>();
-        CurrentPotions = MaximumPotions;
-        CalculatePotions();
-        healingEffect = gameObject.GetComponent<ParticleSystem>();
+        
+        vidaManager = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
+        potionsManager = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
+        healingEffect = gameObject.transform.GetChild(3).GetComponent<ParticleSystem>();
         healingEffect.Pause();
+        PotionsManager.MaximumPotions = MaxPotions;
 
 	}
 
@@ -31,63 +33,13 @@ public class Potions : MonoBehaviour {
         if (GameInputManager.GetKeyDown("HealKey") || GameInputManager.YButton())
         {
             
-            vida.CurarVida();
-            CurrentPotions--;
-            GameManager.instance.NumPociones = CurrentPotions;
+            vidaManager.CurarVida();
+            PotionsManager.CurrentPotions--;
+            Mathf.Clamp(PotionsManager.CurrentPotions, 0, MaxPotions);
             healingEffect.Play();
-            Debug.Log("Me he tomado una pocion");
-            
-            UpdatePotions();
-        }
 
-        //Debug.Log(healingEffect.isPlaying);
-    }
-
-    void CalculatePotions()
-    {
-        for(int i = 0; i < MaximumPotions; i++)
-        {
-            if(MaximumPotions <= i)
-            {
-                potions[i].enabled = false;
-            }
-            else
-            {
-                potions[i].enabled = true;
-            }
-        }
-
-        UpdatePotions();
-    }
-
-    void UpdatePotions()
-    {
-        bool vacio = false;
-        int j;
-        int x = 0;
-
-        for (j = 0; j < potions.Length; j++)
-        {
-            if (vacio)
-            {
-                potions[j].sprite = potionGUI[0];
-            }
-            else
-            {
-                x++;
-                x = Mathf.Clamp(x, 1, MaximumPotions);
-                if (CurrentPotions >= x)
-                {
-                    potions[j].sprite = potionGUI[1];
-                }
-                else
-                {
-                    potions[j].sprite = potionGUI[0];
-                    vacio = true;
-                }
-            }
+            potionsManager.UpdatePotions();
         }
     }
-
-
+    
 }

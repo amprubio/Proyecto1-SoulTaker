@@ -17,7 +17,7 @@ public class Bala : MonoBehaviour {
     public float espRecorrido;
     public Transform objetivoBala; //Avatar
 
-    private Vida vida;
+    
 
     public void ObtieneObjetivo(Transform obj)
     {
@@ -58,15 +58,11 @@ public class Bala : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            vida = collision.GetComponent<Vida>();
-            vida.VidaActual = vida.VidaActual - damage;
             ObjetivoAlcanzado();
-            return;
         }
         else if (collision.gameObject.tag != "Enemy")
         {
             Choque();
-            return;
         }
     }
 

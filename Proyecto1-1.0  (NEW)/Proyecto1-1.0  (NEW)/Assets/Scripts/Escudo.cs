@@ -8,34 +8,32 @@ public class Escudo : MonoBehaviour {
     float Duracion;
     float temp;
     public bool ActivadoEscudo = false;
-    public ParticleSystem escudo;
+    ParticleSystem escudoParticulas;
+    ParticleSystem subParticulas;
 	
 	
     void Start()
     {
+        escudoParticulas = gameObject.transform.GetChild(2).GetComponent<ParticleSystem>();
         colPlayer = GetComponent<Collider2D>();
-        Duracion = escudo.time;
+        Duracion = escudoParticulas.time;
+        subParticulas = gameObject.transform.GetChild(2).GetChild(0).GetComponent<ParticleSystem>();
+       
 
     }
 
 	
-	void Update ()
-    {
-		//if(InputManager.LBButton() && !ActivadoEscudo)
-  //      {
-  //          StartCoroutine(ActivaEscudo());
-            
-  //      }
-        
-	}
-
-    IEnumerator ActivaEscudo()
+    public void ActivaEscudo()
     {
         ActivadoEscudo = true;
-        Debug.Log("Tengoganasdematarte");
-        escudo.Play();
-        yield return new WaitForSeconds(escudo.main.duration);
-        ActivadoEscudo = false;
-        Debug.Log("Posyano");
+        escudoParticulas.Play();
     }
+
+    public void DesactivaEscudo()
+    {
+        ActivadoEscudo = false;
+        escudoParticulas.Stop();
+        subParticulas.Stop();
+    }
+    
 }

@@ -12,7 +12,7 @@ public class MovementController : MonoBehaviour
     public Animator anim;
 
     [Header("Contador")]
-	public int countGranade=7;
+	public int countGranade = 7;
     bool Onfloor = false, jumpKeyHeld = false;
     public SpriteRenderer Player;
 	public GameObject granada;
@@ -73,21 +73,7 @@ public class MovementController : MonoBehaviour
         else 
         {
             anim.SetBool("Idle", true);
-        }
-
-
-        //Granade
-
-        float axisTriggers = GameInputManager.JTriggers();
-
-        if (GameInputManager.GetKeyDown("GranadeKey") || axisTriggers<0) {
-			//if (GetComponent<Boss1Behaviour> ().deadboss1 == true) {
-				if (countGranade != 0)
-					Instantiate (granada, transform.position + new Vector3 (0f, 1f, 0f), Quaternion.identity);
-				else
-					Invoke ("Counter", 18000);
-			//}
-		}
+        }       
     }
 
     private void Update()
@@ -110,7 +96,7 @@ public class MovementController : MonoBehaviour
         else if (GameInputManager.GetKey("JumpKey") || GameInputManager.AButton())
         {
 
-            countDown -= Time.fixedDeltaTime;
+            countDown -= Time.deltaTime;
             if (jumpKeyHeld && countDown > 0f)
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10 * jumpForce, ForceMode2D.Force);
@@ -121,7 +107,7 @@ public class MovementController : MonoBehaviour
 
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
-            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.fixedDeltaTime;
+            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.deltaTime;
             anim.SetBool("Fall", true);
         }
         else
@@ -131,10 +117,7 @@ public class MovementController : MonoBehaviour
     }
 
 
-    private void Counter(ref int countGranade)
-	{
-		countGranade++;
-	}
+   
    
 
     public void OnTriggerStay2D(Collider2D other)
@@ -169,6 +152,11 @@ public class MovementController : MonoBehaviour
             anim.SetBool("Jump", true);
         }
 
+    }
+
+    public void ActivaGranada()
+    {
+        Instantiate(granada, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
     }
 
 }

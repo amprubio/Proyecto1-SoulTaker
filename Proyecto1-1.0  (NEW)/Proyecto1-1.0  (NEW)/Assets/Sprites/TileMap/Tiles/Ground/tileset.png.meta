@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c20e140bed4aa1149bef2dd9d215e639
-timeCreated: 1526337260
+timeCreated: 1526755315
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -200,7 +200,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
+        y: 449
         width: 64
         height: 64
       alignment: 0
@@ -213,8 +213,8 @@ TextureImporter:
         - {x: 32, y: -32}
         - {x: 32, y: 32}
       physicsShape:
-      - - {x: -9.926874, y: 32}
-        - {x: -8.829296, y: -32}
+      - - {x: -9.6472, y: 32}
+        - {x: -9.617426, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
       tessellationDetail: 0
@@ -262,7 +262,7 @@ TextureImporter:
       - - {x: -32, y: 32}
         - {x: -32, y: -32}
         - {x: 8.195145, y: -32}
-        - {x: 7.5122223, y: 32}
+        - {x: 8.274963, y: 32}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset_11
