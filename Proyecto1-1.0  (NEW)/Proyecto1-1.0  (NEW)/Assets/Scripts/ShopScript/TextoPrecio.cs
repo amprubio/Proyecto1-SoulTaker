@@ -22,8 +22,4 @@ public class TextoPrecio : MonoBehaviour {
 		price.text = ("0");
 	}
 
-	private void Update()
-	{
-		//price.text = GameManager.instance.souls.ToString();
-	}
 }
