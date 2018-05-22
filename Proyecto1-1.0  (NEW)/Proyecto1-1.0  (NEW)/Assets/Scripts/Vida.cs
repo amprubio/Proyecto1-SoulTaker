@@ -17,25 +17,29 @@ public class Vida : MonoBehaviour
     void Start()
     {
         vidaManager = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
-        VidaManager.VidaInicio = VidaInicio;
+        //VidaManager.VidaInicio = VidaInicio;
         esc = GameObject.Find("Player").GetComponent<Escudo>();
     }
     
+
     //El player recibe daño del enemigo mediante este OnCollision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && !esc.ActivadoEscudo)
         {
             EnemyLifeSystem enemy = collision.gameObject.GetComponent<EnemyLifeSystem>();
-            VidaManager.VidaActual = VidaManager.VidaActual - enemy.EnemyDamage;
-            VidaManager.VidaActual = Mathf.Clamp(VidaManager.VidaActual, 0, VidaManager.VidaMaxima);
-            vidaManager.ActualizaCorazones();
+            //VidaManager.VidaActual = VidaManager.VidaActual - enemy.EnemyDamage;
+            //VidaManager.VidaActual = Mathf.Clamp(VidaManager.VidaActual, 0, VidaManager.VidaMaxima);
+            //vidaManager.ActualizaCorazones();
+            GameManager.instance.UpdateHealth(VidaManager.currentHealth - enemy.EnemyDamage);
             Colision = true;
+            Debug.Log(GameManager.instance.health);
         }
         //else if (collision.gameObject.tag == "Water" || collision.gameObject.tag == "Thorns")
         else Colision = false;
-        if(VidaManager.VidaActual <= 0)
+        if(/*VidaManager.VidaActual <= 0*/GameManager.instance.health<=0)
         {
+            
             DestroyPlayer();
             SceneManager.LoadScene(0);
         }
@@ -46,13 +50,14 @@ public class Vida : MonoBehaviour
         if (collision.gameObject.tag == "Proyectile")
         {
             ProyectilBoss pro = collision.gameObject.GetComponent<ProyectilBoss>();
-            VidaManager.VidaActual = VidaManager.VidaActual - pro.damage;
-            VidaManager.VidaActual = Mathf.Clamp(VidaManager.VidaActual, 0, VidaManager.VidaMaxima);
-            vidaManager.ActualizaCorazones();
+            //VidaManager.VidaActual = VidaManager.VidaActual - pro.damage;
+            //VidaManager.VidaActual = Mathf.Clamp(VidaManager.VidaActual, 0, VidaManager.VidaMaxima);
+            //vidaManager.ActualizaCorazones();
+            GameManager.instance.UpdateHealth(VidaManager.currentHealth - pro.damage);
             Colision = true;
         }
         else Colision = false;
-        if (VidaManager.VidaActual <= 0)
+        if (/*VidaManager.VidaActual <= 0*/GameManager.instance.health <= 0)
         {
             DestroyPlayer();
             SceneManager.LoadScene(0);
@@ -62,7 +67,7 @@ public class Vida : MonoBehaviour
     
     public void DestroyPlayer()
     {
-        vidaManager.DestroyPlayer();
+        //vidaManager.DestroyPlayer();
         Destroy(gameObject);
     }
 

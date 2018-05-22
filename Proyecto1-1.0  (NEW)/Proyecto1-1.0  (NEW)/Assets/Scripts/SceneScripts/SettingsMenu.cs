@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour {
 
-    public AudioMixer audioMixer;
+    public AudioMixerGroup master;
+    public AudioMixerGroup music;
+    public AudioMixerGroup soundFX;
+    public float defaultVolume;
     public GameObject fullScreenOn;
     public GameObject fullScreenOff;
     public Dropdown dropdownGraphics;
@@ -40,12 +43,24 @@ public class SettingsMenu : MonoBehaviour {
         dropdownResolution.AddOptions(options);
         dropdownResolution.value = currentResolutionIndex;
         dropdownResolution.RefreshShownValue();
+        
+        
     }
 
 
-    public void SetVolume(float volume)
+    public void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        master.audioMixer.SetFloat("MasterVol", volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        music.audioMixer.SetFloat("MusicVol", volume);
+    }
+
+    public void SetSoundFxVolume(float volume)
+    {
+        soundFX.audioMixer.SetFloat("SoundFXVol", volume);
     }
 
     public void SetFullscreen(bool isFullScreen)

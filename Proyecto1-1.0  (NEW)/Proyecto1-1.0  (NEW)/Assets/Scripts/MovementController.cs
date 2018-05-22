@@ -114,11 +114,11 @@ public class MovementController : MonoBehaviour
         {
             anim.SetBool("Fall", false);
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+            GameManager.instance.Kebab();
     }
-
-
-   
-   
+    
 
     public void OnTriggerStay2D(Collider2D other)
     {
@@ -157,6 +157,17 @@ public class MovementController : MonoBehaviour
     public void ActivaGranada()
     {
         Instantiate(granada, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
+    }
+
+    public IEnumerator Knockback(float knockDur, float knockbackPwr,Vector3 knockbackDir)
+    {
+        float timer = 0;
+        while (knockDur > timer)
+        {
+            timer += Time.deltaTime;
+            GetComponent<Rigidbody2D>().AddForce(new Vector3(knockbackDir.x * 10, knockbackDir.y * -knockbackPwr, transform.position.z));
+        }
+        yield return 0;
     }
 
 }

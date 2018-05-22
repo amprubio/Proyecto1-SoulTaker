@@ -12,20 +12,23 @@ public class GameManager : MonoBehaviour
     public float souls;
     public float perSouls = 1;
     public float perDarkness = 1;
+    public int health;
+    public int maxHealth =10;
+    public int potions;
+    public int maxPotions= 3;
 
-    public VidaManager vidaManagerGM;
-    public PotionsManager potionsManagerGM;
+    public VidaManager vidaManager;
+    public PotionsManager potionsManager;
     public Ataque ataque;
     public MovementController movement;
     [HideInInspector]
     public GameObject Player;
-    Transform PlayerTr;
+    //Transform PlayerTr;
     public BoxCollider2D sword;
-    public int VidaPlayer;
-    public int NumPociones;
-    public int VidaInicio;
+    
+    //public int VidaInicio;
 
-    private Scene currentScene;
+    //private Scene currentScene;
     
     
     
@@ -49,47 +52,64 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         sword = GameObject.Find("Player").transform.GetChild(1).GetComponent<BoxCollider2D>(); 
-        vidaManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
-        potionsManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
+        vidaManager = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
+        potionsManager = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
         ataque = GameObject.Find("Player").GetComponent<Ataque>();
         movement = GameObject.Find("Player").GetComponent<MovementController>();
-        currentScene = SceneManager.GetActiveScene();
+        //currentScene = SceneManager.GetActiveScene();
     }
 
-    void Update()
-    {
-        SceneController(currentScene);
+    //void Update()
+    //{
+    //    SceneController(currentScene);
        
-    }
+    //}
+    
+
+    //void SceneController(Scene currentScene)
+    //{
+    //    if(currentScene != SceneManager.GetActiveScene())
+    //    {
+    //        LoadValuesScene();
+    //        VidaManager.VidaActual = VidaPlayer;
+    //        VidaManager.VidaInicio = VidaInicio;
+    //        PotionsManager.CurrentPotions = NumPociones;
+    //        currentScene = SceneManager.GetActiveScene();
+    //    }
+    //}
 
 
 
-
-
-    void SceneController(Scene currentScene)
-    {
-        if(currentScene != SceneManager.GetActiveScene())
-        {
-            LoadValuesScene();
-            VidaManager.VidaActual = VidaPlayer;
-            VidaManager.VidaInicio = VidaInicio;
-            PotionsManager.CurrentPotions = NumPociones;
-            currentScene = SceneManager.GetActiveScene();
-        }
-    }
-
-
-
-    public void LoadValuesScene()
-    {
-        sword = GameObject.Find("Player").transform.GetChild(1).GetComponent<BoxCollider2D>();
-        vidaManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
-        potionsManagerGM = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
-        ataque = GameObject.Find("Player").transform.GetChild(1).GetComponent<Ataque>();
-        movement = GameObject.Find("Player").GetComponent<MovementController>();
-    }
+    //public void LoadValuesScene()
+    //{
+    //    sword = GameObject.Find("Player").transform.GetChild(1).GetComponent<BoxCollider2D>();
+    //    vidaManager = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
+    //    potionsManager = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
+    //    ataque = GameObject.Find("Player").transform.GetChild(1).GetComponent<Ataque>();
+    //    movement = GameObject.Find("Player").GetComponent<MovementController>();
+    //}
    
 
+
+    public int UpdatePotions(int updatedPotions)
+    {
+        potions = updatedPotions;
+        return potions;
+    }
+
+    public int MaxHealth(int addMaxHealth)
+    {
+        maxHealth += addMaxHealth;
+        return maxHealth;
+    }
+
+    public int UpdateHealth(int updatedHealth)
+    {
+        health = updatedHealth;
+        return health;
+    }
+
+    
     public void AddSouls(float amountSouls)
     {
         souls += amountSouls*perSouls;
@@ -188,7 +208,8 @@ public class GameManager : MonoBehaviour
     }
     public void Kebab()
     {
-        vidaManagerGM.AniadeCorazon();
+        MaxHealth(2);
+        health = maxHealth;
         Debug.Log("hay hola");
     }
     public void Concentracion()

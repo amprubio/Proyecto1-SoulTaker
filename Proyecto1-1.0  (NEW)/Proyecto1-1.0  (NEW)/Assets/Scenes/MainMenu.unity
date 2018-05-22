@@ -7345,6 +7345,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 662828013}
+--- !u!1001 &672617754
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.7872932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.6632184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.2265625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099787849375830, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4aec9b0e0d67d2e4584309d594b56306, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &681444582
 GameObject:
   m_ObjectHideFlags: 0
@@ -20353,12 +20395,12 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: -80
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1904205961}
-        m_MethodName: SetVolume
+        m_MethodName: SetSoundFxVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21251,7 +21293,7 @@ GameObject:
   - component: {fileID: 1298370242}
   - component: {fileID: 1298370243}
   m_Layer: 5
-  m_Name: MaterVolumeSlider
+  m_Name: MasterVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21321,12 +21363,12 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: -80
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1904205961}
-        m_MethodName: SetVolume
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31973,6 +32015,7 @@ GameObject:
   - component: {fileID: 1904205957}
   - component: {fileID: 1904205961}
   - component: {fileID: 1904205962}
+  - component: {fileID: 1904205963}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -32074,7 +32117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce43fbdc73e0da54385a9534da3f4e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 0dc8f110c3354a943b1176368ebaef22, type: 2}
+  master: {fileID: 24300002, guid: 0dc8f110c3354a943b1176368ebaef22, type: 2}
+  music: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22, type: 2}
+  soundFX: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22, type: 2}
+  defaultVolume: 0
   fullScreenOn: {fileID: 1261735188}
   fullScreenOff: {fileID: 973000807}
   dropdownGraphics: {fileID: 1493917685}
@@ -32094,6 +32140,87 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!82 &1904205963
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904205956}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 7caaa0e2092e38446a2c362ac51af6f4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.8
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1912275972
 GameObject:
   m_ObjectHideFlags: 0
@@ -33483,12 +33610,12 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: -80
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1904205961}
-        m_MethodName: SetVolume
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

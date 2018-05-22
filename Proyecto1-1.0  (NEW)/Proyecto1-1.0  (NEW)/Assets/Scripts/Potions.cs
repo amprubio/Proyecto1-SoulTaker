@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Potions : MonoBehaviour {
 
     VidaManager vidaManager;
-    PotionsManager potionsManager;
-    public int MaxPotions;
+    //PotionsManager potionsManager;
+    //public int MaxPotions;
     ParticleSystem healingEffect;
-    bool ActiveEffect = false;
+    //bool ActiveEffect = false;
     public float tempEffect = 0.75f;
     
 
@@ -20,10 +20,10 @@ public class Potions : MonoBehaviour {
     {
         
         vidaManager = GameObject.Find("HUDCanvas").transform.GetChild(0).GetComponent<VidaManager>();
-        potionsManager = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
+        //potionsManager = GameObject.Find("HUDCanvas").transform.GetChild(1).GetComponent<PotionsManager>();
         healingEffect = gameObject.transform.GetChild(3).GetComponent<ParticleSystem>();
         healingEffect.Pause();
-        PotionsManager.MaximumPotions = MaxPotions;
+        //PotionsManager.MaximumPotions = MaxPotions;
 
 	}
 
@@ -32,13 +32,17 @@ public class Potions : MonoBehaviour {
     {
         if (GameInputManager.GetKeyDown("HealKey") || GameInputManager.YButton())
         {
-            
-            vidaManager.CurarVida();
-            PotionsManager.CurrentPotions--;
-            Mathf.Clamp(PotionsManager.CurrentPotions, 0, MaxPotions);
-            healingEffect.Play();
+            if (GameManager.instance.potions > 0 && GameManager.instance.health != GameManager.instance.maxHealth)
+            {
+                //vidaManager.CurarVida();
+                //PotionsManager.CurrentPotions--;
+                //Mathf.Clamp(PotionsManager.CurrentPotions, 0, MaxPotions);
+                vidaManager.RestoreHealth();
+                GameManager.instance.UpdatePotions(GameManager.instance.potions-1);
+                healingEffect.Play();
 
-            potionsManager.UpdatePotions();
+                //potionsManager.UpdatePotions();
+            }
         }
     }
     

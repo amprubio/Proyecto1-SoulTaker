@@ -13,7 +13,7 @@ public class PauseManager : MonoBehaviour {
     void Awake()
     {
 
-        if (instance == null && SceneManager.GetActiveScene().buildIndex > 0)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
