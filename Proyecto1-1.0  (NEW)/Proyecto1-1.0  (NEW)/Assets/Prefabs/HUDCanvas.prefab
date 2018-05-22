@@ -438,19 +438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dae203993f1c56479a1d778b4789344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagenVidas:
-  - {fileID: 114801376706427628}
-  - {fileID: 114373282061916962}
-  - {fileID: 114797644519286570}
-  - {fileID: 114231142411684094}
-  - {fileID: 114152925861752132}
-  - {fileID: 114251290828204346}
-  - {fileID: 114181249012020680}
-  - {fileID: 114995762523236982}
-  spriteVidas:
-  - {fileID: 21300000, guid: 9c3267f40f0ea0744b2b2ff93de8c842, type: 3}
-  - {fileID: 21300000, guid: 3cf9a7ae319ea0c4aaab6bcc2fedc5f2, type: 3}
-  - {fileID: 21300000, guid: 20c35a3daf4545448b68d9d1df60ccf7, type: 3}
+  initialMaxHealth: 10
+  healthImages: []
+  healthSprites: []
 --- !u!114 &114092175580607616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1099,13 +1089,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea06de2f24c48a43a04ff7baee1bf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potions:
-  - {fileID: 114176246064372720}
-  - {fileID: 114593776799352852}
-  - {fileID: 114691069760938518}
-  potionGUI:
-  - {fileID: 21300000, guid: 86ac90fc6fec7d44aae829e01bb1d9b0, type: 3}
-  - {fileID: 21300000, guid: de38142701a11eb4696ae59f0914f55c, type: 3}
+  potionsImages: []
+  potionsSprites: []
 --- !u!114 &114877661431717488
 MonoBehaviour:
   m_ObjectHideFlags: 1

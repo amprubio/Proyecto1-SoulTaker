@@ -14,12 +14,15 @@ public class MainMenu : MonoBehaviour
     {
         eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         startAnim = GameObject.FindObjectOfType<Animation>();
+        DestroyImmediate(DontDestroy.instance.gameObject);
+        DestroyImmediate(PauseManager.instance.gameObject);
     }
 
     private void Start()
     {
         eventSystem.SetSelectedGameObject(go);
         startAnim.Play();
+        //FindObjectOfType<AudioManager>().Play("Menu");
     }
 
     public void PlayGame()

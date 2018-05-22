@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c20e140bed4aa1149bef2dd9d215e639
-timeCreated: 1526755315
+timeCreated: 1526891977
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -148,6 +148,10 @@ TextureImporter:
         - {x: -7.709299, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
+      - - {x: -3.1844158, y: 1.9319458}
+        - {x: -3.1844158, y: 4.873291}
+        - {x: 4.168934, y: 4.873291}
+        - {x: 4.168934, y: 1.9319458}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset_4
@@ -499,10 +503,14 @@ TextureImporter:
         - {x: 32, y: -32}
         - {x: 32, y: 32}
       physicsShape:
-      - - {x: -6.446949, y: 32}
-        - {x: -6.0827045, y: -32}
+      - - {x: -9.600985, y: 32}
+        - {x: -9.650385, y: -32}
         - {x: 32, y: -32}
         - {x: 32, y: 32}
+      - - {x: -8.09878, y: 19.15921}
+        - {x: -8.09878, y: 21.873016}
+        - {x: -6.4211597, y: 21.873016}
+        - {x: -6.4211597, y: 19.15921}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset_21
@@ -546,8 +554,8 @@ TextureImporter:
       physicsShape:
       - - {x: -32, y: 32}
         - {x: -32, y: -32}
-        - {x: 4.598358, y: -32}
-        - {x: 4.8781586, y: 32}
+        - {x: 8.168533, y: -32}
+        - {x: 8.171051, y: 32}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset_23

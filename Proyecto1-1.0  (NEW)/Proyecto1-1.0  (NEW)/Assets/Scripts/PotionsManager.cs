@@ -5,66 +5,123 @@ using UnityEngine.UI;
 
 public class PotionsManager : MonoBehaviour {
 
-    public static int CurrentPotions;
-    public static int MaximumPotions;
+    public static int currentPotions;
+    public static int maxPotions;
+    private bool emptyPotion;
     
-    public Image[] potions;
-    public Sprite[] potionGUI;
+    public Image[] potionsImages;
+    public Sprite[] potionsSprites;
 
-    void Start()
+    //void Start()
+    //{
+    //    CurrentPotions = MaximumPotions;
+    //    CalculatePotions();
+    //}
+
+    //public void CalculatePotions()
+    //{
+    //    for (int i = 0; i < MaximumPotions; i++)
+    //    {
+    //        if (MaximumPotions <= i)
+    //        {
+    //            potions[i].enabled = false;
+    //        }
+    //        else
+    //        {
+    //            potions[i].enabled = true;
+    //        }
+    //    }
+
+    //    UpdatePotions();
+    //}
+
+    //public void UpdatePotions()
+    //{
+    //    bool vacio = false;
+    //    int j;
+    //    int x = 0;
+        
+
+    //    for (j = 0; j < potions.Length; j++)
+    //    {
+    //        if (vacio)
+    //        {
+    //            potions[j].sprite = potionGUI[0];
+    //        }
+    //        else
+    //        {
+    //            x++;
+    //            x = Mathf.Clamp(x, 1, MaximumPotions);
+    //            if (CurrentPotions >= x)
+    //            {
+    //                potions[j].sprite = potionGUI[1];
+    //            }
+    //            else
+    //            {
+    //                potions[j].sprite = potionGUI[0];
+    //                vacio = true;
+    //            }
+    //        }
+    //    }
+
+    //    //GameManager.instance.NumPociones = CurrentPotions;
+    //}
+
+    private void Start()
     {
-        
-        CurrentPotions = MaximumPotions;
-        CalculatePotions();
-        
+        maxPotions = GameManager.instance.maxPotions;
+        GameManager.instance.potions = maxPotions;
+        DrawPotions();
+        Debug.Log(GameManager.instance.potions);
     }
 
-    public void CalculatePotions()
+    private void Update()
     {
-        for (int i = 0; i < MaximumPotions; i++)
+        if (currentPotions != GameManager.instance.potions)
         {
-            if (MaximumPotions <= i)
-            {
-                potions[i].enabled = false;
-            }
-            else
-            {
-                potions[i].enabled = true;
-            }
+            DrawPotions();
         }
-
-        UpdatePotions();
     }
 
-    public void UpdatePotions()
+    void DrawPotions()
     {
-        bool vacio = false;
-        int j;
-        int x = 0;
+        currentPotions = GameManager.instance.potions;
+        potionsImages = new Image[maxPotions];
+        int potion = 0;
+        emptyPotion = false;
         
-
-        for (j = 0; j < potions.Length; j++)
+        for(int i = 0; i < potionsImages.Length; i++)
         {
-            if (vacio)
+            potionsImages[i] = gameObject.transform.GetChild(i).GetComponent<Image>();
+
+            if (emptyPotion)
             {
-                potions[j].sprite = potionGUI[0];
+                potionsImages[i].sprite = potionsSprites[0];
             }
             else
             {
-                x++;
-                x = Mathf.Clamp(x, 1, MaximumPotions);
-                if (CurrentPotions >= x)
+                potion++;
+                potion = Mathf.Clamp(potion, 1, maxPotions);
+
+                if (currentPotions >= potion)
                 {
-                    potions[j].sprite = potionGUI[1];
+                    potionsImages[i].sprite = potionsSprites[1];
+                }
+                else if (currentPotions <= 0)
+                {
+                    potionsImages[0].sprite = potionsSprites[0];
                 }
                 else
                 {
-                    potions[j].sprite = potionGUI[0];
-                    vacio = true;
+                    potionsImages[i].sprite = potionsSprites[0];
+                    emptyPotion = true;
                 }
             }
         }
+    }
 
-        GameManager.instance.NumPociones = CurrentPotions;
+    public void RestorePotions()
+    {
+        GameManager.instance.potions = GameManager.instance.maxPotions;
     }
 }
