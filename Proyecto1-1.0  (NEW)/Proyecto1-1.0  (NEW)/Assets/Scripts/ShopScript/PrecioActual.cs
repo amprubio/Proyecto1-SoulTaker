@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PrecioActual : MonoBehaviour {
-	public Collider2D col;
+	public Collider2D [] col= new Collider2D[7];
 	private int precio;
 	public Text txt;
 	void Start(){
@@ -12,11 +12,13 @@ public class PrecioActual : MonoBehaviour {
 		txt = GetComponent<Text> ();
 	}
 	void OnTriggerEnter2D(Collider2D col){
-		if (col.gameObject == GameObject.Find (Searching())) {
+		if (col.gameObject.CompareTag ("Item")) {
 			txt.text = precio.ToString ();
 		}
-
 	}
+		void OnTriggerExit2D(){
+			
+		}
 	string Searching(){
 
 		switch (gameObject.name) {
