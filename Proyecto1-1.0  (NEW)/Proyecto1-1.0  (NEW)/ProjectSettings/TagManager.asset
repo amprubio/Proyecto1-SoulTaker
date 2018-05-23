@@ -14,6 +14,7 @@ TagManager:
   - EndLevel
   - Water&Thorns
   - Foreground
+  - Spawn
   layers:
   - Default
   - TransparentFX
@@ -57,12 +58,15 @@ TagManager:
   - name: Platforms
     uniqueID: 121858513
     locked: 0
+  - name: between
+    uniqueID: 1517383865
+    locked: 0
   - name: Player
     uniqueID: 2745440699
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Foreground
     uniqueID: 4226772491
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
