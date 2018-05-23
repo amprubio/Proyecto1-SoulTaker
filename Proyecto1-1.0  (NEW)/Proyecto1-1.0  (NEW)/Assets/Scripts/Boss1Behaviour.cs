@@ -54,10 +54,10 @@ public class Boss1Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0) {
-			Fase2 ();
+		if (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0)
+        {
 
-			
+			Fase2 ();
 		}
 
 		
@@ -73,15 +73,6 @@ public class Boss1Behaviour : MonoBehaviour {
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint.position, speedM * Time.deltaTime);
         if (transform.position == nextWayPoint.position)
         {
-            if(currentWayPoint <= 0)
-            {
-                incr = 1;
-            }
-            else if(currentWayPoint >= 5 )
-            {
-                incr = -1;
-            }
-
             currentWayPoint = currentWayPoint + incr;
             nextWayPoint = WayPoints[currentWayPoint];
         }
@@ -135,12 +126,11 @@ public class Boss1Behaviour : MonoBehaviour {
             case 0:
                 bossSprite.flipX = false;
                 MoveBoss(speed);
+                incr = 1;
                 RestartValues();
-                
-                
                 break;
             case 1:
-            case 4:
+            case 5:
 
                 //Animacion de disparo
                 if (!IsShooting)
@@ -172,10 +162,11 @@ public class Boss1Behaviour : MonoBehaviour {
                 }
                 break;
 
-            case 5:
+            case 6:
                 bossSprite.flipX = true;
-                MoveBoss(speed);
                 RestartValues();
+                incr = -1;
+                MoveBoss(speed);
                 break;
 
             default:
