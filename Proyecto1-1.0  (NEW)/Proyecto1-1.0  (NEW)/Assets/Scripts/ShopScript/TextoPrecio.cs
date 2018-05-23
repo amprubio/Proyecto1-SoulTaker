@@ -4,22 +4,4 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TextoPrecio : MonoBehaviour {
-
-	private Text price;
-
-
-	void Start ()
-	{
-		SetInitialReferences();
-		Initial();
-	}
-	void SetInitialReferences()
-	{
-		price= GetComponent<Text>();
-	}
-	void Initial()
-	{
-		price.text = ("0");
-	}
-
 }
