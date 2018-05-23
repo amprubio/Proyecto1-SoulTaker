@@ -124,7 +124,7 @@ public class Boss1Behaviour : MonoBehaviour {
         switch (currentWayPoint)
         {
             case 0:
-                bossSprite.flipX = false;
+                bossSprite.flipX = true;
                 MoveBoss(speed);
                 incr = 1;
                 RestartValues();
@@ -163,7 +163,7 @@ public class Boss1Behaviour : MonoBehaviour {
                 break;
 
             case 6:
-                bossSprite.flipX = true;
+                bossSprite.flipX = false;
                 RestartValues();
                 incr = -1;
                 MoveBoss(speed);

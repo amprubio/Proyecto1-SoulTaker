@@ -160,40 +160,40 @@ public class AudioManager : MonoBehaviour
             StopAll();
             PlayMusic("Menu");
         }
-        else if (level==1) //Tienda
-        {
-            StopAll();
-            PlayMusic("Tienda");
-        }
-        else if(level >1 && level <= 4) //Stage1
+        else if(level >0 && level <= 3) //Stage1
         {
             StopAll();
             PlayMusic("Stage1");
         }
-        else if (level ==5) //LvlBoss1
+        else if (level ==4) //LvlBoss1
         {
             StopAll();
-            PlayMusic("LvlBoss1");
+            PlayMusic("Boss1");
         }
-        else if (level > 5 && level <= 9) //Stage2
+        /*else if (level == 5) //Tienda
+        {
+            StopAll();
+            PlayMusic("Tienda");
+        }*/
+        else if (level > 4 && level <= 8) //Stage2
         {
             StopAll();
             PlayMusic("Stage2");
         }
-        else if (level == 10) //LvlBoss2
+        else if (level == 9) //LvlBoss2
         {
             StopAll();
-            PlayMusic("LvlBoss2");
+            PlayMusic("Boss2");
         }
-        else if (level > 10 && level <= 15) //Stage3
+        else if (level > 9 && level <= 14) //Stage3
         {
             StopAll();
             PlayMusic("Stage3");
         }
-        else if (level == 16) //LvlBoss3
+        else if (level == 15) //LvlBoss3
         {
             StopAll();
-            PlayMusic("LvlBoss3");
+            PlayMusic("Boss3");
         }
     }
 

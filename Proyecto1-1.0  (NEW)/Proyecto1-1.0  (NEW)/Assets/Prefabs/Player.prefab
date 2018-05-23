@@ -366,7 +366,7 @@ MonoBehaviour:
   speed: 7
   fall: 2
   jumpImpulse: 0.2
-  jumpForce: 2.8
+  jumpForce: 3.3
   countDown: 0.2
   anim: {fileID: 0}
   countGranade: 7
