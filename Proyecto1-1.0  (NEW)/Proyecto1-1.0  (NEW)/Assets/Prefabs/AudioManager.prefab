@@ -1,0 +1,442 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1574453314911818}
+  m_IsPrefabParent: 1
+--- !u!1 &1574453314911818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4831072553157236}
+  - component: {fileID: 114501897759432348}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4831072553157236
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574453314911818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 499.12036, y: 468.95035, z: -15.741933}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114501897759432348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574453314911818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c30aea8d9d66da40aeb76a3b456689f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Selection
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: a729f11bea072ce4db34d38da581bf98, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Click
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 7d907f31c98495c45a0fdc4fa166b77d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Run
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 9614f4740b883514c81b31cfd9e4ddd1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Jump
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: ab325b5d168192a47b0e64a841972467, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Falling
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 7df7081dfa4b42f4d8277cbec92824d6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Land
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 2700c40aa585e724a98cacf9f5eb99f2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Attack1
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: abf1169823b271f478c5901c74b2bee1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Attack2
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: c41f09c26c09f8340bfec5c46efb64dc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Attack3
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 5911194ddd01ffb4d9aa3a98cf2c7434, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Potion
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 992382a63f5d9544681afff0f806674b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: PlayerDamage
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 2239e864a15e65a4cb93481c8c964a4d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: EnemyDeath
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 3296972498eeb784685a37aeb11a18ca, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: PlayerDeath
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: d3361fe610250984197cd4d62721cfb3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: EnemyHit1
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 8a27e5c7fc96904408aceed6c5eb0177, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: EnemyHit2
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 4009b69a504850a448fb62504d8e9b91, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Projectile
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: ade5fa7fb00871644bf53eaeb1cea918, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Destroyed
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 017d3e47787de3042a1eb1fbb91d2ad2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Respawn
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: e85eb7e44e763ca4dab7e1c555468706, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: CrystalOff
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 7ba5f7e25fbb87e408f03550c4a0f073, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: CrystalHit
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: fd87ca404d97a904ca9e139cc02d39a1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: ElevatorOn
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: d9f5bb610aa41314c9bbb3f6526df5ad, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: TakeSkill
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 55b96abc4ff210347a6b588134852898, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: PickObject
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 5f340e4ea5931da40af9204b3a6d4646, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  - name: Open
+    audioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: a29fd38b3c00ae844984d1cef2ff343e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    minRange: 0
+    maxRange: 500
+    source: {fileID: 0}
+  music:
+  - name: Menu
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 7caaa0e2092e38446a2c362ac51af6f4, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Tienda
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 5a901b7604eb7ab4a92abea2df96c9df, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Stage1
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 38cc2d84661417c43947586cb7c64c5b, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: LvlBoss1
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: a43a2d7c0103fd8449dfa8e35591f314, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Boss1
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 0607e518884b49c47ab525036cc73bc2, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Stage2
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: c2dac4d4feee76d42b0d31c8cf482105, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: LvlBoss2
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: c83a1b18e92b61a47bd07efa87087289, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Boss2
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 020673f4c4ffe6948b68938c48686b90, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Stage3
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 1683c2bb1acd14142810efc02972dd0e, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: LvlBoss3
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 135c660ea8f89b247b79f18b86bf834b, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Boss3
+    audioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+      type: 2}
+    clip: {fileID: 8300000, guid: 019c6870cb3a1a445a3aceced6a2a007, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}

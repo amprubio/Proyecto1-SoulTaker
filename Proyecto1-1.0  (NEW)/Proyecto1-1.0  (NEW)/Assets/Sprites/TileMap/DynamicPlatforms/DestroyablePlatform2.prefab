@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212227462666422238}
   - component: {fileID: 61071205765159472}
   - component: {fileID: 114120969680805342}
+  - component: {fileID: 82340381504389084}
   m_Layer: 0
   m_Name: DestroyablePlatform2
   m_TagString: Platform
@@ -67,6 +68,87 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5259879, y: 0.32157528}
   m_EdgeRadius: 0
+--- !u!82 &82340381504389084
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091472560763894}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114120969680805342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,6 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 0
   respawnTime: 1000000
+  clipDestroyed: {fileID: 8300000, guid: 017d3e47787de3042a1eb1fbb91d2ad2, type: 3}
+  clipRespawn: {fileID: 8300000, guid: e85eb7e44e763ca4dab7e1c555468706, type: 3}
 --- !u!212 &212227462666422238
 SpriteRenderer:
   m_ObjectHideFlags: 1

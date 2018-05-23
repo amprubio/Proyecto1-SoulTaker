@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(this.gameObject);
         }
     }
+    
 
     private void Start()
     {

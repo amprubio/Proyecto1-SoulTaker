@@ -37,12 +37,14 @@ public class PauseManager : MonoBehaviour {
             if (pauseMenuUI.activeSelf)
             {
                 Continue();
+                
             }
             else if (!pauseMenuUI.activeSelf)
             {
                 Pause();
             }
         }
+        if (Input.GetButtonDown("Vertical") && Time.timeScale==0) { SelectionSFX(); }
     }
 
     public void Continue()
@@ -71,5 +73,14 @@ public class PauseManager : MonoBehaviour {
         pauseMenu.SetBool("GamePaused", false);
         yield return new WaitForSeconds(pauseOff.length);
         pauseMenuUI.SetActive(false);
+    }
+
+    public void SelectionSFX()
+    {
+        FindObjectOfType<AudioManager>().PlaySFX("Selection");
+    }
+    public void ClickSFX()
+    {
+        FindObjectOfType<AudioManager>().PlaySFX("Click");
     }
 }

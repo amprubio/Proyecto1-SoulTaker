@@ -21,6 +21,7 @@ public class Water_or_Spikes : MonoBehaviour {
         {
             //StartCoroutine(player.Knockback(0.02f, 15,player.transform.position));
             levelManager.RespawnPlayer();
+            FindObjectOfType<AudioManager>().PlaySFX("PlayerDamage");
             GameManager.instance.UpdateHealth(GameManager.instance.health - dmg);
         }
 
@@ -31,6 +32,7 @@ public class Water_or_Spikes : MonoBehaviour {
         {
             //StartCoroutine(player.Knockback(0.02f, 50, player.transform.position));
             levelManager.RespawnPlayer();
+            FindObjectOfType<AudioManager>().PlaySFX("PlayerDamage");
             GameManager.instance.UpdateHealth(GameManager.instance.health - dmg);
         }
 
