@@ -3,59 +3,92 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Granada_Movement : MonoBehaviour {
-public float distance=10.0f;
-public float angulo = 45.0f;
-public float gravedad=9.8f;
-public float speed=1;
-public GameObject prefabExplosion;
-public Transform granada;
-public SpriteRenderer Avatar;
-private bool flipped;
-void Awake (){
-	//igualamos nuestro transform al transform de la granada ya que el avatar será el punto inicial de referencia
-	float axisX = GameInputManager.MainHorizontal ();
-	if (axisX<0) {
-		flipped = true;
-	}
-	if (axisX>0) {
-		flipped = false;
-	}
-	StartCoroutine (Lanzamiento ()); //llamada al metodo mediante corrutinas
+    
+
+    public float anguloSalida;
+    public float fuerzaSalida;
+    public GameObject particulasExplosion;
+    private Transform granada;
+    public float radioExplosion;
+    public float dañoGranada;
+
+    private float posX;
+    private float posY;
+    private float anguloConvertido;
+    private Rigidbody2D rb;
+    private Vector2 posLanzamiento;
+    public bool flipped;
+    private Collider2D col;
+    private SpriteRenderer playerRenderer;
+   
+
+    void Start ()
+    {
+        float axisX = GameInputManager.MainHorizontal();
+        playerRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
+
+        flipped = playerRenderer.flipX;
+
+        
+
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        col = gameObject.GetComponent<Collider2D>();
+        Lanzamiento();
+    }
+    public void Lanzamiento()
+    {
+	    
+
+        int cambiaDireccion = 1;
+
+        if (flipped)
+        {
+            anguloSalida = 135;
+        }
+
+
+
+        anguloConvertido = anguloSalida;
+        posX = Mathf.Cos(anguloConvertido * Mathf.Deg2Rad);
+        posY = Mathf.Sin(anguloConvertido * Mathf.Deg2Rad);
+        posLanzamiento = new Vector2(posX, posY);
+
+        
+        rb.AddForce(posLanzamiento.normalized * fuerzaSalida * cambiaDireccion, ForceMode2D.Impulse);
+
+           
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        Explosion();
+        
+
+    }
+
+
+    void Explosion()
+    {
+
+        //Instantiate(particulasExplosion, transform.position, transform.rotation);
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radioExplosion);
+
+        foreach(Collider2D objetoCercano in colliders)
+        {
+            if(objetoCercano.tag == "Enemy")
+            {
+                EnemyLifeSystem enm = objetoCercano.GetComponent<EnemyLifeSystem>();
+                enm.LoseHealth(dañoGranada);
+            }
+                
+        }
+
+
+
+        Destroy(gameObject);
+       
+    }
 }
-public IEnumerator Lanzamiento(){
-	Avatar = GetComponent<SpriteRenderer> ();
-	
-	//retardo corto antes del lanzamiento
-	//yield return new WaitForSecondsRealtime (0); //revisar segun la animacion del avatar y el spawneo
-	//movimiento del proyectil a la posicion de lanzamiento + offset si es necesario (revisar)
-	//calculo de distancia al enemigo
-	
-	float s= Vector3.Distance(granada.position, granada.position+ new Vector3(distance,0f,0f));
-	//velocidad inicial
-	float velocidad_inicial=s/(Mathf.Sin(2*angulo*Mathf.Deg2Rad)/gravedad);
-	//componentes x e y
-	float velocidad_X= Mathf.Sqrt(velocidad_inicial)*Mathf.Cos(angulo*Mathf.Deg2Rad);
-	float velocidad_Y= Mathf.Sqrt(velocidad_inicial)*Mathf.Sin(angulo*Mathf.Deg2Rad);
-	// calculo de tiempo
-	float t= s/velocidad_X;
-	//movimiento de parabola en sí
-	float time=0;
-	
-	if (flipped) {
-		velocidad_X = -velocidad_X;
-	}
-	while (time < t) {
-
-		granada.Translate (velocidad_X * Time.deltaTime, (velocidad_Y - (gravedad * time)) * Time.deltaTime, 0); 
-		time += Time.deltaTime;
-		yield return null;
-	} 
-	Instantiate (prefabExplosion, granada.transform.position,  Quaternion.identity);
-	Destroy (this.gameObject,0f);
-	Destroy (prefabExplosion.gameObject,1f);
-
-
-}
-	}
 
 

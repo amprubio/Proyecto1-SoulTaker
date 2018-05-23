@@ -7,25 +7,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss1Behaviour : MonoBehaviour {
+
 	public Transform[] WayPoints= new Transform[6];
-	public GameObject player, habilidad;
-	public SpriteRenderer bossSprite;
-	private Transform nextWayPoint;
+    
+    public GameObject habilidad;
+	
     public float speed = 1f;
 	public GameObject Proyectil;
 	public int numberProyectiles = 5;
 	public int currentWayPoint = 0;
-	public int timeofshoot=5;
+	public int timeofshoot = 5;
 	public static bool Flip;
 	public Transform PuntoSpawn;
-	private float angleOffset;
-	private float minAngle;
+
+    private SpriteRenderer bossSprite;
+    private GameObject player;
+    private float angleOffset;
+    private Transform nextWayPoint;
+    private float minAngle;
     private int incr = 1;
     Animator anim;
     private float varSpeed;
     Vector3 tempPos;
     //temps
-    float tempAnim;
+    
     float tempIdle = 3f;
     float tempShooting;
     bool IsShooting = false;
@@ -33,9 +38,12 @@ public class Boss1Behaviour : MonoBehaviour {
     public int random;
 	[HideInInspector]
 	public bool deadboss1 = false;
-    System.Random rnd= new System.Random();
+    System.Random rnd = new System.Random();
 
     void Start () {
+
+        player = GameObject.Find("Player");
+        bossSprite = gameObject.GetComponent<SpriteRenderer>();
 		Collider2D colBoss = gameObject.GetComponent<Collider2D>();
         transform.position = WayPoints[0].transform.position;
         nextWayPoint = WayPoints[1].transform;
@@ -46,46 +54,30 @@ public class Boss1Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		while (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0) {
-			Fase2 ();
+		if (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0)
+        {
 
-			random = rnd.Next (0, 11);
-			if (currentWayPoint == 0) {
-				if (random < 5) {
-					Fase1 ();
-				}
-            
-			}
+			Fase2 ();
 		}
 
-		Destroy (this.gameObject, 4);
+		
 	}
-	void OnDestroy(){
+	void OnDestroy()
+    {
 		Instantiate (habilidad.gameObject);
 	}
 
 	void MoveBoss(float speedM)
 	{
+
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint.position, speedM * Time.deltaTime);
-
-        
-
         if (transform.position == nextWayPoint.position)
         {
-            if(currentWayPoint == 0)
-            {
-                incr = 1;
-            }
-            else if(currentWayPoint == 5 )
-            {
-                incr = -1;
-            }
-
             currentWayPoint = currentWayPoint + incr;
             nextWayPoint = WayPoints[currentWayPoint];
         }
-
     }
+
 	private void Shoot()
 	{
 
@@ -102,18 +94,6 @@ public class Boss1Behaviour : MonoBehaviour {
         for (int i = 0; i < numberProyectiles; i++)
         {
             GameObject Proyectiles = (GameObject)Instantiate(Proyectil, PuntoSpawn.transform.position, Quaternion.identity);
-            //if (rotz + (angleOffset * (i+1)) > 0)
-            //{
-            //    x = -rotaciónLocalProyectil;
-            //}
-            //else if ((rotz + (angleOffset * i)) == 0)
-            //{
-            //    x = 0;
-            //}
-            //else
-            //{
-            //    x = rotaciónLocalProyectil;
-            //}
             Proyectiles.transform.rotation = Quaternion.Euler(0, 0, minAngle - (angleOffset * i));
 
         }
@@ -146,12 +126,11 @@ public class Boss1Behaviour : MonoBehaviour {
             case 0:
                 bossSprite.flipX = false;
                 MoveBoss(speed);
+                incr = 1;
                 RestartValues();
-                
-                
                 break;
             case 1:
-            case 4:
+            case 5:
 
                 //Animacion de disparo
                 if (!IsShooting)
@@ -185,8 +164,9 @@ public class Boss1Behaviour : MonoBehaviour {
 
             case 6:
                 bossSprite.flipX = true;
-                MoveBoss(speed);
                 RestartValues();
+                incr = -1;
+                MoveBoss(speed);
                 break;
 
             default:
