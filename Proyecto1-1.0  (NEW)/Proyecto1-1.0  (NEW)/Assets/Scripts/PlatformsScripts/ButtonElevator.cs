@@ -35,12 +35,19 @@ public class ButtonElevator : MonoBehaviour {
             anim.SetBool("ButtonOn", false);
             anim.SetBool("ElevatorOn", false);
         }
+
+        if (!pressed)
+        {
+            FindObjectOfType<AudioManager>().Stop("ElevatorOn");
+            FindObjectOfType<AudioManager>().Play("CrystalOff");
+        }
     }
 
     void MoveElevator()
     {
         elevator.position = Vector3.MoveTowards(elevator.position, new Vector3(elevator.position.x, refPoint.position.y, elevator.position.z), speed.speed * Time.deltaTime);
         anim.SetBool("ElevatorOn", true);
+        FindObjectOfType<AudioManager>().Play("ElevatorOn");
     }
     
 
@@ -48,6 +55,8 @@ public class ButtonElevator : MonoBehaviour {
     {
         if (other.gameObject.name == "Sword")
         {
+            FindObjectOfType<AudioManager>().Stop("CrystalOff");
+            FindObjectOfType<AudioManager>().Play("CrystalHit");
             pressed = true;
             anim.SetBool("ButtonOn",true);
             

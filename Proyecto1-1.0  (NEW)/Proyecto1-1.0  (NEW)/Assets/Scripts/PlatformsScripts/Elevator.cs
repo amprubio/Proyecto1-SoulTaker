@@ -38,6 +38,7 @@ public class Elevator : MonoBehaviour {
                 active = false;
                 movingUp = false;
                 anim.SetBool("ElevatorOn", false);
+                FindObjectOfType<AudioManager>().Stop("ElevatorOn");
             }
         }
     }
@@ -53,6 +54,7 @@ public class Elevator : MonoBehaviour {
                 active = false;
                 movingDown = false;
                 anim.SetBool("ElevatorOn", false);
+                FindObjectOfType<AudioManager>().Stop("ElevatorOn");
             }
 
         }
@@ -65,6 +67,7 @@ public class Elevator : MonoBehaviour {
         {
             active = true;
             anim.SetBool("ElevatorOn", true);
+            FindObjectOfType<AudioManager>().Play("ElevatorOn");
         }
     }
 }

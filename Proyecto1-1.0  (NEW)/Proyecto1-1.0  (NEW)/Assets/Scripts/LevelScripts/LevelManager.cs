@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     private Animator animTransition;
     private Animator animPlayer;
     bool entering=false;
+    //public string music;
 
 
     // Use this for initialization
@@ -24,6 +25,7 @@ public class LevelManager : MonoBehaviour
         animTransition = GameObject.Find("LevelTransition").GetComponent<Animator>();
         animPlayer = GameObject.Find("Player").GetComponent<Animator>();
         Cursor.visible = false;
+        //FindObjectOfType<AudioManager>().Play(music);
     }
 
     private void OnEnable()
