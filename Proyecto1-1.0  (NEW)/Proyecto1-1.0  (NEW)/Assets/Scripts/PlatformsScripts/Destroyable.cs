@@ -33,6 +33,7 @@ public class Destroyable : MonoBehaviour {
                 rend.enabled = false;
                 waitTime = resetWait;
                 touched = false;
+                FindObjectOfType<AudioManager>().Play("Destroy");
             }
         }
 
@@ -44,6 +45,7 @@ public class Destroyable : MonoBehaviour {
                 col.enabled = true;
                 rend.enabled = true;
                 respawnTime = resetRespawn;
+                FindObjectOfType<AudioManager>().Play("Respawn");
             }
         }
     }

@@ -13,7 +13,8 @@ public class Ataque : MonoBehaviour {
     private bool rdy = true;
     private bool Hit = false;
     private SpriteRenderer player;
-    
+
+     
 
 	void Start ()
     {
@@ -39,6 +40,7 @@ public class Ataque : MonoBehaviour {
             enemy.LoseHealth(DañoAtaque);
             Debug.Log("Hit" + DañoAtaque);
             Hit = true;
+            FindObjectOfType<AudioManager>().Play("EnemyDamage2");
         }
     }
 
@@ -46,6 +48,7 @@ public class Ataque : MonoBehaviour {
     {
         SwordCol.enabled = true;
         attack.anim.SetBool("Attack", true);
+        FindObjectOfType<AudioManager>().Play("Attack1");
         yield return new WaitForSeconds(attackAnim.length);
         attack.anim.SetBool("Attack", false);
         rdy = false;

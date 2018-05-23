@@ -19,8 +19,8 @@ public class Water_or_Spikes : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
-            StartCoroutine(player.Knockback(0.02f, 15,player.transform.position));
-            //levelManager.RespawnPlayer();
+            //StartCoroutine(player.Knockback(0.02f, 15,player.transform.position));
+            levelManager.RespawnPlayer();
             GameManager.instance.UpdateHealth(GameManager.instance.health - dmg);
         }
 
@@ -29,8 +29,8 @@ public class Water_or_Spikes : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
-            StartCoroutine(player.Knockback(0.02f, 50, player.transform.position));
-            //levelManager.RespawnPlayer();
+            //StartCoroutine(player.Knockback(0.02f, 50, player.transform.position));
+            levelManager.RespawnPlayer();
             GameManager.instance.UpdateHealth(GameManager.instance.health - dmg);
         }
 

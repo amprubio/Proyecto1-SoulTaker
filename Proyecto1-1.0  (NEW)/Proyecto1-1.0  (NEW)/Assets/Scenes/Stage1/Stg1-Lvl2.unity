@@ -5360,6 +5360,27 @@ Prefab:
       propertyPath: animTransition
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 82325719567668524, guid: 13810bdf576f2924fbf8f76701eb3c9c,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 38cc2d84661417c43947586cb7c64c5b, type: 3}
+    - target: {fileID: 82325719567668524, guid: 13810bdf576f2924fbf8f76701eb3c9c,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+        type: 2}
+    - target: {fileID: 82325719567668524, guid: 13810bdf576f2924fbf8f76701eb3c9c,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82325719567668524, guid: 13810bdf576f2924fbf8f76701eb3c9c,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13810bdf576f2924fbf8f76701eb3c9c, type: 2}
   m_IsPrefabParent: 0

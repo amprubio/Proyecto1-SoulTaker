@@ -52,6 +52,8 @@ public class MovementController : MonoBehaviour
 
         if (axisX < 0 || GameInputManager.GetKey("LeftKey"))
         {
+            //FindObjectOfType<AudioManager>().Stop("Walk");
+            //FindObjectOfType<AudioManager>().Play("Walk");
             transform.Translate(new Vector3(-1, 0) * Time.fixedDeltaTime * speed);
             x = -1;
             Player.flipX = true;
@@ -62,6 +64,9 @@ public class MovementController : MonoBehaviour
         }
         else if (axisX > 0|| GameInputManager.GetKey("RightKey"))
         {
+
+            //FindObjectOfType<AudioManager>().Stop("Walk");
+            //FindObjectOfType<AudioManager>().Play("Walk");
             transform.Translate(new Vector3(1, 0) * Time.fixedDeltaTime * speed);
             x = 1;
             Player.flipX = false;
@@ -73,6 +78,7 @@ public class MovementController : MonoBehaviour
         else 
         {
             anim.SetBool("Idle", true);
+            //FindObjectOfType<AudioManager>().Stop("Walk");
         }       
     }
 
@@ -109,14 +115,15 @@ public class MovementController : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.deltaTime;
             anim.SetBool("Fall", true);
+            //FindObjectOfType<AudioManager>().Play("Falling");
         }
         else
         {
             anim.SetBool("Fall", false);
+            //FindObjectOfType<AudioManager>().Stop("Falling");
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
-            GameManager.instance.Kebab();
+        
     }
     
 
@@ -142,14 +149,18 @@ public class MovementController : MonoBehaviour
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Foreground")
         {
             Onfloor = false;
+            //FindObjectOfType<AudioManager>().Stop("Walk");
             anim.SetBool("Jump", true);
+            //FindObjectOfType<AudioManager>().Play("Jump");
         }
 
         else if (other.gameObject.tag == "Elevator")
         {
             Onfloor = false;
             transform.parent = null;
+            //FindObjectOfType<AudioManager>().Stop("Walk");
             anim.SetBool("Jump", true);
+            //FindObjectOfType<AudioManager>().Play("Jump");
         }
 
     }
@@ -159,15 +170,15 @@ public class MovementController : MonoBehaviour
         Instantiate(granada, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
     }
 
-    public IEnumerator Knockback(float knockDur, float knockbackPwr,Vector3 knockbackDir)
-    {
-        float timer = 0;
-        while (knockDur > timer)
-        {
-            timer += Time.deltaTime;
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(knockbackDir.x * 10, knockbackDir.y * -knockbackPwr, transform.position.z));
-        }
-        yield return 0;
-    }
+    //public IEnumerator Knockback(float knockDur, float knockbackPwr,Vector3 knockbackDir)
+    //{
+    //    float timer = 0;
+    //    while (knockDur > timer)
+    //    {
+    //        timer += Time.deltaTime;
+    //        GetComponent<Rigidbody2D>().AddForce(new Vector3(knockbackDir.x * 10, knockbackDir.y * -knockbackPwr, transform.position.z));
+    //    }
+    //    yield return 0;
+    //}
 
 }

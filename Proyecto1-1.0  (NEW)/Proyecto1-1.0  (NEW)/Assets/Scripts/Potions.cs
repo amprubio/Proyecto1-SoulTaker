@@ -40,6 +40,7 @@ public class Potions : MonoBehaviour {
                 vidaManager.RestoreHealth();
                 GameManager.instance.UpdatePotions(GameManager.instance.potions-1);
                 healingEffect.Play();
+                FindObjectOfType<AudioManager>().Play("Potion");
 
                 //potionsManager.UpdatePotions();
             }

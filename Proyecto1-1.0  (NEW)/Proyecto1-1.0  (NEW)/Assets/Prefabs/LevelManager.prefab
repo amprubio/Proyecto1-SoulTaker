@@ -49,12 +49,13 @@ AudioSource:
   m_GameObject: {fileID: 1411570850902412}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 38cc2d84661417c43947586cb7c64c5b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -108,7 +109,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -135,4 +136,3 @@ MonoBehaviour:
   currentCheckpoint: {fileID: 0}
   exitLevel: {fileID: 7400000, guid: 9367ebb13ad61794da78713b5feba154, type: 2}
   enterLevel: {fileID: 7400000, guid: 4c94e2ea7fd790e44a8e920247e66c31, type: 2}
-  music: Stage1

@@ -33,13 +33,13 @@ public class Vida : MonoBehaviour
             //vidaManager.ActualizaCorazones();
             GameManager.instance.UpdateHealth(VidaManager.currentHealth - enemy.EnemyDamage);
             Colision = true;
+            FindObjectOfType<AudioManager>().Play("PlayerDamage");
             Debug.Log(GameManager.instance.health);
         }
         //else if (collision.gameObject.tag == "Water" || collision.gameObject.tag == "Thorns")
         else Colision = false;
         if(/*VidaManager.VidaActual <= 0*/GameManager.instance.health<=0)
         {
-            
             DestroyPlayer();
             SceneManager.LoadScene(0);
         }
@@ -55,6 +55,7 @@ public class Vida : MonoBehaviour
             //vidaManager.ActualizaCorazones();
             GameManager.instance.UpdateHealth(VidaManager.currentHealth - pro.damage);
             Colision = true;
+            FindObjectOfType<AudioManager>().Play("PlayerDamage");
         }
         else Colision = false;
         if (/*VidaManager.VidaActual <= 0*/GameManager.instance.health <= 0)
@@ -68,6 +69,7 @@ public class Vida : MonoBehaviour
     public void DestroyPlayer()
     {
         //vidaManager.DestroyPlayer();
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
         Destroy(gameObject);
     }
 
