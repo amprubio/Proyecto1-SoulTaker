@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 
 public class SkillController : MonoBehaviour {
@@ -11,7 +10,6 @@ public class SkillController : MonoBehaviour {
 
     MovementController movementController;
     Escudo escudo;
-    Scene sc;
 
     
 
@@ -24,13 +22,13 @@ public class SkillController : MonoBehaviour {
         {
             s.currentCooldown = s.cooldown;
         }
-
-        sc = SceneManager.GetActiveScene();
     }
 	
 	
 	void FixedUpdate ()
     {
+        
+
         if (Input.GetKey(KeyCode.R) && !escudo.ActivadoEscudo)
         {
             if(skills[0].currentCooldown >= skills[0].cooldown)
@@ -49,9 +47,6 @@ public class SkillController : MonoBehaviour {
                 skills[1].currentCooldown = 0;
             }
         }
-        
-        ChangeSceneValues();
-
 	}
 
     void Update()
@@ -66,15 +61,6 @@ public class SkillController : MonoBehaviour {
         }
     }
     
-    void ChangeSceneValues()
-    {
-        if(sc != SceneManager.GetActiveScene())
-        {
-            movementController = GameObject.Find("Player").GetComponent<MovementController>();
-            escudo = GameObject.Find("Player").GetComponent<Escudo>();
-            sc = SceneManager.GetActiveScene();
-        }
-    }
 
 }
 

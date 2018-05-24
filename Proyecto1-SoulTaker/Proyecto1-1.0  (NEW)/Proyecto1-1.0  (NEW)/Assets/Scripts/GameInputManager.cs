@@ -184,6 +184,4 @@ public class GameInputManager  {
     {
         return Input.GetButtonDown("Start_Button");
     }
-
-    
 }

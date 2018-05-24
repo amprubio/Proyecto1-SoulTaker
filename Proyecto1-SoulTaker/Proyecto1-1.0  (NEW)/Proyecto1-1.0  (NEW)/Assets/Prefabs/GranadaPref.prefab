@@ -93,7 +93,7 @@ MonoBehaviour:
   fuerzaSalida: 10
   particulasExplosion: {fileID: 0}
   radioExplosion: 10
-  "da\xF1oGranada": 10
+  "da\xF1oGranada": 0
   flipped: 0
 --- !u!212 &212662450572772374
 SpriteRenderer:

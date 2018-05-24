@@ -1,5 +1,6 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+<<<<<<< HEAD
 Cmd: preprocess
   insize=2570 outsize=941 ok=1
 Cmd: preprocess
@@ -8,3 +9,5 @@ Cmd: preprocess
   insize=1979 outsize=742 ok=1
 Cmd: preprocess
   insize=2536 outsize=907 ok=1
+=======
+>>>>>>> parent of 039835f... Arrgelando las habilidades

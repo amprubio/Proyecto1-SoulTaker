@@ -8168,17 +8168,24 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043933360413184, guid: b93d54871b877a6499cf220124f03aad, type: 2}
+      propertyPath: m_Name
+      value: HUDCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 223191283588284296, guid: b93d54871b877a6499cf220124f03aad,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 265232987}
+<<<<<<< HEAD
     - target: {fileID: 1043933360413184, guid: b93d54871b877a6499cf220124f03aad, type: 2}
       propertyPath: m_Name
       value: HUDCanvas
 <<<<<<< HEAD:Proyecto1-1.0  (NEW)/Proyecto1-1.0  (NEW)/Assets/Scenes/Stage1/Stg1-Lvl1.unity
 =======
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 039835f... Arrgelando las habilidades
     - target: {fileID: 224055696188218008, guid: b93d54871b877a6499cf220124f03aad,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -8238,66 +8245,6 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224017493023202002, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224017493023202002, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224017493023202002, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 22.535007
-      objectReference: {fileID: 0}
-    - target: {fileID: 224017493023202002, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -16.335007
-      objectReference: {fileID: 0}
-    - target: {fileID: 224017493023202002, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 224017493023202002, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 224670978609670158, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224670978609670158, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224670978609670158, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 58.105007
-      objectReference: {fileID: 0}
-    - target: {fileID: 224670978609670158, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -16.335007
-      objectReference: {fileID: 0}
-    - target: {fileID: 224670978609670158, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 224670978609670158, guid: b93d54871b877a6499cf220124f03aad,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 224774526085495146, guid: b93d54871b877a6499cf220124f03aad,
         type: 2}
