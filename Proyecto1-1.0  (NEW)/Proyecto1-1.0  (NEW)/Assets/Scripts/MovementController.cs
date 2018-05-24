@@ -52,11 +52,11 @@ public class MovementController : MonoBehaviour
 
         if (axisX < 0 || GameInputManager.GetKey("LeftKey"))
         {
-            if (Onfloor)
-            {
-                FindObjectOfType<AudioManager>().StopSFX("Run");
-                FindObjectOfType<AudioManager>().PlaySFX("Run");
-            }
+            //if (Onfloor)
+            //{
+            //    FindObjectOfType<AudioManager>().StopSFX("Run");
+            //    FindObjectOfType<AudioManager>().PlaySFX("Run");
+            //}
             transform.Translate(new Vector3(-1, 0) * Time.fixedDeltaTime * speed);
             x = -1;
             Player.flipX = true;
@@ -68,11 +68,11 @@ public class MovementController : MonoBehaviour
         else if (axisX > 0|| GameInputManager.GetKey("RightKey"))
         {
 
-            if (Onfloor)
-            {
-                FindObjectOfType<AudioManager>().StopSFX("Run");
-                FindObjectOfType<AudioManager>().PlaySFX("Run");
-            }
+            //if (Onfloor)
+            //{
+            //    FindObjectOfType<AudioManager>().StopSFX("Run");
+            //    FindObjectOfType<AudioManager>().PlaySFX("Run");
+            //}
             transform.Translate(new Vector3(1, 0) * Time.fixedDeltaTime * speed);
             x = 1;
             Player.flipX = false;
