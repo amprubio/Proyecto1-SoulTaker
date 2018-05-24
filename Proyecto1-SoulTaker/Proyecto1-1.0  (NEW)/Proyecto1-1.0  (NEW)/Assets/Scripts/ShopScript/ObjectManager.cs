@@ -63,8 +63,10 @@ public class ObjectManager : MonoBehaviour {
             }
             objectsArr[tmp].instanciado = true;
 
-            Instantiate(objectsArr[tmp].objeto, spawnPoints[i].transform);
-            textSpawnPoints[0].text = objectsArr[tmp].objeto.name;
+            GameObject go = Instantiate(objectsArr[tmp].objeto, spawnPoints[i].transform);
+            go.transform.parent = spawnPoints[i].transform.parent.transform;
+            go.transform.position = spawnPoints[i].transform.position;
+            
         }
 
 

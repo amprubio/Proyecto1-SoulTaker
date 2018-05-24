@@ -11,8 +11,8 @@ public class BoosterBehaviour : MonoBehaviour {
     private float totalSouls;
     private float totalDarkness;
     private Vector3 tempPos = new Vector3();
-    private float amplitude = 0.01f;
-    private float frequency = 0.5f;
+    private float amplitude = 0.001f;
+    private float frequency = 0.25f;
 
 
     // Use this for initialization
@@ -25,7 +25,7 @@ public class BoosterBehaviour : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other)
     {
         
-        if (collision.gameObject.tag == "Sword" )//&& (totalSouls - amountSouls) > 0 && (totalDarkness - amountDarkness) > 0) 
+        if (other.gameObject.tag == "Sword" && (totalSouls - amountSouls) > 0 && (totalDarkness - amountDarkness) > 0) 
         {
 
             GameManager.instance.SubsSouls(amountSouls);
@@ -37,12 +37,12 @@ public class BoosterBehaviour : MonoBehaviour {
 
     void Update()
     {
-        
+
         tempPos = transform.position;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
 
         transform.position = tempPos;
-        
+
     }
 
     private void OnDestroy()
