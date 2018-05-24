@@ -32,13 +32,11 @@ public class ObjectManager : MonoBehaviour {
         InstantiateObjects();
 
         
-
-        //Transform transChild;
-
-        //for(int i = 0; i < textSpawnPoints.Length; i++)
-        //{
-           
-        //}
+        for(int i = 0; i < textSpawnPoints.Length; i++)
+        {
+            textSpawnPoints[i] = GameObject.Find("CanvasObjetos").transform.GetChild(i).GetComponent<Text>();
+            textSpawnPoints[i].text = string.Empty;
+        }
     }
 
     void Update()

@@ -10,10 +10,13 @@ public class BoosterBehaviour : MonoBehaviour {
 
     private float totalSouls;
     private float totalDarkness;
+    private Vector3 tempPos = new Vector3();
+    private float amplitude = 0.01f;
+    private float frequency = 0.5f;
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         totalDarkness = GameManager.instance.darkness;
         totalSouls = GameManager.instance.souls;
@@ -30,6 +33,16 @@ public class BoosterBehaviour : MonoBehaviour {
             Destroy(gameObject);
 
         }
+    }
+
+    void Update()
+    {
+        
+        tempPos = transform.position;
+        tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
+
+        transform.position = tempPos;
+        
     }
 
     private void OnDestroy()
