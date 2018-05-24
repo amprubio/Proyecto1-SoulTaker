@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/Stage3/Stg3-Lvl5.unity
+  isLoaded: 1
+  isActive: 1
