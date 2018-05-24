@@ -52,11 +52,7 @@ public class MovementController : MonoBehaviour
 
         if (axisX < 0 || GameInputManager.GetKey("LeftKey"))
         {
-            if (Onfloor)
-            {
-                FindObjectOfType<AudioManager>().StopSFX("Run");
-                FindObjectOfType<AudioManager>().PlaySFX("Run");
-            }
+            
             transform.Translate(new Vector3(-1, 0) * Time.fixedDeltaTime * speed);
             x = -1;
             Player.flipX = true;
@@ -64,15 +60,14 @@ public class MovementController : MonoBehaviour
             //FeetCol.offset = new Vector2(-0.15f, -0.5f);
             SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
+            //if (Onfloor)
+            //{
+            //    //FindObjectOfType<AudioManager>().StopSFX("Run");
+            //    FindObjectOfType<AudioManager>().PlaySFX("Run");
+            //}
         }
         else if (axisX > 0|| GameInputManager.GetKey("RightKey"))
         {
-
-            if (Onfloor)
-            {
-                FindObjectOfType<AudioManager>().StopSFX("Run");
-                FindObjectOfType<AudioManager>().PlaySFX("Run");
-            }
             transform.Translate(new Vector3(1, 0) * Time.fixedDeltaTime * speed);
             x = 1;
             Player.flipX = false;
@@ -80,7 +75,13 @@ public class MovementController : MonoBehaviour
             //FeetCol.offset = new Vector2(0.15f, -0.5f);
             SwordCol.offset = new Vector2(swordColOff * x, SwordCol.offset.y);
             anim.SetBool("Idle", false);
+            //if (Onfloor)
+            //{
+            //    //FindObjectOfType<AudioManager>().StopSFX("Run");
+            //    FindObjectOfType<AudioManager>().PlaySFX("Run");
+            //}
         }
+
         else 
         {
             anim.SetBool("Idle", true);
@@ -90,6 +91,7 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
+
 
         // Jump
 

@@ -185,7 +185,7 @@ public class AudioManager : MonoBehaviour
             StopAll();
             PlayMusic("Boss2");
         }
-        else if (level > 9 && level <= 14) //Stage3
+        else if (level  9 && level != 15) //Stage3
         {
             StopAll();
             PlayMusic("Stage3");

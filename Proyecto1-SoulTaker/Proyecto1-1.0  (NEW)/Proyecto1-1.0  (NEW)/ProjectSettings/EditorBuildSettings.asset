@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9b03f78e915301145ad90bd00264a1e5
+  - enabled: 0
+    path: Assets/Scenes/Tienda.unity
+    guid: ad84a1ecad6d9334d89f298c9fa6b55c
   - enabled: 1
     path: Assets/Scenes/Stage1/Stg1-Lvl1.unity
     guid: ba7ec1eedaa4b6a40a47dd1ddc3e85b1
@@ -20,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage1/Stg1-LvlBoss.unity
     guid: 9bdb5bf313f0136428572bff72d0b01c
-  - enabled: 0
-    path: Assets/Scenes/Tienda.unity
-    guid: ad84a1ecad6d9334d89f298c9fa6b55c
   - enabled: 1
     path: Assets/Scenes/Stage2/Stg2-Lvl1.unity
     guid: 81de46cddbe469441aeb468a7e054697
@@ -38,3 +38,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage2/Stg2-LvlBoss.unity
     guid: 923b95027b584b44ca72ac810c1ba194
+  - enabled: 1
+    path: Assets/Scenes/Stage3/Stg3-Lvl1.unity
+    guid: 7699a61a28b475e41a5fe96778253c90
+  - enabled: 1
+    path: Assets/Scenes/Stage3/Stg3-Lvl2.unity
+    guid: fe494acf038f79d45b816d733b2c43e4
+  - enabled: 1
+    path: Assets/Scenes/Stage3/Stg3-Lvl3.unity
+    guid: 1581a9d2a8e9fc246bd0367ee76ba61e
+  - enabled: 1
+    path: Assets/Scenes/Stage3/Stg3-Lvl4.unity
+    guid: f4f337d88df98fb47886d99162a5f0a9
+  - enabled: 1
+    path: Assets/Scenes/Stage3/Stg3-Lvl5.unity
+    guid: e37ffed813cef6a408fc85ac25daf917

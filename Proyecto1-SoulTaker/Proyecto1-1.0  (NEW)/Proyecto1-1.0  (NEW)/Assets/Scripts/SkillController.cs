@@ -31,13 +31,14 @@ public class SkillController : MonoBehaviour {
 	
 	void FixedUpdate ()
     {
-        if (Input.GetKey(KeyCode.R) && !escudo.ActivadoEscudo)
+        if ((GameInputManager.GetKeyDown("ShieldKey") && !escudo.ActivadoEscudo) || (GameInputManager.JTriggers() > 0 && !escudo.ActivadoEscudo))
         {
             if(skills[0].currentCooldown >= skills[0].cooldown)
             {
                 escudo.ActivaEscudo();
                 skills[0].currentCooldown = 0;
-            }else if(skills[0].currentCooldown >= 5)
+            }
+            else if(skills[0].currentCooldown >= 5)
             {
                 escudo.DesactivaEscudo();
             }
