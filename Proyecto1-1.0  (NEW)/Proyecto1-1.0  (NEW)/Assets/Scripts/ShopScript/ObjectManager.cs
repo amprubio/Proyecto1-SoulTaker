@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectManager : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class ObjectManager : MonoBehaviour {
 
     public GameObject[] boosters;
     public GameObject[] spawnPoints;
+    public Text[] textSpawnPoints;
     
 
     [HideInInspector]
@@ -28,6 +30,15 @@ public class ObjectManager : MonoBehaviour {
         objectsArr = new Objects[boosters.Length];
 
         InstantiateObjects();
+
+        
+
+        //Transform transChild;
+
+        //for(int i = 0; i < textSpawnPoints.Length; i++)
+        //{
+           
+        //}
     }
 
     void Update()
@@ -55,8 +66,10 @@ public class ObjectManager : MonoBehaviour {
             objectsArr[tmp].instanciado = true;
 
             Instantiate(objectsArr[tmp].objeto, spawnPoints[i].transform);
-            
+            textSpawnPoints[0].text = objectsArr[tmp].objeto.name;
         }
+
+
     }
     
     private bool IsDup(Objects[] arr, int tmp)
@@ -69,6 +82,8 @@ public class ObjectManager : MonoBehaviour {
         else return false;
 
     }
+
+
 
 
 }
