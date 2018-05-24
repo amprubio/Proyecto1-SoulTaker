@@ -355,6 +355,69 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 155df71e487a34344b34da682a7eba1b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &597119011 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1022102160500688, guid: 6cdbd7ceb0d3a4a47be1c8578f0a217d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1890550142}
+--- !u!60 &597119012
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597119011}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.79, y: 1.1500001}
+    newSize: {x: 2.79, y: 1.1500001}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4096055, y: -0.53888756}
+      - {x: 0.6050418, y: -0.54431874}
+      - {x: 0.662836, y: -0.3905463}
+      - {x: 0.6980064, y: -0.2180832}
+      - {x: 0.62291765, y: -0.1144124}
+      - {x: 0.45199847, y: 0.19053984}
+      - {x: 0.9473742, y: 0.09445685}
+      - {x: 1.1034122, y: 0.16960248}
+      - {x: 1.2366076, y: 0.35222214}
+      - {x: 1.0138514, y: 0.42901507}
+      - {x: 0.6201298, y: 0.5126944}
+      - {x: 0.21510538, y: 0.2985505}
+      - {x: 0.022403665, y: 0.2280395}
+      - {x: -0.15154201, y: 0.33350214}
+      - {x: -0.4130249, y: 0.40050197}
+      - {x: -0.7712575, y: 0.35743472}
+      - {x: -0.9742088, y: 0.3198103}
+      - {x: -1.12541, y: 0.06263932}
+      - {x: -1.3306011, y: -0.16427857}
+      - {x: -1.1543219, y: -0.28352928}
+      - {x: -0.97103924, y: -0.31755286}
+      - {x: -1.078083, y: -0.528921}
+      - {x: -0.8445964, y: -0.535275}
+      - {x: -0.7104199, y: -0.534872}
+      - {x: -0.26406488, y: -0.5360294}
+      - {x: -0.40948957, y: -0.31808025}
+      - {x: -0.8227, y: -0.19111915}
+      - {x: -0.708893, y: -0.31320578}
+      - {x: -0.50418115, y: -0.43382406}
+      - {x: -0.2637337, y: -0.5362347}
+      - {x: -0.18041542, y: -0.53363246}
+      - {x: 0.047249224, y: -0.5375161}
+      - {x: 0.0984508, y: -0.5386403}
+      - {x: 0.3436658, y: -0.32791618}
 --- !u!1 &620209523
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,7 +3190,7 @@ Prefab:
     - target: {fileID: 114908064041887158, guid: 6cdbd7ceb0d3a4a47be1c8578f0a217d,
         type: 2}
       propertyPath: MaxHealth
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114205535520330504, guid: 6cdbd7ceb0d3a4a47be1c8578f0a217d,
         type: 2}
@@ -3359,7 +3422,17 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 57fcaaef75eda9240ac67a1c844fc822, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 1022102160500688, guid: 6cdbd7ceb0d3a4a47be1c8578f0a217d, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 50965723261277364, guid: 6cdbd7ceb0d3a4a47be1c8578f0a217d,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 60656780380415404, guid: 6cdbd7ceb0d3a4a47be1c8578f0a217d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6cdbd7ceb0d3a4a47be1c8578f0a217d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1902408395
