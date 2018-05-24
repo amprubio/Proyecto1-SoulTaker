@@ -68,8 +68,9 @@ public class Boss1Behaviour : MonoBehaviour {
 	}
 
 	void MoveBoss(float speedM)
-	{
-
+    {
+        anim.SetBool("Disparo", false);
+        anim.SetBool("Ataque", true);
         transform.position = Vector3.MoveTowards(transform.position, nextWayPoint.position, speedM * Time.deltaTime);
         if (transform.position == nextWayPoint.position)
         {
@@ -80,8 +81,8 @@ public class Boss1Behaviour : MonoBehaviour {
 
 	private void Shoot()
 	{
-
-        
+        anim.SetBool("Ataque", false);
+        anim.SetBool("Disparo", true);
         //Rotacion del boss hacia el player
         Vector3 direcc = player.transform.position - PuntoSpawn.transform.position;
         float rotz = LookAtPlayer(bossSprite.flipX, direcc);
@@ -186,10 +187,9 @@ public class Boss1Behaviour : MonoBehaviour {
         angBase.Normalize();
         float rotz = Mathf.Atan2(angBase.y, angBase.x) * Mathf.Rad2Deg;
 
-        if (!flip)
-        {
+
             rotz = rotz + 180;
-        }
+        
 
 
         return rotz;
