@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 50008131149936798}
   - component: {fileID: 114833577626431202}
   m_Layer: 0
-  m_Name: nodoViajero
+  m_Name: PuntoSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1022102160500688}
   m_LocalRotation: {x: 0.00043692734, y: 0.012885398, z: 0.0053729243, w: 0.9999025}
-  m_LocalPosition: {x: -16.04, y: -2.83, z: 0.21}
+  m_LocalPosition: {x: -3.5650074, y: -1.2726109, z: 0.21}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.0422019}
   m_Children:
   - {fileID: 4262260318642898}
@@ -142,8 +142,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.56067634, y: -0.5488889}
-      - {x: 0.608379, y: -0.50118625}
-      - {x: 0.608379, y: -0.45348364}
+      - {x: 0.79956836, y: -0.57514876}
+      - {x: 0.6435898, y: -0.44331318}
       - {x: 0.4891224, y: -0.31037575}
       - {x: 0.7991895, y: -0.5727402}
       - {x: 1.1569593, y: -0.5727402}
@@ -154,18 +154,20 @@ PolygonCollider2D:
       - {x: 0.10750134, y: 0.45286638}
       - {x: 0.012096074, y: 0.38131243}
       - {x: -0.29797104, y: 0.5244203}
-      - {x: -0.46493027, y: 0.59597427}
-      - {x: -1.204321, y: 0.59597427}
-      - {x: -1.3951316, y: 0.40516376}
-      - {x: -1.3951316, y: 0.23820454}
-      - {x: -1.3712803, y: 0.09509664}
+      - {x: -0.652586, y: 0.4858378}
+      - {x: -1.0138739, y: 0.33844846}
+      - {x: -1.1249435, y: 0.13347858}
+      - {x: -1.1796091, y: 0.076164186}
+      - {x: -1.4054673, y: -0.13899761}
       - {x: -1.0850645, y: -0.16726784}
-      - {x: -0.77499735, y: -0.07186257}
+      - {x: -1.1260233, y: -0.3721707}
+      - {x: -0.8629519, y: -0.103952214}
+      - {x: -0.668401, y: 0.042796284}
       - {x: -0.5603355, y: 0.14279927}
       - {x: -0.44107893, y: 0.14279927}
-      - {x: -0.63188946, y: 0.07124533}
-      - {x: -0.8227, y: -0.19111915}
-      - {x: -0.8227, y: -0.28652442}
+      - {x: -0.5484568, y: -0.2830407}
+      - {x: -1.129628, y: -0.37575257}
+      - {x: -0.9308665, y: -0.48775655}
       - {x: -0.6557408, y: -0.5727402}
       - {x: -0.27411973, y: -0.5727402}
       - {x: -0.17871445, y: -0.5488889}
@@ -180,7 +182,7 @@ Animator:
   m_GameObject: {fileID: 1022102160500688}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31111bf19a6899146a96b7abb667dcd1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 57fcaaef75eda9240ac67a1c844fc822, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -220,14 +222,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  player: {fileID: 0}
-  bossSprite: {fileID: 212299383661001892}
+  habilidad: {fileID: 0}
+  speed: 4
   Proyectil: {fileID: 1694658068913892, guid: aa0c8530e92f2c8459af51b41f1c506c, type: 2}
-  numberProyectiles: 5
+  numberProyectiles: 3
   currentWayPoint: 0
   timeofshoot: 5
   PuntoSpawn: {fileID: 4262260318642898}
+  random: 0
+  deadboss1: 0
 --- !u!114 &114833577626431202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDamage: 1
-  MaxHealth: 0
+  MaxHealth: 300
   CurrentHealth: 0
   souls: 0
   darkness: 0
@@ -294,7 +297,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 246db0a3213429e4eb077fc331c1253a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.79, y: 1.1500001}

@@ -54,6 +54,9 @@ public class Boss1Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		while (IsShooting || IsIdle) {
+			anim.Play ("boss1Iddle");
+		}
 		if (GetComponent<EnemyLifeSystem> ().CurrentHealth > 0)
         {
 
@@ -80,7 +83,7 @@ public class Boss1Behaviour : MonoBehaviour {
 
 	private void Shoot()
 	{
-
+		
         
         //Rotacion del boss hacia el player
         Vector3 direcc = player.transform.position - PuntoSpawn.transform.position;
