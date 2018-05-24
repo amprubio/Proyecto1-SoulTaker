@@ -28,6 +28,7 @@ public class Ataque : MonoBehaviour {
     {
         if ((GameInputManager.GetKeyDown("AttackKey") && rdy) || (GameInputManager.XButton() && rdy))
         {
+            FindObjectOfType<AudioManager>().PlaySFX("Attack1");
             StartCoroutine(AttackTime(tRetardo));
         }
     }
@@ -36,11 +37,11 @@ public class Ataque : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemy" && (collision.isTrigger == false) && !Hit)
         {
+            FindObjectOfType<AudioManager>().PlaySFX("EnemyHit2");
             EnemyLifeSystem enemy = collision.gameObject.GetComponent<EnemyLifeSystem>();
             enemy.LoseHealth(DañoAtaque);
             Debug.Log("Hit" + DañoAtaque);
             Hit = true;
-            FindObjectOfType<AudioManager>().Play("EnemyDamage2");
         }
     }
 
@@ -48,7 +49,6 @@ public class Ataque : MonoBehaviour {
     {
         SwordCol.enabled = true;
         attack.anim.SetBool("Attack", true);
-        FindObjectOfType<AudioManager>().Play("Attack1");
         yield return new WaitForSeconds(attackAnim.length);
         attack.anim.SetBool("Attack", false);
         rdy = false;

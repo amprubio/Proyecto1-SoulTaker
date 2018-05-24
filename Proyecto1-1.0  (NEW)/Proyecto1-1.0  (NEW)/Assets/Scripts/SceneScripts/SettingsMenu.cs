@@ -9,11 +9,13 @@ public class SettingsMenu : MonoBehaviour {
     public AudioMixerGroup master;
     public AudioMixerGroup music;
     public AudioMixerGroup soundFX;
-    public float defaultVolume;
     public GameObject fullScreenOn;
     public GameObject fullScreenOff;
     public Dropdown dropdownGraphics;
     public Dropdown dropdownResolution;
+    private Slider sliderM;
+    private Slider sliderMu;
+    private Slider sliderSFX;
 
     private Resolution[] resolutions;
 
@@ -43,23 +45,32 @@ public class SettingsMenu : MonoBehaviour {
         dropdownResolution.AddOptions(options);
         dropdownResolution.value = currentResolutionIndex;
         dropdownResolution.RefreshShownValue();
-        
-        
+
+
+        //sliderM = GameObject.Find("MasterVolumeSlider").GetComponent<Slider>();
+        //sliderM.value = master.audioMixer.;
+        //sliderMu = GameObject.Find("MusicVolumeSlider").GetComponent<Slider>();
+        //sliderMu.value = ;
+        //sliderSFX = GameObject.Find("SoundVolumeSlider").GetComponent<Slider>();
+        //sliderSFX.value = ;
     }
 
 
     public void SetMasterVolume(float volume)
     {
         master.audioMixer.SetFloat("MasterVol", volume);
+        //sliderM.value = volume;
     }
 
     public void SetMusicVolume(float volume)
     {
+        //sliderMu.value = volume;
         music.audioMixer.SetFloat("MusicVol", volume);
     }
 
     public void SetSoundFxVolume(float volume)
     {
+        //sliderSFX.value = volume;
         soundFX.audioMixer.SetFloat("SoundFXVol", volume);
     }
 
@@ -100,4 +111,5 @@ public class SettingsMenu : MonoBehaviour {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+    
 }

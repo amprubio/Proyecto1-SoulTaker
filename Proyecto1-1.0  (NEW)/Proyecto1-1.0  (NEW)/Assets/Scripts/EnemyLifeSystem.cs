@@ -41,7 +41,6 @@ public class EnemyLifeSystem : MonoBehaviour {
         Debug.Log("CurrentHealth - i : " + CurrentHealth);
         if (CurrentHealth <= 0)
         {
-            FindObjectOfType<AudioManager>().Play("EnemyDeath");
             Destroy(this.gameObject);
         }
     }

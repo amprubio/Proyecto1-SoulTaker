@@ -24,6 +24,11 @@ public class MainMenu : MonoBehaviour
         startAnim.Play();
         //FindObjectOfType<AudioManager>().Play("Menu");
     }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Vertical")) { SelectionSFX(); }
+        if (Input.GetButtonDown("Submit")) { ClickSFX(); }
+    }
 
     public void PlayGame()
     {
@@ -33,5 +38,15 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+
+    public void SelectionSFX()
+    {
+        FindObjectOfType<AudioManager>().PlaySFX("Selection");
+    }
+
+    public void ClickSFX()
+    {
+        FindObjectOfType<AudioManager>().PlaySFX("Click");
     }
 }

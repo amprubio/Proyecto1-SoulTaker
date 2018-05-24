@@ -6,6 +6,9 @@ public class Destroyable : MonoBehaviour {
 
     public float waitTime = 1.0f;
     public float respawnTime = 2.0f;
+    private AudioSource audioSource;
+    public AudioClip clipDestroyed;
+    public AudioClip clipRespawn;
     private bool touched = false;
     private Collider2D col;
     private SpriteRenderer rend;
@@ -16,6 +19,7 @@ public class Destroyable : MonoBehaviour {
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         col = GetComponent<BoxCollider2D>();
         rend = GetComponent<SpriteRenderer>();
         resetWait = waitTime;
@@ -29,11 +33,12 @@ public class Destroyable : MonoBehaviour {
             waitTime -= Time.deltaTime;
             if (waitTime < 0f)
             {
+                audioSource.clip = clipDestroyed;
+                audioSource.Play();
                 col.enabled = false;
                 rend.enabled = false;
                 waitTime = resetWait;
                 touched = false;
-                FindObjectOfType<AudioManager>().Play("Destroy");
             }
         }
 
@@ -42,10 +47,11 @@ public class Destroyable : MonoBehaviour {
             respawnTime -= Time.deltaTime;
             if (respawnTime < 0)
             {
+                audioSource.clip = clipRespawn;
+                audioSource.Play();
                 col.enabled = true;
                 rend.enabled = true;
                 respawnTime = resetRespawn;
-                FindObjectOfType<AudioManager>().Play("Respawn");
             }
         }
     }

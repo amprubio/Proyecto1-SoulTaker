@@ -52,8 +52,11 @@ public class MovementController : MonoBehaviour
 
         if (axisX < 0 || GameInputManager.GetKey("LeftKey"))
         {
-            //FindObjectOfType<AudioManager>().Stop("Walk");
-            //FindObjectOfType<AudioManager>().Play("Walk");
+            if (Onfloor)
+            {
+                FindObjectOfType<AudioManager>().StopSFX("Run");
+                FindObjectOfType<AudioManager>().PlaySFX("Run");
+            }
             transform.Translate(new Vector3(-1, 0) * Time.fixedDeltaTime * speed);
             x = -1;
             Player.flipX = true;
@@ -65,8 +68,11 @@ public class MovementController : MonoBehaviour
         else if (axisX > 0|| GameInputManager.GetKey("RightKey"))
         {
 
-            //FindObjectOfType<AudioManager>().Stop("Walk");
-            //FindObjectOfType<AudioManager>().Play("Walk");
+            if (Onfloor)
+            {
+                FindObjectOfType<AudioManager>().StopSFX("Run");
+                FindObjectOfType<AudioManager>().PlaySFX("Run");
+            }
             transform.Translate(new Vector3(1, 0) * Time.fixedDeltaTime * speed);
             x = 1;
             Player.flipX = false;
@@ -78,7 +84,7 @@ public class MovementController : MonoBehaviour
         else 
         {
             anim.SetBool("Idle", true);
-            //FindObjectOfType<AudioManager>().Stop("Walk");
+            FindObjectOfType<AudioManager>().StopSFX("Run");
         }       
     }
 
@@ -89,6 +95,8 @@ public class MovementController : MonoBehaviour
 
         if ((GameInputManager.GetKeyDown("JumpKey") && Onfloor) || (GameInputManager.AButtonDown() && Onfloor))
         {
+            FindObjectOfType<AudioManager>().StopSFX("Run");
+            FindObjectOfType<AudioManager>().PlaySFX("Jump");
             jumpKeyHeld = true;
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpImpulse, ForceMode2D.Impulse);
         }
@@ -102,7 +110,7 @@ public class MovementController : MonoBehaviour
         else if (GameInputManager.GetKey("JumpKey") || GameInputManager.AButton())
         {
 
-            countDown -= Time.deltaTime;
+            countDown -= Time.fixedDeltaTime;
             if (jumpKeyHeld && countDown > 0f)
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10 * jumpForce, ForceMode2D.Force);
@@ -113,14 +121,14 @@ public class MovementController : MonoBehaviour
 
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
-            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * fall * Time.fixedDeltaTime;
             anim.SetBool("Fall", true);
-            //FindObjectOfType<AudioManager>().Play("Falling");
+            //FindObjectOfType<AudioManager>().PlaySFX("Falling");
         }
         else
         {
             anim.SetBool("Fall", false);
-            //FindObjectOfType<AudioManager>().Stop("Falling");
+            //FindObjectOfType<AudioManager>().StopSFX("Falling");
         }
 
         
@@ -133,7 +141,7 @@ public class MovementController : MonoBehaviour
         {
             Onfloor = true;
             anim.SetBool("Jump", false);
-
+            
         }
 
         else if (other.gameObject.tag == "Elevator")
@@ -141,6 +149,7 @@ public class MovementController : MonoBehaviour
             Onfloor = true;
             transform.parent = other.transform;
             anim.SetBool("Jump", false);
+            
         }
     }
     public void OnTriggerExit2D(Collider2D other)
@@ -149,18 +158,15 @@ public class MovementController : MonoBehaviour
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Foreground")
         {
             Onfloor = false;
-            //FindObjectOfType<AudioManager>().Stop("Walk");
             anim.SetBool("Jump", true);
-            //FindObjectOfType<AudioManager>().Play("Jump");
+            
         }
 
         else if (other.gameObject.tag == "Elevator")
         {
             Onfloor = false;
             transform.parent = null;
-            //FindObjectOfType<AudioManager>().Stop("Walk");
             anim.SetBool("Jump", true);
-            //FindObjectOfType<AudioManager>().Play("Jump");
         }
 
     }

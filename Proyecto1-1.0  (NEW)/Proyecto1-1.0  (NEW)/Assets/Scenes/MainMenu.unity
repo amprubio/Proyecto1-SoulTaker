@@ -1315,7 +1315,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 134539193}
-  - component: {fileID: 134539194}
   m_Layer: 5
   m_Name: MainTitle
   m_TagString: Untagged
@@ -1346,18 +1345,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &134539194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 134539192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 208cf416cfce4b949bdd4b71426e97f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 1706695629}
 --- !u!1 &179259185
 GameObject:
   m_ObjectHideFlags: 0
@@ -6989,7 +6976,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1706695629}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &611337485
@@ -14945,7 +14932,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 134539194}
+      - m_Target: {fileID: 1904205964}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -20368,6 +20355,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1904205964}
+        m_MethodName: SelectionSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1129241711
@@ -21328,6 +21326,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1904205961}
         m_MethodName: SetMasterVolume
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1904205964}
+        m_MethodName: SelectionSFX
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -31113,7 +31122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 134539194}
+      - m_Target: {fileID: 1904205964}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -31974,6 +31983,7 @@ GameObject:
   - component: {fileID: 1904205961}
   - component: {fileID: 1904205962}
   - component: {fileID: 1904205963}
+  - component: {fileID: 1904205964}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -32078,7 +32088,6 @@ MonoBehaviour:
   master: {fileID: 24300002, guid: 0dc8f110c3354a943b1176368ebaef22, type: 2}
   music: {fileID: 243440516138392042, guid: 0dc8f110c3354a943b1176368ebaef22, type: 2}
   soundFX: {fileID: 243168603057035436, guid: 0dc8f110c3354a943b1176368ebaef22, type: 2}
-  defaultVolume: 0
   fullScreenOn: {fileID: 1261735188}
   fullScreenOff: {fileID: 973000807}
   dropdownGraphics: {fileID: 1493917685}
@@ -32095,7 +32104,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 68e71a6116202144895028fb884ce341, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!82 &1904205963
@@ -32166,7 +32175,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -32179,6 +32188,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1904205964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904205956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208cf416cfce4b949bdd4b71426e97f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1706695629}
 --- !u!1 &1912275972
 GameObject:
   m_ObjectHideFlags: 0
@@ -33583,6 +33604,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1904205964}
+        m_MethodName: SelectionSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!224 &2074060896
@@ -33715,6 +33747,48 @@ Transform:
   m_Father: {fileID: 1547860123}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.7700005}
+--- !u!1001 &2099357697
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 499.12036
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 468.95035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -15.741933
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831072553157236, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1d49e7f5047d2914f9d1fa54f7c16afd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2117007381
 GameObject:
   m_ObjectHideFlags: 0

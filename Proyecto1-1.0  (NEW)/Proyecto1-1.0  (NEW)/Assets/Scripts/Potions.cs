@@ -37,10 +37,10 @@ public class Potions : MonoBehaviour {
                 //vidaManager.CurarVida();
                 //PotionsManager.CurrentPotions--;
                 //Mathf.Clamp(PotionsManager.CurrentPotions, 0, MaxPotions);
+                FindObjectOfType<AudioManager>().PlaySFX("Potion");
                 vidaManager.RestoreHealth();
                 GameManager.instance.UpdatePotions(GameManager.instance.potions-1);
                 healingEffect.Play();
-                FindObjectOfType<AudioManager>().Play("Potion");
 
                 //potionsManager.UpdatePotions();
             }
