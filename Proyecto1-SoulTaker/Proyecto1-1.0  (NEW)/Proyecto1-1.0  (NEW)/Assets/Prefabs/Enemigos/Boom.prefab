@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 95593157178662810}
   m_Layer: 0
   m_Name: Boom
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,8 +148,8 @@ MonoBehaviour:
   enemyGraphic: {fileID: 1412148583045766}
   facingRight: 0
   enemy: {fileID: 212936818349405454}
-  chargeTime: 3
-  enemySpeed: 5
+  chargeTime: 0
+  enemySpeed: 4
   anim: {fileID: 95593157178662810}
 --- !u!114 &114380980661223246
 MonoBehaviour:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  attack1Range: 0.1
+  attack1Range: 20
   objectExplosion: {fileID: 1368295580995558, guid: b180a7760f91d1e4bacc481890a899b1,
     type: 2}
 --- !u!114 &114398162617130104
@@ -182,6 +182,7 @@ MonoBehaviour:
   CurrentHealth: 0
   souls: 50
   darkness: 30
+  barrera: {fileID: 0}
 --- !u!212 &212936818349405454
 SpriteRenderer:
   m_ObjectHideFlags: 1

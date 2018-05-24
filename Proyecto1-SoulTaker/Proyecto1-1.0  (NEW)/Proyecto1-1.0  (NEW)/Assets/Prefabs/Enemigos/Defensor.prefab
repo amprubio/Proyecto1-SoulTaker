@@ -147,8 +147,8 @@ MonoBehaviour:
   enemyGraphic: {fileID: 1447250959645254}
   facingRight: 0
   enemy: {fileID: 212919485975585032}
-  chargeTime: 2
-  enemySpeed: 7
+  chargeTime: 0
+  enemySpeed: 3
   anim: {fileID: 95897950819130208}
 --- !u!114 &114983089303104464
 MonoBehaviour:
@@ -161,11 +161,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c87a4998cab1a140bab0b75e7f1b0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyDamage: 2
-  MaxHealth: 50
+  EnemyDamage: 1
+  MaxHealth: 20
   CurrentHealth: 0
   souls: 80
   darkness: 55
+  barrera: {fileID: 0}
 --- !u!212 &212919485975585032
 SpriteRenderer:
   m_ObjectHideFlags: 1

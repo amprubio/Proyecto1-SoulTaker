@@ -1,8 +1,0 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Stage3/Stg3-Lvl5.unity
-=======
-- path: Assets/Scenes/Tienda.unity
->>>>>>> parent of 039835f... Arrgelando las habilidades
-  isLoaded: 1
-  isActive: 1

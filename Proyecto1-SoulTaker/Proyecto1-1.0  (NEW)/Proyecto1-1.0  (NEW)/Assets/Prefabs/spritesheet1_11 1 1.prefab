@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4239189158592424}
   - component: {fileID: 212380056467825088}
   - component: {fileID: 58965656222331466}
-  - component: {fileID: 114607965004408022}
+  - component: {fileID: 114209705648578926}
   m_Layer: 0
   m_Name: spritesheet1_11 1 1
-  m_TagString: Untagged
+  m_TagString: Proyectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &114607965004408022
+--- !u!114 &114209705648578926
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -65,13 +65,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1694658068913892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca6a402391f9000469c7161face66f7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8426ba9f39abf9044a0a700064befa76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 2
-  angulo: 2
-  seno: 0.3
+  speed: 5
+  damage: 1
+  angulo: 0
+  seno: 0
   coseno: 0
 --- !u!212 &212380056467825088
 SpriteRenderer:

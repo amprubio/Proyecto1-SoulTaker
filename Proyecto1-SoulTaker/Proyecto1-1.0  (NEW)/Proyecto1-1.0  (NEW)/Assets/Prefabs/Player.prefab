@@ -366,11 +366,7 @@ MonoBehaviour:
   speed: 7
   fall: 2
   jumpImpulse: 0.2
-<<<<<<< HEAD:Proyecto1-1.0  (NEW)/Proyecto1-1.0  (NEW)/Assets/Prefabs/Player.prefab
-  jumpForce: 3
-=======
   jumpForce: 3.3
->>>>>>> 039835f792d4272eef78f18750b83d1dd822cf7a:Proyecto1-SoulTaker/Proyecto1-1.0  (NEW)/Proyecto1-1.0  (NEW)/Assets/Prefabs/Player.prefab
   countDown: 0.2
   anim: {fileID: 0}
   countGranade: 7

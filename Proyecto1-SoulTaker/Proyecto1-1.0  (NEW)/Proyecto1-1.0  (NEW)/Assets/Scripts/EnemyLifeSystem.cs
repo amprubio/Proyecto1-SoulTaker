@@ -16,6 +16,7 @@ public class EnemyLifeSystem : MonoBehaviour {
     public float darkness;
     private Souls giveSouls;
     private Darkness giveDarkness;
+    public GameObject barrera;
 
     
     void Start()
@@ -42,6 +43,7 @@ public class EnemyLifeSystem : MonoBehaviour {
         if (CurrentHealth <= 0)
         {
             Destroy(this.gameObject);
+            Destroy(barrera);
         }
     }
     

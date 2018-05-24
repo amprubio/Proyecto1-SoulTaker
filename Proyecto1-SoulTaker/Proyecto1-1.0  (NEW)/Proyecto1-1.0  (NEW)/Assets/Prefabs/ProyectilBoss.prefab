@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  damage: 2
+  damage: 1
   angulo: 0
   seno: 0
   coseno: 0
