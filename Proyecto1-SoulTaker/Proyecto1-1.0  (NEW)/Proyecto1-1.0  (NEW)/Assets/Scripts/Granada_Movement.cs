@@ -70,7 +70,7 @@ public class Granada_Movement : MonoBehaviour {
     void Explosion()
     {
 
-        //Instantiate(particulasExplosion, transform.position, transform.rotation);
+        Instantiate(particulasExplosion, transform.position, transform.rotation);
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radioExplosion);
 

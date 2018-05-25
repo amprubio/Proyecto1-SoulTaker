@@ -91,7 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anguloSalida: 20
   fuerzaSalida: 10
-  particulasExplosion: {fileID: 0}
+  particulasExplosion: {fileID: 1368295580995558, guid: b180a7760f91d1e4bacc481890a899b1,
+    type: 2}
   radioExplosion: 10
   "da\xF1oGranada": 10
   flipped: 0
