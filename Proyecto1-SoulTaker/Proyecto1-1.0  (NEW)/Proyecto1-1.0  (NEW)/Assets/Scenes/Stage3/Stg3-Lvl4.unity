@@ -4839,6 +4839,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4536320620631688, guid: 4a7062de65d0fde45bf4fa609bdd3d3f,
     type: 2}
   m_PrefabInternal: {fileID: 1290168884}
+--- !u!1001 &1308059647
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 11.01758
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393132750160030, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 598d8c2d4f8370043a344a4ab5e739ff, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1336252578
 Prefab:
   m_ObjectHideFlags: 0
@@ -5242,7 +5284,7 @@ Transform:
   - {fileID: 241470000}
   - {fileID: 679638234}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1566548421
 EdgeCollider2D:
