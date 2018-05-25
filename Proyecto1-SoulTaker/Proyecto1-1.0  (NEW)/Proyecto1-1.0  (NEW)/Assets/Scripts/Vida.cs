@@ -61,7 +61,7 @@ public class Vida : MonoBehaviour
         if (/*VidaManager.VidaActual <= 0*/GameManager.instance.health <= 0)
         {
             DestroyPlayer();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 

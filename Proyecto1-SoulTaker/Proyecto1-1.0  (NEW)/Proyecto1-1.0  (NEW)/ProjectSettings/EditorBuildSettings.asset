@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9b03f78e915301145ad90bd00264a1e5
   - enabled: 1
-    path: Assets/Scenes/Tienda.unity
-    guid: ad84a1ecad6d9334d89f298c9fa6b55c
-  - enabled: 1
     path: Assets/Scenes/Stage1/Stg1-Lvl1.unity
     guid: ba7ec1eedaa4b6a40a47dd1ddc3e85b1
   - enabled: 1
@@ -23,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage1/Stg1-LvlBoss.unity
     guid: 9bdb5bf313f0136428572bff72d0b01c
+  - enabled: 1
+    path: Assets/Scenes/Tienda.unity
+    guid: ad84a1ecad6d9334d89f298c9fa6b55c
   - enabled: 1
     path: Assets/Scenes/Stage2/Stg2-Lvl1.unity
     guid: 81de46cddbe469441aeb468a7e054697
